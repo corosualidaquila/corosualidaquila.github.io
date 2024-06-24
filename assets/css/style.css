@@ -88,7 +88,7 @@ body.dark_theme {
 
 body.light_theme {
 
-  --bg-primary: hsl(0, 0%, 0%);
+  --bg-primary: hsl(0, 0%, 100%);
   --bg-secondary: hsl(0, 0%, 100%);
   --color-primary: hsl(0, 0%, 12%);
   --color-secondary: hsl(0, 0%, 37%);
@@ -483,6 +483,7 @@ main { overflow-x: hidden; }
 .hero-title {
   text-align: center;
   margin-bottom: 30px;
+   color: var(--color-primary);
 }
 
 .hero .btn-primary { margin-inline: auto; }
