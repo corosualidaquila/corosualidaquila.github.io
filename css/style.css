@@ -37,7 +37,6 @@ body {
   background-color: var(--light-color);
   position: fixed;
   top: 40;
-  left: 40;
   z-index: 100;
   transition: .5s;
 }
@@ -55,7 +54,6 @@ body {
   display: block;
   color: var(--light-color);
   text-align: center;
-  padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
 }
