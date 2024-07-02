@@ -41,8 +41,8 @@ body {
   position: absolute;
   display: flex;
   cursor: pointer;
-  top: 40px;
-  right: 40px;
+  top: 0;
+  right: 0;
 
 }
 
