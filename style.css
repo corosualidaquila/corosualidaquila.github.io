@@ -7,6 +7,7 @@ label {
   border-radius: 200px;
   box-shadow: inset 0px 5px 15px rgba(0,0,0,0.4), inset 0px -5px 15px rgba(255,255,255,0.4);
   cursor: pointer;
+  transiction: 0.3;
 }
 
 label:after {
@@ -19,6 +20,7 @@ label:after {
   background: linear-gradient(180deg,#ffcc89,#d8860b);
   border-radius: 180px;
   box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+    transiction: 0.3;
 }
 input {
   width: 0;
@@ -33,11 +35,4 @@ input:checked + label:after {
   left:490px;
   transform: translateX(-100%);
   background: linear-gradient(180deg,#777,#3a3a3a);
-}
-label, label:after {
-  transition: 0.3s
-}
-
-label:active:after{ 
-  width: 260px; 
 }
