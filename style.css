@@ -1,13 +1,13 @@
 body {
   padding: 25px;
-  background-color: white;
+  background-color: #ffffff;
   color: #2B2929;
   font-size: 25px;
 }
 
 .dark-mode {
   background-color: #2B2929;
-  color: white;
+  color: #ffffff;
 }
 
 
