@@ -1,12 +1,12 @@
 body {
   padding: 25px;
-  background-color: #fff;
+  background-color: rgba(255,255,255,0) ;
   color: 000;
   font-size: 25px;
 }
 
 .dark-mode {
   background-color: 000;
-  color: #fff  ;
+  color: rgba(255,255,255,0)   ;
 }
 
