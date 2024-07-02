@@ -54,7 +54,7 @@ body {
 }
 
 .nav__logo {
-  color: var(--darl-color);
+  color: var(--dark-color);
   font-weight: var(--font-semi-bold);
   transition: color .4s;
 }
