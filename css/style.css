@@ -17,6 +17,7 @@ body {
    background-color: var(--light-color);
   color: #2B2929;
   font-size: 25px;
+  font-family: serif
 }
 
 .dark-mode {
