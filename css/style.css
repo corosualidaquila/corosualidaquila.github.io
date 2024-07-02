@@ -63,6 +63,7 @@ body {
   display: flex;
   align-items: center;
   column-gap: 1rem;
+   color: var(--dark-color);
 }
 
 .nav__search, 
