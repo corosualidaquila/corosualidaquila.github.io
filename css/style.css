@@ -19,8 +19,6 @@
 /* ------------ BASE ------------ */
 
 body {
-  top: 40px;
-  right: 100px;
    background-color: var(--light-color);
   color: #2B2929;
   font-size: 30px;
@@ -32,9 +30,11 @@ body {
   color: var(--light-color);
 }
 
-
+/* menu */
 .topnav {
   overflow: hidden;
+  top: 40px;
+  right: 100px;
 }
 
 .topnav a {
