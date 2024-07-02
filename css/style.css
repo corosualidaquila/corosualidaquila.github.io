@@ -13,10 +13,11 @@
 /* ------------ BASE ------------ */
 
 body {
-  padding: 25px;
+  top: 40px;
+  right: 100px;
    background-color: var(--light-color);
   color: #2B2929;
-  font-size: 25px;
+  font-size: 30px;
   font-family: serif
 }
 
