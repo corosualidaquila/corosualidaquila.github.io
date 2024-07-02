@@ -47,10 +47,6 @@ input:checked + label:after {
   background: linear-gradient(180deg,#777,#3a3a3a);
 }
 
-label, label:after {
-  transition: 0.3s
-}
-
 label:active:after{ 
   width: 260px; 
 }
