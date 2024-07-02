@@ -44,7 +44,7 @@ body {
 
 .navbar {
   overflow: hidden;
-  background-color: #333;
+  background-color: var(--dark-color);
   position: fixed;
   top: 0;
   width: 100%;
@@ -53,7 +53,7 @@ body {
 .navbar a {
   float: left;
   display: block;
-  color: #f2f2f2;
+  color: var(--light-color);
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
