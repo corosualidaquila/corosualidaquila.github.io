@@ -14,31 +14,41 @@
 </head>
 <body>
 
- <nav class="navbar" data-navbar>
-        <ul class="navbar-list">
+<!--=============== HEADER ===============-->
+        <header class="header" id="header">
+            <div class="progress-container">
+                <div class="progress-bar" id="myBar"></div>
+              </div>  
+            <nav class="nav container">
+                <a href="#" class="nav__logo"> Endless Navs </a>
 
-          <li>
-            <a href="#home" class="navbar-link">Home.</a>
-          </li>
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="#home" class="nav__link active-link">Home</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#about" class="nav__link">About Us</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="" class="nav__link">Navbars</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#contact" class="nav__link">Contact Us</a>
+                        </li>
 
-          <li>
-            <a href="#about" class="navbar-link">About.</a>
-          </li>
+                        <i class='bx bx-toggle-left change-theme' id="theme-button"></i>
+                    </ul>
+                </div>
 
-          <li>
-            <a href="#skills" class="navbar-link">Skills.</a>
-          </li>
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-grid-alt'></i>
+                </div>
 
-          <li>
-            <a href="#portfolio" class="navbar-link">Portfolio.</a>
-          </li>
+            
+            </nav>
+       
 
-          <li>
-            <a href="#contact" class="navbar-link">Contact.</a>
-          </li>
-
-        </ul>
-      </nav>
 
   <div class="btn" onclick="myFunction()">
     <div class="btn__indicator">
@@ -47,6 +57,7 @@
       </div>
     </div>
   </div>
+           </header>
 
  <!------------------------- 
         FILE SCRIPT
