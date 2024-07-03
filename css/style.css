@@ -29,8 +29,6 @@
 }
 
 body{
-    display: flex;
-    min-height: 150vh;
     background: var(--light-color);
 }
 
