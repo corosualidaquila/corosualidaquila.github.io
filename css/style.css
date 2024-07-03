@@ -51,14 +51,14 @@ body {
   width: 60px;
   height: 34px;
   border-radius: 26px;
-  position: ansolute;
+  position: absolute;
   display: flex;
   cursor: pointer;
 
 }
 
 .btn__indicator{
-  background-color: ;
+  background-color: var(--dark-color);
   width: 26px;
   height: 26px;
   top: 4px;
