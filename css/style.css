@@ -39,7 +39,7 @@ body.dark{
 }
 
 .toggle{
-    position: fixed;
+    position: absolute;
     top: 30px; right: 30px;
     width: 2em; height: 2em;
     border-radius: 50%;
