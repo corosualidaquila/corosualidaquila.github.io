@@ -26,10 +26,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
 /* -------- FOR CHANGE DARK/LIGHT MODE --------*/
 
-function myFunction() {
-   var element = document.body;
-   element.classList.toggle("dark-mode");
-}
+ function switchMode(){
+            const body = document.querySelector('body');
+            body.classList.toggle('dark');
+        }
 
 
 /* --------- NAV MENU --------- */
