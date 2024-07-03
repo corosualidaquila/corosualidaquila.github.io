@@ -70,8 +70,6 @@ body.dark .toggle{
     color: var(--light-color);
     position: absolute;
     display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 body.dark .moon{
@@ -83,8 +81,6 @@ body.dark .sun{
     color: var(--dark-color);
     position: absolute;
     display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 /* -----------------------------
