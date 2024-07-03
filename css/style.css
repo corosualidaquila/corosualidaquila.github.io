@@ -65,7 +65,7 @@ body.dark .toggle{
     box-shadow: none;
 }
 
-.sun{
+.moon{
     width: 20px; height: 20px;
     color: var(--light-color);
     position: absolute;
