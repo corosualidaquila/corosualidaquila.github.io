@@ -160,13 +160,13 @@ body.darkmode{
 ------------------*/
 .topnav {
   overflow: hidden;
-  background-color: #333;
+  background-color: var(--dark-color);
 }
 
 .topnav a {
   float: left;
   display: block;
-  color: #f2f2f2;
+  color: var(--light-color);
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -175,12 +175,12 @@ body.darkmode{
 
 .topnav a:hover {
   background-color: #ddd;
-  color: black;
+  color: var(--dark-color);
 }
 
 .topnav a.active {
   background-color: #04AA6D;
-  color: white;
+  color: var(--light-color);
 }
 
 .topnav .icon {
