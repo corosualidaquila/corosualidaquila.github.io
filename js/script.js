@@ -24,6 +24,8 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 
+/* -------- FOR THE TOGGLE BUTTON --------*/
+
 function myFunction() {
    var element = document.body;
    element.classList.toggle("dark-mode");
@@ -79,3 +81,20 @@ btn.addEventListener('click', () => {
     icon.classList.remove('animated');
   }, 500)
 })
+
+
+/* --------- NAV MENU --------- */
+function myNavFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+
+
+
+
+
+
