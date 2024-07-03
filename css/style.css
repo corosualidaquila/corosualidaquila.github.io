@@ -170,7 +170,7 @@ body.darkmode{
 ------------------*/
 .bg-img {
   /* The image used */
-  background-image: var(--light-color);
+  background-image: url("lavagna-poitiers.jpg");
 
   min-height: 380px;
 
