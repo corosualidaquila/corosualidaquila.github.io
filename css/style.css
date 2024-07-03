@@ -61,8 +61,6 @@ body {
   background-color: var(--dark-color);
   width: 26px;
   height: 26px;
-  top: 4px;
-  left: 4px;
   border-radius: 50%;
   position: absolute;
   transition: transform .3s ease;
