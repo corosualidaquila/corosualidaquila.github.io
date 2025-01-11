@@ -1217,45 +1217,57 @@ html:not(.lt-ie10) .not-animated {
 	align-items: center;
 	padding: 20px;
 	background: #ffffff;
-	transition: .3s all ease;
-}
-
-.preloader.loaded {
+	transition: 0.3s all ease;
+  }
+  
+  .preloader.loaded {
 	opacity: 0;
 	visibility: hidden;
-}
-
-.preloader-body {
+  }
+  
+  .preloader-body {
 	text-align: center;
-}
-
-.preloader-body p {
+  }
+  
+  .preloader-body p {
 	position: relative;
-	right: -8px;
-}
-
-.cssload-container {
-	width: 100%;
-	height: 36px;
-	text-align: center;
-}
-
-.cssload-speeding-wheel {
-	width: 36px;
-	height: 36px;
-	margin: 0 auto;
-	border: 3px solid var(--primary-color);
+	font-size: 16px;
+	color: var(--primary-color);
+  }
+  
+  .vinyl {
+	width: 60px;
+	height: 60px;
 	border-radius: 50%;
-	border-left-color: transparent;
-	border-bottom-color: transparent;
-	animation: cssload-spin .88s infinite linear;
-}
-
-@keyframes cssload-spin {
+	background: radial-gradient(circle, #000000 60%, #ffffff 65%);
+	position: relative;
+	border: 4px solid var(--primary-color);
+	animation: spin 1.5s infinite linear;
+  }
+  
+  .vinyl::before {
+	content: '';
+	width: 10px;
+	height: 10px;
+	background: var(--primary-color);
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+  }
+  
+  @keyframes spin {
 	100% {
-		transform: rotate(360deg);
+	  transform: rotate(360deg);
 	}
-}
+  }
+  
+
+
+
+
+
 
 /** @section ToTop */
 .ui-to-top {
