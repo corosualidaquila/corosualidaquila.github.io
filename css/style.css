@@ -62,7 +62,7 @@
 :root {
 	--primary-color: #64c1ec;  /* azzurro */
 	--secondary-color: #222d4f; /* blu scuro */
-	--background-color: #f4f4f4; /* Colore di sfondo */
+	--text-color-white: #f4f4f4; /* Colore di sfondo */
 	--text-color: #333333; /* Colore del testo */
   }
   
@@ -1255,12 +1255,6 @@ html:not(.lt-ie10) .not-animated {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-  }
-  
-  @keyframes spin {
-	100% {
-	  transform: rotate(360deg);
-	}
   }
   
   .music-notes {
@@ -13790,7 +13784,7 @@ img + .custom-title {
 }
 
 .breadcrumbs-custom-path {
-	background-color: rgba(0, 0, 0, 0.3);
+	background-color: var(--text-color-white);
 	padding: 19px 0 21px;
 	text-transform: uppercase;
 	font-weight: 700;
@@ -13840,7 +13834,7 @@ img + .custom-title {
 
 .breadcrumbs-custom-path a:hover,
 .breadcrumbs-custom-path li.active {
-	color: #ffffff;
+	color: var(--text-color-white);
 }
 
 .breadcrumbs-custom-path li.active {
@@ -13952,7 +13946,7 @@ img + .custom-title {
 	font-size: 17px;
 	line-height: 1.41176;
 	background-color: transparent;
-	color: #ffffff;
+	color: var(--text-color-white);
 	transition: all 0.3s ease-in-out;
 }
 
@@ -14016,7 +14010,7 @@ img + .custom-title {
 	padding: 9px 16px;
 	margin-left: auto;
 	margin-right: auto;
-	color: #ffffff;
+	color: var(--text-color-white);
 	text-align: left;
 	background-color: #1c2748;
 	border-radius: 0;
@@ -14192,7 +14186,7 @@ footer a:hover {
 
 .aside-item .form-label,
 .aside-item .form-input {
-	color: #ffffff;
+	color: var(--text-color-white);
 	font-weight: 400;
 	padding-right: 30px;
 }
@@ -14215,7 +14209,7 @@ footer a:hover {
 .aside-item .rd-search button {
 	cursor: pointer;
 	font-size: 20px;
-	color: #ffffff;
+	color: var(--text-color-white);
 }
 
 .aside-item .rd-search button:hover {
@@ -14227,7 +14221,7 @@ footer a:hover {
 }
 
 .aside-item p {
-	color: rgba(255, 255, 255, 0.5);
+	color: var(--text-color-white);
 }
 
 .aside-title {
@@ -14265,7 +14259,7 @@ footer a:hover {
 	left: 0;
 	bottom: 0;
 	width: 1px;
-	background-color: #ffffff;
+	background-color: var(--text-color-white);
 	z-index: 0;
 }
 
@@ -14278,8 +14272,8 @@ footer a:hover {
 	align-items: center;
 	justify-content: space-between;
 	text-transform: uppercase;
-	border-left: 1px solid #ffffff;
-	color: #ffffff;
+	border-left: 1px solid var(--text-color-white);
+	color: var(--text-color-white);
 	padding: 0 0 5px 20px;
 	position: relative;
 }
@@ -14343,16 +14337,16 @@ footer a:hover {
 	font-size: 12px;
 	font-weight: 700;
 	letter-spacing: .1em;
-	color: rgba(255, 255, 255, 0.5);
-	border: 1px solid rgba(255, 255, 255, 0.5);
+	color: var(--text-color-white);
+	border: 1px solid var(--text-color-white);
 	padding: 8px 12px;
 	min-width: 73px;
 	border-radius: 10em;
 }
 
 .button-tags:hover {
-	color: #ffffff;
-	border-color: #ffffff;
+	color: var(--text-color-white);
+	border-color: var(--text-color-white);
 }
 
 /** @section Single Product */
@@ -14417,7 +14411,7 @@ div.single-product-rating .icon {
 }
 
 .single-product-card .card-corporate .card-body p {
-	color: rgba(255, 255, 255, 0.5);
+	color: var(--text-color-white);
 	letter-spacing: 0;
 	font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
@@ -14489,11 +14483,11 @@ div.single-product-rating .icon {
 }
 
 .single-product-checkbox-size .radio-custom-text {
-	color: rgba(255, 255, 255, 0.5);
+	color: var(--text-color-white);
 }
 
 .single-product-checkbox-size .radio-custom:checked ~ .radio-custom-text {
-	color: #ffffff;
+	color: var(--text-color-white);
 }
 
 .single-product-checkbox-size .checkbox-inline {
@@ -14522,7 +14516,7 @@ div.single-product-rating .icon {
 	min-height: auto;
 	padding: 0 27px;
 	border: 0;
-	color: #ffffff;
+	color: var(--text-color-white);
 	font-size: 16px;
 }
 
@@ -14590,7 +14584,7 @@ div.single-product-rating .icon {
 .single-product-old-price {
 	margin-left: 14px;
 	font-size: 18px;
-	color: rgba(255, 255, 255, 0.5);
+	color: var(--text-color-white);
 	text-decoration: line-through;
 }
 
@@ -14640,7 +14634,7 @@ div.single-product-rating .icon {
 }
 
 .single-product-tabs {
-	color: rgba(255, 255, 255, 0.5);
+	color: var(--text-color-white);
 }
 
 .single-product-tabs h6 {
@@ -14667,7 +14661,7 @@ div.single-product-rating .icon {
 	width: 3px;
 	height: 3px;
 	border-radius: 50%;
-	background-color: rgba(255, 255, 255, 0.5);
+	background-color: var(--text-color-white);
 	top: 12px;
 	left: 0;
 	transform: translateY(-50%);
@@ -14797,7 +14791,7 @@ div.single-product-rating .icon {
 	position: relative;
 	display: block;
 	background-color: var(--primary-color);
-	color: #ffffff;
+	color: var(--text-color-white);
 	font-family: "Source Code Pro", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 	font-size: 18px;
 	font-weight: 700;
@@ -14814,7 +14808,7 @@ div.single-product-rating .icon {
 
 .home-preview-button:hover {
 	color: var(--primary-color);
-	background-color: #ffffff;
+	background-color: var(--text-color-white);
 }
 
 .owl-carousel.owl-modern-landing .owl-item:not(.active) {
@@ -14872,7 +14866,7 @@ div.single-product-rating .icon {
 /* Stile generale per la sezione */
 .services {
     padding: 50px 15px;
-    background-color: #f9f9f9; /* Colore di sfondo per separare visivamente la sezione */
+    background-color: var(--text-color-white); /* Colore di sfondo per separare visivamente la sezione */
 }
 
 .services h2 {
@@ -14903,7 +14897,7 @@ div.single-product-rating .icon {
 }
 
 .service-icon i {
-    color: white; /* Colore delle icone */
+    color: var(--text-color-white); /* Colore delle icone */
     font-size: 30px; /* Dimensione dell'icona */
 }
 
@@ -14926,7 +14920,7 @@ div.single-product-rating .icon {
 /* Archive */
 .archive-section {
 	padding: 40px;
-	background-color: #ffffff;
+	background-color: var(--text-color-white);
   }
   
   .archive-nav {
@@ -14951,7 +14945,7 @@ div.single-product-rating .icon {
   }
   
   .archive-list h6 {
-	color: #4c5a86; /* Colore per il testo */
+	color: var(--secondary-color); /* Colore per il testo */
 	font-size: 1.2rem;
 	margin-bottom: 10px;
   }
