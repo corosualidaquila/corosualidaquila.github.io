@@ -271,7 +271,7 @@ html.boxed body {
 }
 
 .text-white-5 {
-	color: rgba(255, 255, 255, 0.5);
+	color: var(--text-color-white);
 }
 
 /** @section Offsets */
