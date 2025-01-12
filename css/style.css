@@ -14990,6 +14990,24 @@ div.single-product-rating .icon {
 	display: block;
   }
 
+  /* Aggiungiamo la regola per migliorare la visibilità su mobile */
+@media (max-width: 768px) {
+    .archive-nav {
+        flex-direction: column;
+        gap: 20px; /* Ridotto lo spazio tra le voci */
+    }
+
+    .sezione-testo {
+        font-size: 1.2rem; /* Ridotto il font su schermi piccoli */
+        padding: 8px 12px; /* Ridotto il padding */
+    }
+
+    .archive-list {
+        margin-left: 10px;
+        padding-left: 10px;
+    }
+}
+
   
 
   
