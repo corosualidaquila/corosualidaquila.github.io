@@ -94,8 +94,11 @@
           <h2 class="sezione-testo" onclick="toggleVisibility('natale')">Natale</h2>
           <h2 class="sezione-testo" onclick="toggleVisibility('triduo')">Triduo</h2>
         </div>
+
+        <div id="messaggio-iniziale">
+          Benvenuto nell'archivio! Seleziona una sezione per visualizzarne i dettagli.
+        </div>
         
-        <h6>Benvenuti</h6>
         <!-- Sezione Testi -->
         <div id="anlit" class="archive-list">
           <hr class="separator">
@@ -410,22 +413,38 @@
     <script src="js/script.js"></script>
     
     <script>
+      
       function toggleVisibility(sectionId) {
-        // Nascondi tutte le sezioni
-        var sections = document.querySelectorAll('.archive-list');
-        sections.forEach(function(section) {
-          section.classList.remove('active');
-        });
-    
-        // Mostra la sezione selezionata
-        var selectedSection = document.getElementById(sectionId);
-        selectedSection.classList.add('active');
-      }
-    
-      // Mostra la sezione di "Testi" per default all'inizio
-      window.onload = function() {
-        toggleVisibility('testi');
-      };
+  // Nascondi tutte le sezioni
+  var sections = document.querySelectorAll('.archive-list');
+  sections.forEach(function(section) {
+    section.classList.remove('active');
+  });
+
+  // Nascondi il messaggio iniziale
+  var messaggioIniziale = document.getElementById('messaggio-iniziale');
+  messaggioIniziale.style.display = 'none';
+
+  // Mostra la sezione selezionata, se esiste
+  var selectedSection = document.getElementById(sectionId);
+  if (selectedSection) {
+    selectedSection.classList.add('active');
+  }
+}
+
+// Mostra il messaggio iniziale quando la pagina viene caricata
+window.onload = function () {
+  var messaggioIniziale = document.getElementById('messaggio-iniziale');
+  messaggioIniziale.style.display = 'block';
+
+  // Nascondi tutte le sezioni
+  var sections = document.querySelectorAll('.archive-list');
+  sections.forEach(function(section) {
+    section.classList.remove('active');
+  });
+};
+
+
     </script>
     
     
