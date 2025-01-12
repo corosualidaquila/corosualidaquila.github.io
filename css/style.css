@@ -10399,7 +10399,7 @@ a.link-social:hover::after {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	color: var(--secondary-color);
+	color: var(--text-color-white);
 }
 
 .box-event + .box-event {
