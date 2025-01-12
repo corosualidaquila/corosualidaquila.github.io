@@ -14922,7 +14922,12 @@ div.single-product-rating .icon {
     }
 }
 
-
+.separator {
+	border: none; /* Rimuove il bordo predefinito di <hr> */
+	border-top: 1px solid #ccc; /* Linea grigia */
+	margin: 15px 0; /* Spaziatura sopra e sotto */
+  }
+  
 
 /* Archive */
 .archive-section {
