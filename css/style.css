@@ -14992,6 +14992,7 @@ div.single-product-rating .icon {
 
   /* Aggiungiamo la regola per migliorare la visibilità su mobile */
 /* Ottimizzazioni per schermi più piccoli (max-width: 768px) */
+/* Ottimizzazioni per schermi più piccoli (max-width: 768px) */
 @media (max-width: 768px) {
     /* Modifica l'orientamento della navbar in colonna */
     .archive-nav {
@@ -15009,11 +15010,11 @@ div.single-product-rating .icon {
         text-align: center; /* Centra il testo */
     }
 
-    /* Mostra e gestisci l'accordion */
+    /* Nascondi le sezioni inizialmente */
     .archive-list {
+        display: none; /* Nascondi le sezioni per default */
         margin-left: 0;
         padding-left: 0;
-        display: block; /* Assicurati che le sezioni siano visibili */
     }
 
     /* Ridurre il padding delle box all'interno dell'accordion */
@@ -15049,12 +15050,3 @@ div.single-product-rating .icon {
         font-size: 1rem;
     }
 }
-
-
-
-
-
-  
-
-  
-  

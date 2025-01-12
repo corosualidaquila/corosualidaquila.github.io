@@ -415,33 +415,33 @@
     <script>
       
       function toggleVisibility(sectionId) {
-  // Nascondi tutte le sezioni
-  var sections = document.querySelectorAll('.archive-list');
-  sections.forEach(function(section) {
-    section.classList.remove('active');
-  });
+    // Nascondi tutte le sezioni
+    var sections = document.querySelectorAll('.archive-list');
+    sections.forEach(function(section) {
+        section.classList.remove('active');
+    });
 
-  // Nascondi il messaggio iniziale
-  var messaggioIniziale = document.getElementById('messaggio-iniziale');
-  messaggioIniziale.style.display = 'none';
+    // Nascondi il messaggio iniziale
+    var messaggioIniziale = document.getElementById('messaggio-iniziale');
+    messaggioIniziale.style.display = 'none';
 
-  // Mostra la sezione selezionata, se esiste
-  var selectedSection = document.getElementById(sectionId);
-  if (selectedSection) {
-    selectedSection.classList.add('active');
-  }
+    // Mostra la sezione selezionata, se esiste
+    var selectedSection = document.getElementById(sectionId);
+    if (selectedSection) {
+        selectedSection.classList.add('active');
+    }
 }
 
 // Mostra il messaggio iniziale quando la pagina viene caricata
 window.onload = function () {
-  var messaggioIniziale = document.getElementById('messaggio-iniziale');
-  messaggioIniziale.style.display = 'block';
+    var messaggioIniziale = document.getElementById('messaggio-iniziale');
+    messaggioIniziale.style.display = 'block';
 
-  // Nascondi tutte le sezioni
-  var sections = document.querySelectorAll('.archive-list');
-  sections.forEach(function(section) {
-    section.classList.remove('active');
-  });
+    // Nascondi tutte le sezioni
+    var sections = document.querySelectorAll('.archive-list');
+    sections.forEach(function(section) {
+        section.classList.remove('active');
+    });
 };
 
 
