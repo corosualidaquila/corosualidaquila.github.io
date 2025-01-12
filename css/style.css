@@ -14933,21 +14933,20 @@ div.single-product-rating .icon {
 #messaggio-iniziale {
 	text-align: center;
 	font-size: 2rem;
-	background-color: var(--primary-color);
-	color: var(--text-color-white); /* Usa il colore principale per il testo */
+	color: var(--secondary-color); /* Usa il colore principale per il testo */
 	margin-top: 20px;
   }
 
 #messaggio-iniziale h5 {
   font-size: 1.5rem;
   font-weight: bold;
-  color: var(--text-color-white); /* Colore per il titolo */
+  color: var(--primary-color); /* Colore per il titolo */
   margin-bottom: 10px;
 }
 
 #messaggio-iniziale h6 {
   font-size: 1rem;
-  color: var(--text-color-white); /* Colore per la descrizione */
+  color: var(--secondary-color); /* Colore per la descrizione */
 }
 
 .archive-section {
@@ -14963,7 +14962,7 @@ div.single-product-rating .icon {
   }
   
   .sezione-testo {
-	color: var(--primary-color); /* Colore blu per i titoli */
+	color: var(--secondary-color); /* Colore blu per i titoli */
 	cursor: pointer; /* Puntatore quando ci passi sopra */
 	font-size: 1.5rem;
 	font-weight: bold;
