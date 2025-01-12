@@ -14991,22 +14991,65 @@ div.single-product-rating .icon {
   }
 
   /* Aggiungiamo la regola per migliorare la visibilità su mobile */
+/* Ottimizzazioni per schermi più piccoli (max-width: 768px) */
 @media (max-width: 768px) {
+    /* Modifica l'orientamento della navbar in colonna */
     .archive-nav {
         flex-direction: column;
-        gap: 20px; /* Ridotto lo spazio tra le voci */
+        gap: 15px; /* Ridotto lo spazio tra i titoli */
+        align-items: center; /* Centra i titoli */
+        padding: 10px; /* Aggiungi un po' di padding ai lati */
     }
 
+    /* Riduci la dimensione del font delle sezioni per smartphone */
     .sezione-testo {
         font-size: 1.2rem; /* Ridotto il font su schermi piccoli */
-        padding: 8px 12px; /* Ridotto il padding */
+        padding: 8px 12px; /* Ridotto il padding per una migliore usabilità */
+        width: 100%; /* Fai sì che i titoli prendano tutta la larghezza */
+        text-align: center; /* Centra il testo */
     }
 
+    /* Mostra e gestisci l'accordion */
     .archive-list {
-        margin-left: 10px;
-        padding-left: 10px;
+        margin-left: 0;
+        padding-left: 0;
+        display: block; /* Assicurati che le sezioni siano visibili */
+    }
+
+    /* Ridurre il padding delle box all'interno dell'accordion */
+    .box-event {
+        padding: 15px; /* Riduci il padding per un look più compatto */
+    }
+
+    /* Ridurre la dimensione del testo all'interno degli item */
+    .box-event-text-title a {
+        font-size: 1.1rem; /* Ridotto per una migliore visibilità */
+    }
+
+    .box-event-button-wrap {
+        margin-top: 10px; /* Aggiungi spazio sopra il pulsante per separarlo */
+    }
+
+    .accordion-item h3 {
+        font-size: 1.2rem; /* Riduci il font per i titoli delle sezioni */
+    }
+
+    /* Aggiusta il layout del messaggio iniziale per dispositivi mobili */
+    #messaggio-iniziale {
+        text-align: center;
+        font-size: 1.5rem; /* Ridotto per una visualizzazione migliore */
+        margin-top: 10px;
+    }
+
+    #messaggio-iniziale h5 {
+        font-size: 1.2rem; /* Ridotto il font per un look più compatto */
+    }
+
+    #messaggio-iniziale h6 {
+        font-size: 1rem;
     }
 }
+
 
 
 
