@@ -271,7 +271,7 @@ html.boxed body {
 }
 
 .text-white-5 {
-	color: rgba(255, 255, 255, 0.5);
+	color: var(--text-color-black);
 }
 
 /** @section Offsets */
@@ -4324,7 +4324,7 @@ h2 + .tabs-albums {
 	font-weight: 700;
 	transition: all 0.3s ease-in-out;
 	padding-top: 8px;
-	color: var(--text-color-black);
+	color: var(--text-color-white);
 }
 
 @media (min-width: 576px) {
