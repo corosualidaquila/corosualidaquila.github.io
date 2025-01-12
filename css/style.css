@@ -14943,7 +14943,7 @@ div.single-product-rating .icon {
   }
   
   .sezione-testo {
-	color: var(--text-color-white); /* Colore blu per i titoli */
+	color: var(--primary-color); /* Colore blu per i titoli */
 	cursor: pointer; /* Puntatore quando ci passi sopra */
 	font-size: 1.5rem;
 	font-weight: bold;
