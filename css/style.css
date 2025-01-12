@@ -271,7 +271,7 @@ html.boxed body {
 }
 
 .text-white-5 {
-	color: var(--text-color-white);
+	color: rgba(255, 255, 255, 0.5);
 }
 
 /** @section Offsets */
@@ -14872,7 +14872,7 @@ div.single-product-rating .icon {
 .services h2 {
     font-size: 2rem;
     margin-bottom: 30px;
-    color: var(--primary-color); /* Colore del titolo */
+    color: var(--text-color-white); /* Colore del titolo */
 }
 
 /* Stile per gli item dei servizi */
