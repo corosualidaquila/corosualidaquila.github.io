@@ -14951,7 +14951,7 @@ div.single-product-rating .icon {
 
 .archive-section {
 	padding: 40px;
-	background-color: var(--text-color-white);
+	background-color: var(--primary-color);
   }
   
   .archive-nav {
@@ -14976,7 +14976,7 @@ div.single-product-rating .icon {
   }
   
   .archive-list h6 {
-	color: #4c5a86; /* Colore per il testo */
+	color: var(--secondary-color); /* Colore per il testo */
 	font-size: 1.2rem;
 	margin-bottom: 10px;
   }
