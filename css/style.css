@@ -889,7 +889,7 @@ html [class*='section-'].section-bottom-0 {
 }
 
 .bg-gray-100 {
-	background-color: #f3efef;
+	background-color: var(--text-color-white);
 }
 
 .bg-gray-100:not([style*="background-"]) + .bg-gray-100:not([style*="background-"]) {
@@ -905,7 +905,7 @@ html [class*='section-'].section-bottom-0 {
 }
 
 .bg-gray-800 {
-	background-color: #165884;
+	background-color: var(--secondary-color);
 }
 
 .bg-gray-800:not([style*="background-"]) + .bg-gray-800:not([style*="background-"]) {
@@ -913,7 +913,7 @@ html [class*='section-'].section-bottom-0 {
 }
 
 .bg-gray-850 {
-	background-color: #112956;
+	background-color: var(--secondary-color);
 }
 
 .bg-gray-850:not([style*="background-"]) + .bg-gray-850:not([style*="background-"]) {
@@ -921,7 +921,7 @@ html [class*='section-'].section-bottom-0 {
 }
 
 .bg-gray-860 {
-	background-color: #17223d;
+	background-color: var(--secondary-color);
 }
 
 .bg-gray-860:not([style*="background-"]) + .bg-gray-860:not([style*="background-"]) {
