@@ -10463,7 +10463,7 @@ a.link-social:hover::after {
 
 .box-event-text-title {
 	font-weight: 700;
-	color: var(--text-color-black);
+	color: var(--secondary-color);
 }
 
 .box-event-text-location {
