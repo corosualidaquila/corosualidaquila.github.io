@@ -9977,7 +9977,7 @@ p [style*='max-width'] {
 }
 
 .text-gray-600 {
-	color: #4c5a86;
+	color: var(--secondary-color);
 }
 
 .custom-title {
@@ -12526,7 +12526,7 @@ textarea.form-input {
 }
 
 .form-label.auto-fill {
-	color: var(--text-color-black);
+	color: var(--text-color-white);
 }
 
 .rd-form.text-center .form-label {
