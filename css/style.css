@@ -10394,12 +10394,12 @@ a.link-social:hover::after {
 }
 
 .box-event {
-	background-color: var(--text-color-white);
+	background-color: var(--primary-color);
 	padding: 19px 18px 22px 22px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	color: var(--text-color-black);
+	color: var(--secondary-color);
 }
 
 .box-event + .box-event {
