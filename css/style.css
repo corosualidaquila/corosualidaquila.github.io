@@ -10394,7 +10394,7 @@ a.link-social:hover::after {
 }
 
 .box-event {
-	background-color: var(--primary-color);
+	background-color: var(--text-color-white);
 	padding: 19px 18px 22px 22px;
 	display: flex;
 	align-items: center;
@@ -10463,7 +10463,7 @@ a.link-social:hover::after {
 
 .box-event-text-title {
 	font-weight: 700;
-	color: var(--text-color-white);
+	color: var(--secondary-color);
 }
 
 .box-event-text-location {
@@ -14940,7 +14940,7 @@ div.single-product-rating .icon {
 #messaggio-iniziale h5 {
   font-size: 1.5rem;
   font-weight: bold;
-  color: var(--text-color-white); /* Colore per il titolo */
+  color: var(--primary-color); /* Colore per il titolo */
   margin-bottom: 10px;
 }
 
@@ -14951,7 +14951,7 @@ div.single-product-rating .icon {
 
 .archive-section {
 	padding: 40px;
-	background-color: var(--primary-color);
+	background-color: var(--text-color-white);
   }
   
   .archive-nav {
