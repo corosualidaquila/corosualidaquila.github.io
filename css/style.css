@@ -61,7 +61,7 @@
 /* color */
 :root {
 	--primary-color: #61c8ff;  /* azzurro  #64c1ec*/
-	--secondary-color: #3c84ea; /* blu scuro #222d4f*/
+	--secondary-color: #222d4f; /* blu scuro #222d4f*/
 	--text-color-white: #ffffff; /* Colore di sfondo */
 	--text-color-black: #151515; /* Colore del testo */
   }
