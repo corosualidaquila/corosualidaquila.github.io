@@ -14932,11 +14932,11 @@ div.single-product-rating .icon {
 /* Archive */
 #messaggio-iniziale {
 	text-align: center;
-	font-size: 1.2rem;
-	color: var(--primary-color); /* Usa il colore principale per il testo */
+	font-size: 4rem;
+	color: var(--secondary-color); /* Usa il colore principale per il testo */
 	margin-top: 20px;
   }
-  
+
 .archive-section {
 	padding: 40px;
 	background-color: var(--text-color-white);
