@@ -14991,22 +14991,31 @@ div.single-product-rating .icon {
   }
 
   /* Aggiungiamo la regola per migliorare la visibilità su mobile */
+/* Aggiungi una media query per i dispositivi mobili */
 @media (max-width: 768px) {
-    .archive-nav {
-        flex-direction: column;
-        gap: 20px; /* Ridotto lo spazio tra le voci */
-    }
-
-    .sezione-testo {
-        font-size: 1.2rem; /* Ridotto il font su schermi piccoli */
-        padding: 8px 12px; /* Ridotto il padding */
-    }
-
-    .archive-list {
-        margin-left: 10px;
-        padding-left: 10px;
-    }
-}
+	#matrimoni {
+	  display: flex;
+	  flex-direction: column;
+	  align-items: flex-start; /* Allinea gli elementi a sinistra */
+	}
+  
+	.box-event {
+	  width: 100%; /* Rende il box-event più largo su dispositivi mobili */
+	  margin-bottom: 20px; /* Aggiungi un margine tra gli eventi */
+	}
+  
+	.box-event-text-wrap,
+	.box-event-button-wrap {
+	  width: 100%; /* Rende le due sezioni al 100% della larghezza */
+	  text-align: left; /* Allinea il testo a sinistra */
+	}
+  
+	.box-event-button-wrap {
+	  display: flex;
+	  justify-content: flex-start; /* Allinea il pulsante di download a sinistra */
+	}
+  }
+  
 
   
 
