@@ -161,7 +161,7 @@ html p a:hover {
 /** @section Context Styles */
 .context-dark,
 .context-dark h1, .context-dark h2, .context-dark h3, .context-dark h4, .context-dark h5, .context-dark h6, .context-dark [class^='heading-'] {
-	color: var(--text-color-white);
+	color: var(--primary-color);
 }
 
 .table-custom.table-cart td, .post-creative {
