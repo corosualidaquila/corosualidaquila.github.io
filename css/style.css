@@ -271,7 +271,7 @@ html.boxed body {
 }
 
 .text-white-5 {
-	color: var(--text-color-black);
+	color: var(--text-color-white);
 }
 
 /** @section Offsets */
@@ -12526,7 +12526,7 @@ textarea.form-input {
 }
 
 .form-label.auto-fill {
-	color: #cdcdcd;
+	color: var(--text-color-black);
 }
 
 .rd-form.text-center .form-label {
