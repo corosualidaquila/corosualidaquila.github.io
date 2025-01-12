@@ -10067,7 +10067,7 @@ p [style*='max-width'] {
 }
 
 .banner-creative .box-event-text-title {
-	color: var(--text-color-white);
+	color: var(--primary-color);
 }
 
 @media (max-width: 575.98px) {
