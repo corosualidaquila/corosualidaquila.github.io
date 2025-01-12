@@ -14971,32 +14971,7 @@ div.single-product-rating .icon {
 	display: block;
   }
 
-  #messaggio-iniziale {
-	background-color: #f0f8ff;
-	border: 1px solid #dcdcdc;
-	padding: 10px;
-	margin: 20px 0;
-	font-size: 16px;
-	text-align: center;
-	color: #333;
-  }
   
-  .archive-list {
-	display: none;
-	padding: 10px;
-	border: 1px solid #ccc;
-	background-color: #fff;
-  }
-  
-  .archive-list.active {
-	display: block;
-  }
-  
-  .sezione-testo {
-	cursor: pointer;
-	color: #007bff;
-	margin: 10px 0;
-	text-decoration: underline;
-  }
+
   
   
