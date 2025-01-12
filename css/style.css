@@ -10067,7 +10067,7 @@ p [style*='max-width'] {
 }
 
 .banner-creative .box-event-text-title {
-	color: var(--primary-color);
+	color: var(--text-color-white);
 }
 
 @media (max-width: 575.98px) {
@@ -10394,7 +10394,7 @@ a.link-social:hover::after {
 }
 
 .box-event {
-	background-color: var(--text-color-white);
+	background-color: var(--primary-color);
 	padding: 19px 18px 22px 22px;
 	display: flex;
 	align-items: center;
