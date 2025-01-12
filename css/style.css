@@ -60,9 +60,9 @@
 
 /* color */
 :root {
-	--primary-color: #64c1ec;  /* azzurro */
+	--primary-color: #f4f4f4;  /* azzurro */
 	--secondary-color: #222d4f; /* blu scuro */
-	--text-color-white: #ffffff; /* Colore di sfondo */
+	--text-color-white: #64c1ec; /* Colore di sfondo */
 	--text-color-black: #151515; /* Colore del testo */
   }
   
