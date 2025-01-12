@@ -14940,7 +14940,7 @@ div.single-product-rating .icon {
 #messaggio-iniziale h5 {
   font-size: 1.5rem;
   font-weight: bold;
-  color: var(--primary-color); /* Colore per il titolo */
+  color: var(--text-color-white); /* Colore per il titolo */
   margin-bottom: 10px;
 }
 
