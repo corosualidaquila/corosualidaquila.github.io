@@ -10399,7 +10399,7 @@ a.link-social:hover::after {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	color: var(--text-color-white);
+	color: var(--secondary-color);
 }
 
 .box-event + .box-event {
@@ -10463,7 +10463,7 @@ a.link-social:hover::after {
 
 .box-event-text-title {
 	font-weight: 700;
-	color: var(--secondary-color);
+	color: var(--text-color-white);
 }
 
 .box-event-text-location {
