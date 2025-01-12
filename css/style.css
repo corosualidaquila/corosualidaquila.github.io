@@ -161,7 +161,7 @@ html p a:hover {
 /** @section Context Styles */
 .context-dark,
 .context-dark h1, .context-dark h2, .context-dark h3, .context-dark h4, .context-dark h5, .context-dark h6, .context-dark [class^='heading-'] {
-	color: var(--text-color-white);
+	color: var(--secondary-color);
 }
 
 .table-custom.table-cart td, .post-creative {
@@ -4265,7 +4265,7 @@ h2 + .tabs-albums {
 }
 
 .tabs-video .nav-link:hover .nav-video-title, .tabs-video .nav-link.active .nav-video-title {
-	color: #4c5a86;
+	color: var(--secondary-color);
 }
 
 .tabs-video .nav-item {
