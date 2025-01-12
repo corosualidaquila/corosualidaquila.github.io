@@ -14932,7 +14932,7 @@ div.single-product-rating .icon {
 /* Archive */
 .archive-section {
 	padding: 40px;
-	background-color: var(--text-color-white);
+	background-color: var(--primary-color);
   }
   
   .archive-nav {
@@ -14943,7 +14943,7 @@ div.single-product-rating .icon {
   }
   
   .sezione-testo {
-	color: var(--primary-color); /* Colore blu per i titoli */
+	color: var(--text-color-white); /* Colore blu per i titoli */
 	cursor: pointer; /* Puntatore quando ci passi sopra */
 	font-size: 1.5rem;
 	font-weight: bold;
@@ -14963,7 +14963,7 @@ div.single-product-rating .icon {
   }
   
   .archive-list h6:hover {
-	color: var(--primary-color); /* Colore blu quando si passa sopra */
+	color: var(--secondary-color); /* Colore blu quando si passa sopra */
   }
   
   /* Sezione visibile quando attivata */
