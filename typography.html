@@ -86,6 +86,62 @@
 
 
       <section class="archive-section">
+        <!-- Messaggio iniziale -->
+        <div id="messaggio-iniziale">
+          <h5>Qui trovi tutti i canti delle celebrazioni.</h5>
+          <h6>Seleziona una sezione per visualizzare il contenuto.</h6>
+        </div>
+      
+        <!-- Sezione Testi e Spartiti -->
+        <div class="archive-nav">
+          <h2 class="sezione-testo" onclick="toggleVisibility('anlit')">Animazione Liturgica</h2>
+          <h2 class="sezione-testo" onclick="toggleVisibility('funerali')">Funerali</h2>
+          <h2 class="sezione-testo" onclick="toggleVisibility('matrimoni')">Matrimoni</h2>
+          <h2 class="sezione-testo" onclick="toggleVisibility('natale')">Natale</h2>
+          <h2 class="sezione-testo" onclick="toggleVisibility('triduo')">Triduo</h2>
+        </div>
+      
+        <!-- Sezioni Accordion -->
+        <div id="anlit" class="archive-list">
+          <div class="accordion-item">
+            <h3>Autunno & Festa della gioventù 2018</h3>
+            <a href="https://drive.google.com/uc?export=download&id=1RhQLiah44LlVP_wreFKVPfLXDKaKPMGK" class="button">Download</a>
+          </div>
+          <div class="accordion-item">
+            <h3>Avvento 2015</h3>
+            <a href="https://drive.google.com/uc?export=download&id=0B125_qILHPJeSzhaLVc3c2RjMm5jM0dVOG5YX3hydVBkcHhN" class="button">Download</a>
+          </div>
+          <div class="accordion-item">
+            <h3>Avvento 2018</h3>
+            <a href="https://drive.google.com/uc?export=download&id=1vkU0cw68tMDysUERoO1eSonMOIOa28YY" class="button">Download</a>
+          </div>
+          <!-- Altri canti -->
+        </div>
+        
+        <div id="funerali" class="archive-list">
+          <!-- Contenuto per Funerali -->
+        </div>
+        
+        <div id="matrimoni" class="archive-list">
+          <!-- Contenuto per Matrimoni -->
+        </div>
+      
+        <!-- Altre sezioni... -->
+      </section>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+      <section class="archive-section">
 
         <div id="messaggio-iniziale">
           <h5>Qui trovi tutti i canti delle celebrazioni.</h5>
@@ -101,7 +157,7 @@
           <h2 class="sezione-testo" onclick="toggleVisibility('triduo')">Triduo</h2>
         </div>
 
-        
+    
         
         <!-- Sezione Testi -->
         <div id="anlit" class="archive-list">
@@ -448,6 +504,39 @@ window.onload = function () {
   });
 };
 
+
+    </script>
+
+    <script>
+      function toggleVisibility(sectionId) {
+  // Nascondi tutte le sezioni
+  var sections = document.querySelectorAll('.archive-list');
+  sections.forEach(function(section) {
+    section.classList.remove('active');
+  });
+
+  // Mostra la sezione selezionata
+  var selectedSection = document.getElementById(sectionId);
+  if (selectedSection) {
+    selectedSection.classList.add('active');
+  }
+
+  // Nascondi il messaggio iniziale
+  var messaggioIniziale = document.getElementById('messaggio-iniziale');
+  messaggioIniziale.style.display = 'none';
+}
+
+// Mostra il messaggio iniziale quando la pagina viene caricata
+window.onload = function () {
+  var messaggioIniziale = document.getElementById('messaggio-iniziale');
+  messaggioIniziale.style.display = 'block';
+  
+  // Nascondi tutte le sezioni
+  var sections = document.querySelectorAll('.archive-list');
+  sections.forEach(function(section) {
+    section.classList.remove('active');
+  });
+};
 
     </script>
     
