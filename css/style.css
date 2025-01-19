@@ -14941,6 +14941,11 @@ div.single-product-rating .icon {
     font-weight: bold; /* Rende il testo in grassetto */
 }
 
+.services .justify-text {
+    text-align: justify;
+    line-height: 1.6; /* Opzionale, per migliorare la leggibilità */
+}
+
 /* Stile per le colonne nei dispositivi più piccoli */
 @media (max-width: 767px) {
     .service-item {
