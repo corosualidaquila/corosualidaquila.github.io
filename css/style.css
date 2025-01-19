@@ -14927,6 +14927,7 @@ div.single-product-rating .icon {
     justify-content: center;
     align-items: center;
     margin-bottom: 15px; /* Distanza tra cerchio e titolo */
+	margin-top: 15px;
 }
 
 .service-icon i {
