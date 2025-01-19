@@ -523,6 +523,24 @@
     <div class="snackbars" id="form-output-global"></div>
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
+    <script>
+      $(document).ready(function() {
+    // Quando un tab viene selezionato
+    $('#tabs-2 .nav-link').on('click', function() {
+        // Pausa il video del tab precedente
+        var activeTab = $('.tab-pane.show'); // Trova il tab attivo
+        var iframe = activeTab.find('iframe'); // Trova l'iframe nel tab attivo
+        var iframeSrc = iframe.attr('src'); // Ottieni l'URL dell'iframe
+        
+        // Se l'iframe esiste, metti in pausa
+        if (iframe.length) {
+            var src = iframeSrc.split('?')[0]; // Prendi solo l'URL senza i parametri
+            iframe.attr('src', ''); // Ferma il video (lo rimuoviamo)
+            iframe.attr('src', src); // Ricarica l'iframe, avviando il video quando sarà selezionato di nuovo
+        }
+    });
+});
 
+    </script>
   </body>
 </html>
