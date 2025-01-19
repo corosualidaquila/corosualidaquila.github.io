@@ -14868,19 +14868,6 @@ div.single-product-rating .icon {
 	}
 }
 
-/* Stile scarixare modulo */
-
-
-.services {
-    padding: 50px 15px;
-    background-color: var(--secondary-color) /* Colore di sfondo per separare visivamente la sezione */
-}
-
-.services h2 {
-    font-size: 2rem;
-    margin-bottom: 30px;
-    color: var(--primary-color); /* Colore del titolo */
-}
 
 
 /* Stile generale per la sezione */
@@ -14895,10 +14882,10 @@ div.single-product-rating .icon {
     color: var(--primary-color); /* Colore del titolo */
 }
 
-.services h6 {
+.services h6,h4 {
     font-size: 1rem;
     margin-bottom: 30px;
-    color: var(--primary-color); /* Colore del titolo */
+    color: var(--secondary-color); /* Colore del titolo */
 }
 
 /* Stile per gli item dei servizi */
