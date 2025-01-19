@@ -1653,6 +1653,7 @@
 		 * @description  Custom jPlayer script
 		 */
 		
+		
 		if (plugins.jPlayerInit.length) {
 			var artist = $('.jp-artist');
 			
@@ -1660,6 +1661,9 @@
 			$html.addClass('ontouchstart' in window || 'onmsgesturechange' in window ? 'touch' : 'no-touch');
 			
 			var activePlayerInstance = null; // Traccia il player attivo
+		
+			// Variabile per memorizzare tutte le istanze dei player
+			var playerInstances = [];
 		
 			$.each(plugins.jPlayerInit, function (index, item) {
 				var player = item.querySelector('.jp-jplayer');
@@ -1669,10 +1673,12 @@
 				var mediaObj = jpFormatePlaylistObj($(item).find('.jp-player-list .jp-player-list-item')),
 					playerInstance = initJplayerBase(index, item, mediaObj);
 		
-				// Memorizza il player attivo iniziale
-				if (index === 0) {
-					activePlayerInstance = playerInstance; // Memorizza il player attivo iniziale
-				}
+				// Memorizziamo ogni istanza di player in un array
+				playerInstances.push({
+					year: $(item).data('jp-player-name'),
+					instance: playerInstance,
+					element: item
+				});
 		
 				// Impostiamo l'anno come parte del nome del player
 				var year = $(item).data('jp-player-name');
@@ -1722,35 +1728,31 @@
 		
 			// Interrompe la riproduzione quando si cambia anno
 			$(".nav-link").on("click", function () {
-				// Ferma il player attivo
-				if (activePlayerInstance) {
-					activePlayerInstance.pause(); // Ferma il player attivo
-					activePlayerInstance.setPlaylist([]); // Pulisce la playlist corrente
-					console.log("Riproduzione fermata e playlist svuotata");
-				}
+				// Otteniamo l'anno selezionato dalla nav-link
+				var targetYear = $(this).text().trim(); 
 		
-				// Fermiamo la riproduzione per qualsiasi altro player
-				$('[data-jp-player-name]').each(function () {
-					var playerYear = $(this).data('jp-player-name');
-					var playerInstance = $(this).data('jp-instance');
+				// Ferma tutte le istanze dei player
+				$.each(playerInstances, function (index, item) {
+					var playerInstance = item.instance;
 					if (playerInstance) {
-						playerInstance.pause();
+						playerInstance.pause(); // Ferma la riproduzione
+						playerInstance.setPlaylist([]); // Pulisce la playlist corrente
+						console.log("Riproduzione fermata per l'anno: " + item.year);
 					}
 				});
 		
-				// Determina quale player attivare in base alla selezione
-				var targetYear = $(this).text(); // Ottieni l'anno dalla nav-link
-		
-				// Avvia il player per l'anno selezionato
-				$('[data-jp-player-name="' + targetYear + '"]').each(function () {
-					var playerInstance = $(this).data('jp-instance');
-					if (playerInstance) {
-						playerInstance.play(); // Riprendi la riproduzione
+				// Troviamo il player per l'anno selezionato e avvia la riproduzione
+				$.each(playerInstances, function (index, item) {
+					if (item.year === targetYear) {
+						var playerInstance = item.instance;
+						if (playerInstance) {
+							playerInstance.play(); // Avvia la riproduzione del player selezionato
+							console.log("Riproduzione avviata per l'anno: " + item.year);
+						}
 					}
 				});
 			});
 		}
-		
 		
 		
 		
