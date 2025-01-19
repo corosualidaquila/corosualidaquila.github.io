@@ -1659,7 +1659,8 @@
 			// Determina se il dispositivo è touch o meno
 			$html.addClass('ontouchstart' in window || 'onmsgesturechange' in window ? 'touch' : 'no-touch');
 		
-			var activePlayerInstance = null; // Traccia il player attivo
+			// Memorizza le istanze dei player
+			var playerInstances = [];
 		
 			$.each(plugins.jPlayerInit, function (index, item) {
 				var player = item.querySelector('.jp-jplayer');
@@ -1669,61 +1670,38 @@
 				var mediaObj = jpFormatePlaylistObj($(item).find('.jp-player-list .jp-player-list-item')),
 					playerInstance = initJplayerBase(index, item, mediaObj);
 		
-				if (index === 0) {
-					activePlayerInstance = playerInstance; // Memorizza il player attivo iniziale
-				}
-		
-				if ($(item).data('jp-player-name')) {
-					var customJpPlaylists = $('[data-jp-playlist-relative-to="' + $(item).data('jp-player-name') + '"]'),
-						playlistItems = customJpPlaylists.find("[data-jp-playlist-item]");
-		
-					// Aggiorna solo lo stato senza avviare la riproduzione
-					playlistItems.on('click', function (e) {
-						e.preventDefault(); // Evita il comportamento predefinito
-		
-						var $clickedItem = $(e.delegateTarget);
-		
-						// Crea la nuova playlist
-						var mediaObj = jpFormatePlaylistObj(playlistItems);
-						if (!JSON.stringify(playerInstance.playlist) === JSON.stringify(mediaObj) || !playerInstance.playlist.length) {
-							playerInstance.setPlaylist(mediaObj);
-						}
-		
-						// Seleziona il brano ma non avvia la riproduzione
-						playlistItems.removeClass('playing last-played');
-						$clickedItem.addClass('last-played'); // Indica che è stato selezionato
-						playerInstance.pause(); // Assicura che il player resti in pausa
-					});
-		
-					// Callback per il play
-					$(playerInstance.cssSelector.jPlayer).bind($.jPlayer.event.play, function () {
-						playlistItems.removeClass('playing last-played');
-						playlistItems.filter('.last-played').addClass('playing');
-					});
-		
-					// Callback per il pause
-					$(playerInstance.cssSelector.jPlayer).bind($.jPlayer.event.pause, function () {
-						playlistItems.filter('.playing').addClass('last-played').removeClass('playing');
-					});
-		
-					// Aggiungi eventi per i pulsanti next/prev
-					$(item).find('.jp-next').on('click', function () {
-						playlistItems.filter('.playing, .last-played').addClass('play-next');
-					});
-		
-					$(item).find('.jp-previous').on('click', function () {
-						playlistItems.filter('.playing, .last-played').addClass('play-prev');
-					});
-				}
+				playerInstances.push({
+					instance: playerInstance,
+					element: item,
+					year: $(item).closest('.tab-pane').data('year') // Ottieni l'anno direttamente dal tab
+				});
 			});
 		
-			// Interrompe la riproduzione quando si cambia anno
+			// Gestione del cambio di tab
 			$(".nav-link").on("click", function () {
-				if (activePlayerInstance) {
-					activePlayerInstance.pause(); // Ferma il player attivo
-				}
+				var selectedYear = $(this).data('year'); // Anno selezionato dalla nav
+				console.log("Selected year: ", selectedYear);
+		
+				// Ferma tutte le riproduzioni
+				$.each(playerInstances, function (index, item) {
+					var playerInstance = item.instance;
+					playerInstance.pause();
+					playerInstance.setPlaylist([]); // Svuota la playlist
+				});
+		
+				// Trova e riproduci il player corrispondente all'anno selezionato
+				$.each(playerInstances, function (index, item) {
+					if (item.year === selectedYear) {
+						var playerInstance = item.instance;
+						var mediaObj = jpFormatePlaylistObj($(item.element).find('.jp-player-list .jp-player-list-item'));
+		
+						playerInstance.setPlaylist(mediaObj); // Imposta la playlist dell'anno selezionato
+						playerInstance.play(); // Avvia la riproduzione
+					}
+				});
 			});
 		}
+		
 		
 		
 		
