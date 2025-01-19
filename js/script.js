@@ -1655,16 +1655,18 @@
 		
 		if (plugins.jPlayerInit.length) {
 			var artist = $('.jp-artist');
-		
+			
 			// Determina se il dispositivo è touch o meno
 			$html.addClass('ontouchstart' in window || 'onmsgesturechange' in window ? 'touch' : 'no-touch');
-		
-			// Memorizza le istanze dei player
+			
+			var activePlayerInstance = null; // Traccia il player attivo
+			
+			// Array per memorizzare tutte le istanze dei player
 			var playerInstances = [];
 		
 			$.each(plugins.jPlayerInit, function (index, item) {
 				var player = item.querySelector('.jp-jplayer');
-		
+				
 				$(item).addClass('jp-audio-' + index);
 		
 				var mediaObj = jpFormatePlaylistObj($(item).find('.jp-player-list .jp-player-list-item')),
@@ -1673,30 +1675,75 @@
 				playerInstances.push({
 					instance: playerInstance,
 					element: item,
-					year: $(item).closest('.tab-pane').data('year') // Ottieni l'anno direttamente dal tab
+					year: $(item).data('jp-player-name') // Memorizziamo l'anno per ogni player
 				});
+		
+				// Gestione playlist
+				if ($(item).data('jp-player-name')) {
+					var customJpPlaylists = $('[data-jp-playlist-relative-to="' + $(item).data('jp-player-name') + '"]'),
+						playlistItems = customJpPlaylists.find("[data-jp-playlist-item]");
+		
+					// Gestione clic su brani nella playlist
+					playlistItems.on('click', function (e) {
+						e.preventDefault(); // Evita il comportamento predefinito
+						
+						var $clickedItem = $(e.delegateTarget);
+		
+						// Crea la nuova playlist
+						var mediaObj = jpFormatePlaylistObj(playlistItems);
+						if (!JSON.stringify(playerInstance.playlist) === JSON.stringify(mediaObj) || !playerInstance.playlist.length) {
+							playerInstance.setPlaylist(mediaObj);
+						}
+		
+						// Seleziona il brano ma non avvia la riproduzione
+						playlistItems.removeClass('playing last-played');
+						$clickedItem.addClass('last-played'); // Indica che è stato selezionato
+						playerInstance.pause(); // Assicura che il player resti in pausa
+					});
+		
+					// Callback per il play
+					$(playerInstance.cssSelector.jPlayer).bind($.jPlayer.event.play, function () {
+						playlistItems.removeClass('playing last-played');
+						playlistItems.filter('.last-played').addClass('playing');
+					});
+		
+					// Callback per il pause
+					$(playerInstance.cssSelector.jPlayer).bind($.jPlayer.event.pause, function () {
+						playlistItems.filter('.playing').addClass('last-played').removeClass('playing');
+					});
+		
+					// Aggiungi eventi per i pulsanti next/prev
+					$(item).find('.jp-next').on('click', function () {
+						playlistItems.filter('.playing, .last-played').addClass('play-next');
+					});
+		
+					$(item).find('.jp-previous').on('click', function () {
+						playlistItems.filter('.playing, .last-played').addClass('play-prev');
+					});
+				}
 			});
 		
-			// Gestione del cambio di tab
+			// Gestisce l'interruzione della riproduzione quando si cambia anno
 			$(".nav-link").on("click", function () {
-				var selectedYear = $(this).data('year'); // Anno selezionato dalla nav
-				console.log("Selected year: ", selectedYear);
-		
+				var targetYear = $(this).text().trim(); // Ottieni l'anno selezionato
+				
 				// Ferma tutte le riproduzioni
 				$.each(playerInstances, function (index, item) {
 					var playerInstance = item.instance;
+		
+					// Ferma tutti i player
 					playerInstance.pause();
 					playerInstance.setPlaylist([]); // Svuota la playlist
 				});
 		
-				// Trova e riproduci il player corrispondente all'anno selezionato
+				// Trova il player relativo all'anno selezionato e ripristina la playlist
 				$.each(playerInstances, function (index, item) {
-					if (item.year === selectedYear) {
+					if (item.year === targetYear) {
 						var playerInstance = item.instance;
 						var mediaObj = jpFormatePlaylistObj($(item.element).find('.jp-player-list .jp-player-list-item'));
-		
+						
 						playerInstance.setPlaylist(mediaObj); // Imposta la playlist dell'anno selezionato
-						playerInstance.play(); // Avvia la riproduzione
+						playerInstance.play(); // Avvia la riproduzione del player selezionato
 					}
 				});
 			});
