@@ -14868,6 +14868,19 @@ div.single-product-rating .icon {
 	}
 }
 
+/* Stile scarixare modulo */
+
+
+.services {
+    padding: 50px 15px;
+    background-color: var(--secondary-color) /* Colore di sfondo per separare visivamente la sezione */
+}
+
+.services h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: var(--primary-color); /* Colore del titolo */
+}
 
 
 /* Stile generale per la sezione */
@@ -14885,7 +14898,7 @@ div.single-product-rating .icon {
 .services h6 {
     font-size: 1rem;
     margin-bottom: 30px;
-    color: var(--secondary-color); /* Colore del titolo */
+    color: var(--primary-color); /* Colore del titolo */
 }
 
 /* Stile per gli item dei servizi */
@@ -14934,29 +14947,6 @@ div.single-product-rating .icon {
 	margin: 15px 0; /* Spaziatura sopra e sotto */
   }
   
-  .button-services {
-    display: inline-block;
-    background-color: #f1f1f1; /* Colore di sfondo del bottone */
-    color: #333; /* Colore del testo */
-    padding: 15px 30px; /* Spaziatura interna */
-    font-size: 1rem; /* Dimensione del testo */
-    text-decoration: none; /* Rimuove la sottolineatura */
-    border-radius: 50px; /* Rende il bottone arrotondato */
-    border: 2px solid #333; /* Bordo del bottone */
-    transition: all 0.3s ease; /* Aggiungi un effetto di transizione */
-}
-
-.button-services:hover {
-    background-color: #333; /* Colore di sfondo al passaggio del mouse */
-    color: var(--secondary-color); /* Colore del testo al passaggio del mouse */
-    border-color: #333; /* Bordo al passaggio del mouse */
-}
-
-.box-event-button-wrap {
-    display: flex;
-    justify-content: center; /* Centra il bottone */
-    margin-top: 20px;
-}
 
 /* Archive */
 #messaggio-iniziale {
