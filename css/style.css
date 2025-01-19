@@ -14914,7 +14914,8 @@ div.single-product-rating .icon {
     margin-bottom: 30px; /* Distanza tra i servizi */
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centra sia l'icona che la scritta */
+    align-items: center; 
+	cursor: pointer; /* Centra sia l'icona che la scritta */
 }
 
 .service-icon {
