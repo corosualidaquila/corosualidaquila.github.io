@@ -14883,8 +14883,8 @@ div.single-product-rating .icon {
     color: var(--primary-color); /* Colore del titolo */
 }
 
-.services h1 {
-    font-size: 2rem;
+.services h3 {
+    font-size: 2.5rem;
     margin-bottom: 30px;
     color: var(--secondary-color); /* Colore del titolo */
 }
