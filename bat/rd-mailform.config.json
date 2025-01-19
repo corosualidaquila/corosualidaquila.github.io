@@ -1,8 +1,8 @@
 {
-  "useSmtp": false,
+  "useSmtp": true,
   "host": "stmp.gmail.com",
   "port": 465,
-  "username": "demo@gmail.com",
-  "password": "demopassword",
-  "recipientEmail": "demo@gmail.com"
+  "username": "c.sualidaquila@gmail.com",
+  "password": "coro1su2ali3daquila4",
+  "recipientEmail": "c.sualidaquila@gmail.com"
 }
