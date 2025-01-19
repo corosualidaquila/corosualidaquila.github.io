@@ -1652,12 +1652,15 @@
 		 * Jp Audio player
 		 * @description  Custom jPlayer script
 		 */
+		
 		if (plugins.jPlayerInit.length) {
-
 			var artist = $('.jp-artist');
 		
 			// Imposta "touch" o "no-touch" per il dispositivo
 			$html.addClass('ontouchstart' in window || 'onmsgesturechange' in window ? 'touch' : 'no-touch');
+		
+			// Variabile per tracciare l'istanza del player attuale
+			var activePlayerInstance = null;
 		
 			$.each(plugins.jPlayerInit, function (index, item) {
 				var player = item.querySelector('.jp-jplayer');
@@ -1666,6 +1669,11 @@
 		
 				var mediaObj = jpFormatePlaylistObj($(item).find('.jp-player-list .jp-player-list-item')),
 					playerInstance = initJplayerBase(index, item, mediaObj);
+		
+				// Salva l'istanza del player corrente
+				if (index === 0) {
+					activePlayerInstance = playerInstance;
+				}
 		
 				if ($(item).data('jp-player-name')) {
 					var customJpPlaylists = $('[data-jp-playlist-relative-to="' + $(item).data('jp-player-name') + '"]'),
@@ -1684,11 +1692,6 @@
 						// Rimuovere l'avvio automatico
 						playlistItems.removeClass('playing last-played');
 						$clickedItem.addClass('last-played'); // Solo segnalare quale traccia è selezionata
-					});
-		
-					// Ferma il player quando si cambia anno
-					$(".nav-link").on("click", function () {
-						playerInstance.pause(); // Pausa quando si cambia anno
 					});
 		
 					// Callback per quando parte l'audio
@@ -1712,35 +1715,16 @@
 					});
 				}
 			});
-		}
 		
-		/**
-		 * Instance CirclePlayer
-		 *
-		 * CirclePlayer(jPlayerSelector, media, options)
-		 *   jPlayerSelector: String - The css selector of the jPlayer div.
-		 *   media: Object - The media object used in jPlayer("setMedia",media).
-		 *   options: Object - The jPlayer options.
-		 *
-		 * @description  Multiple instances must set the cssSelectorAncestor in the jPlayer options.
-		 */
-		if (plugins.circleJPlayer.length) {
-			$.each(plugins.circleJPlayer, function (index, item) {
-				$(item).find('.cp-jplayer').addClass('cp-jplayer-' + index);
-				$(item).find('.cp-container').addClass('cp-container-' + index);
-
-				new CirclePlayer(".cp-jplayer-" + index,
-						{
-							oga: $(item).data('jp-oga'),
-							m4a: $(item).data('jp-m4a'),
-							mp3: $(item).data('jp-mp3')
-						}, {
-							cssSelectorAncestor: ".cp-container-" + index,
-							supplied: "mp3, m4a",
-							volume: 0.4
-						});
+			// Aggiungi un evento per fermare la riproduzione quando si cambia anno
+			$(".nav-link").on("click", function () {
+				if (activePlayerInstance) {
+					activePlayerInstance.pause(); // Ferma il player corrente
+				}
 			});
 		}
+		
+
 
 		/**
 		 * Jp Video player
