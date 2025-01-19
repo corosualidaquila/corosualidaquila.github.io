@@ -1564,6 +1564,7 @@ html.tablet .ui-to-top {
 	outline-offset: 0;
 	cursor: pointer;
 	-webkit-appearance: none;
+	appearance: none;
 }
 
 .rd-navbar-search-toggle::-moz-focus-inner {
@@ -3120,10 +3121,6 @@ html.rd-navbar-fixed-linked .page {
 	touch-action: pan-x;
 }
 
-/* Coverflow */
-.swiper-container-coverflow .swiper-wrapper {
-	/* Windows 8 IE 10 fix */
-}
 
 .swiper-container-fade.swiper-container-free-mode .swiper-slide {
 	transition-timing-function: ease-out;
@@ -3678,6 +3675,7 @@ html.rd-navbar-fixed-linked .page {
 	outline-offset: 0;
 	cursor: pointer;
 	-webkit-appearance: none;
+	appearance: none;
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -4741,6 +4739,7 @@ h2 + .tabs-albums {
 	-ms-touch-action: pan-Y;
 	touch-action: manipulation;
 	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
 	/* fix firefox animation glitch */
 }
 
@@ -4913,6 +4912,7 @@ h2 + .tabs-albums {
 	background: var(--text-color-white);
 	display: block;
 	-webkit-backface-visibility: visible;
+	backface-visibility: visible;
 	transition: opacity 200ms ease;
 	border-radius: 10em;
 }
@@ -5269,7 +5269,6 @@ h2 + .tabs-albums {
 
 .lg-icon {
 	font-family: 'lg';
-	speak: none;
 	font-style: normal;
 	font-weight: normal;
 	font-variant: normal;
@@ -8044,21 +8043,6 @@ yx-axis
 	color: var(--primary-color);
 }
 
-.jp-player-init {
-	/**
-	 * Player
-	 * -----------------------------------------------------------------------------
-	 */
-	/* jPlayer: Cotrols
-	----------------------------------------------- */
-	/* jPlayer: Progress Bar
-	----------------------------------------------- */
-	/* jPlayer: Volume Bar
-	----------------------------------------------- */
-	/* Diagonal Background Bars */
-	/* jPlayer: Playlist
-	----------------------------------------------- */
-}
 
 .jp-player-init.jp-player-fixed {
 	position: fixed;
@@ -9274,6 +9258,7 @@ div.jp-creative .jp-playlist-item {
 	padding-right: 20px;
 	text-align: center;
 	-moz-appearance: textfield;
+	appearance: textfield;
 	color: #000000;
 	font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
@@ -11681,7 +11666,6 @@ img {
 	display: inline-block;
 	font-weight: 400;
 	font-style: normal;
-	speak: none;
 	text-transform: none;
 }
 
@@ -12480,6 +12464,7 @@ input:-webkit-autofill ~ .form-validation {
 	background-image: none;
 	border-radius: 0;
 	-webkit-appearance: none;
+	appearance: none;
 	transition: .3s ease-in-out;
 	border: 0;
 	border-bottom: 1px solid rgba(255, 255, 255, 0.5);
@@ -12761,6 +12746,7 @@ textarea.form-input {
 .toggle-custom {
 	padding-left: 60px;
 	-webkit-appearance: none;
+	appearance: none;
 }
 
 .toggle-custom:checked ~ .checkbox-custom-dummy::after {
@@ -14047,7 +14033,7 @@ img + .custom-title {
 
 .snackbars-right {
 	display: inline-block;
-	float: right;
+	text-align: right;
 	text-transform: uppercase;
 }
 
