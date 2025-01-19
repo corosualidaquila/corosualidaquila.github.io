@@ -393,7 +393,29 @@
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
     
-  
+    <script>
+      $(document).ready(function () {
+        // Inizializzazione jPlayer
+        $("#jquery_jplayer_1").jPlayer({
+          ready: function () {
+            $(this).jPlayer("setMedia", {
+              mp3: "" // Non avviamo subito l'audio
+            });
+          },
+          swfPath: "/js",
+          supplied: "mp3",
+          wmode: "window"
+        });
+    
+        // Assegna un listener a ogni elemento della lista
+        $("#audio-list li").on("click", function () {
+          var audioPath = $(this).data("audio"); // Prendi il percorso dall'attributo data-audio
+          $("#jquery_jplayer_1").jPlayer("setMedia", {
+            mp3: audioPath
+          }).jPlayer("play"); // Cambia file e avvia la riproduzione
+        });
+      });
+    </script>
     <script>
     document.querySelectorAll('.nav-link').forEach(tab => {
       tab.addEventListener('click', function () {
