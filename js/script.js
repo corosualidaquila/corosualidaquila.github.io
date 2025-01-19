@@ -1665,6 +1665,7 @@
 			// Variabile per memorizzare tutte le istanze dei player
 			var playerInstances = [];
 		
+			// Inizializza ogni player
 			$.each(plugins.jPlayerInit, function (index, item) {
 				var player = item.querySelector('.jp-jplayer');
 				
@@ -1680,12 +1681,10 @@
 					element: item
 				});
 		
-				// Impostiamo l'anno come parte del nome del player
-				var year = $(item).data('jp-player-name');
-		
 				// Aggiungi l'evento di click per ciascun player
-				var customJpPlaylists = $('[data-jp-playlist-relative-to="' + year + '"]'),
-					playlistItems = customJpPlaylists.find("[data-jp-playlist-item]");
+				var year = $(item).data('jp-player-name');
+				var customJpPlaylists = $('[data-jp-playlist-relative-to="' + year + '"]');
+				var playlistItems = customJpPlaylists.find("[data-jp-playlist-item]");
 		
 				// Aggiorna solo lo stato senza avviare la riproduzione
 				playlistItems.on('click', function (e) {
@@ -1715,15 +1714,6 @@
 				$(playerInstance.cssSelector.jPlayer).bind($.jPlayer.event.pause, function () {
 					playlistItems.filter('.playing').addClass('last-played').removeClass('playing');
 				});
-		
-				// Aggiungi eventi per i pulsanti next/prev
-				$(item).find('.jp-next').on('click', function () {
-					playlistItems.filter('.playing, .last-played').addClass('play-next');
-				});
-		
-				$(item).find('.jp-previous').on('click', function () {
-					playlistItems.filter('.playing, .last-played').addClass('play-prev');
-				});
 			});
 		
 			// Interrompe la riproduzione quando si cambia anno
@@ -1745,14 +1735,17 @@
 				$.each(playerInstances, function (index, item) {
 					if (item.year === targetYear) {
 						var playerInstance = item.instance;
-						if (playerInstance) {
-							playerInstance.play(); // Avvia la riproduzione del player selezionato
-							console.log("Riproduzione avviata per l'anno: " + item.year);
-						}
+						var mediaObj = jpFormatePlaylistObj($(item.element).find('.jp-player-list .jp-player-list-item'));
+		
+						// Imposta e avvia la playlist per l'anno selezionato
+						playerInstance.setPlaylist(mediaObj);
+						playerInstance.play(); // Avvia la riproduzione del player selezionato
+						console.log("Riproduzione avviata per l'anno: " + item.year);
 					}
 				});
 			});
 		}
+		
 		
 		
 		
