@@ -1733,15 +1733,18 @@
 		 * Jp Video player
 		 * @description  Custom jPlayer video initialization
 		 */
+		
 		if (plugins.jPlayerVideo.length) {
+			var activeVideoPlayer = null; // Memorizza il player attivo
+		
 			$.each(plugins.jPlayerVideo, function (index, item) {
 				var $item = $(item);
-
+		
 				$item.find('.jp-video').addClass('jp-video-' + index);
-
-				new jPlayerPlaylist({
+		
+				var playerInstance = new jPlayerPlaylist({
 					jPlayer: item.getElementsByClassName("jp-jplayer")[0],
-					cssSelectorAncestor: ".jp-video-" + index // Need too bee a selector not HTMLElement or Jq object, so we make it unique
+					cssSelectorAncestor: ".jp-video-" + index // Selettore univoco per ciascun video player
 				}, jpFormatePlaylistObj($(item).find('.jp-player-list .jp-player-list-item')), {
 					playlistOptions: {
 						enableRemoveControls: false
@@ -1754,51 +1757,44 @@
 					useStateClassSkin: true,
 					volume: 0.4
 				});
-
-				$(item).find(".jp-jplayer").on('click', function (e) {
-					var $this = $(this);
-					if ($('.jp-video-' + index).hasClass('jp-state-playing')) {
-						$this.jPlayer("pause");
-					} else {
-						$this.jPlayer("play");
+		
+				// Salva l'istanza del player nel div corrente
+				$item.data('playerInstance', playerInstance);
+		
+				$(item).find(".jp-player-list-item").on("click", function (e) {
+					// Interrompi il player attivo se esiste e non è questo
+					if (activeVideoPlayer && activeVideoPlayer !== playerInstance) {
+						activeVideoPlayer.pause(); // Interrompi il player attivo
 					}
+		
+					// Imposta il player attivo corrente
+					activeVideoPlayer = playerInstance;
 				});
-
-				var initialContainerWidth = $item.width();
-				// this is the overall page container, so whatever is relevant to your page
-
-				$window.resize(function () {
-					if ($item.width() !== initialContainerWidth) {
-						// checks current container size against it's rendered size on every resize.
-						initialContainerWidth = $item.width();
-						$item.trigger('resize', $item);
-						//pass off to resize listener for performance
+		
+				// Fermare il player attivo quando si passa a un altro contenuto
+				$(".nav-link").on("click", function () {
+					if (activeVideoPlayer) {
+						activeVideoPlayer.pause(); // Interrompi la riproduzione
+						activeVideoPlayer = null; // Resetta il player attivo
 					}
 				});
 			});
-
-			$window.on('resize', function (e) {
+		
+			$window.on("resize", function () {
 				$('.jp-video').each(function (index) {
-					// find every instance of jplayer using a class in their default markup
 					var $parentContainer = $(this).closest('.jp-video-init'),
-							// finds jplayers closest parent element from the ones you give it (can chain as many as you want)
-							containerWidth = $parentContainer.width(),
-							//takes the closest elements width
-							ARWidth = 1280,
-							ARHeight = 720;
-
-					// Width and height figures used to calculate the aspect ratio (will not restrict your players to this size)
-
+						containerWidth = $parentContainer.width(),
+						ARWidth = 1280,
+						ARHeight = 720;
+		
 					var aspectRatio = ARHeight / ARWidth;
-
+		
 					var videoHeight = Math.round(aspectRatio * containerWidth);
-					// calculates the appropriate height in rounded pixels using the aspect ratio
 					$(this).find('.jp-jplayer').width(containerWidth).height(videoHeight);
-					// and then apply the width and height!
 				});
-			})
-			.trigger('resize');
+			}).trigger("resize");
 		}
+		
 
 		// jQuery Countdown
 		if ( plugins.countDown.length ) {
