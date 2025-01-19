@@ -14929,6 +14929,33 @@ div.single-product-rating .icon {
     margin-bottom: 15px; /* Distanza tra cerchio e titolo */
 }
 
+/* Striscia in 3 colonne */
+.note-strip {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px; /* Distanza dal testo principale */
+}
+
+.note-column {
+    flex: 1; /* Ogni colonna prende lo stesso spazio */
+    display: flex;
+    justify-content: center; /* Centra il contenuto orizzontalmente */
+    align-items: center; /* Centra il contenuto verticalmente */
+}
+
+.center-column {
+    text-align: center; /* Allinea il testo al centro */
+    font-size: 1.2rem;
+    padding: 0 20px; /* Aggiungi un po' di spazio ai lati */
+}
+
+/* Puoi personalizzare l'icona della nota musicale */
+.note-icon {
+    font-size: 2rem; /* Puoi cambiare la dimensione dell'icona */
+}
+
+
 .service-icon i {
     color: white; /* Colore delle icone */
     font-size: 30px; /* Dimensione dell'icona */
