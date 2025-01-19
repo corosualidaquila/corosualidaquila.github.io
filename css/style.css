@@ -14868,8 +14868,6 @@ div.single-product-rating .icon {
 	}
 }
 
-/* scaricare modulo */
-
 
 /* Stile generale per la sezione */
 .services {
@@ -14893,6 +14891,14 @@ div.single-product-rating .icon {
     font-size: 1rem;
     margin-bottom: 30px;
     color: var(--secondary-color); /* Colore del titolo */
+}
+
+.download-button {
+    display: flex;
+    justify-content: center; /* Centra il contenuto orizzontalmente */
+    align-items: center; /* Centra verticalmente, se necessario */
+    width: 100%; /* Assicura che il contenitore prenda tutta la larghezza disponibile */
+    margin-top: 20px; /* Distanza superiore (opzionale, aggiungi se necessario) */
 }
 
 /* Stile per gli item dei servizi */
