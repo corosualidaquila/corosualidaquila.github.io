@@ -14883,9 +14883,10 @@ div.single-product-rating .icon {
 }
 
 .services h6 {
-    font-size: 0.6rem;
+    font-size: 1.2rem;
     margin-bottom: 30px;
     color: var(--secondary-color); /* Colore del titolo */
+	font-weight: bold;
 }
 
 /* Stile per gli item dei servizi */
