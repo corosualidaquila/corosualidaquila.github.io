@@ -1679,8 +1679,9 @@
 					var customJpPlaylists = $('[data-jp-playlist-relative-to="' + $(item).data('jp-player-name') + '"]'),
 						playlistItems = customJpPlaylists.find("[data-jp-playlist-item]");
 		
-					// Toggle audio play on custom playlist play button click
+					// Disabilita l'avvio automatico quando si clicca su un titolo
 					playlistItems.on('click', function (e) {
+						e.preventDefault(); // Previene il comportamento di default
 						var $clickedItem = $(e.delegateTarget);
 		
 						// Configurare il player ma NON avviare automaticamente
@@ -1689,9 +1690,9 @@
 							playerInstance.setPlaylist(mediaObj);
 						}
 		
-						// Rimuovere l'avvio automatico
+						// Seleziona la traccia ma non avvia la riproduzione
 						playlistItems.removeClass('playing last-played');
-						$clickedItem.addClass('last-played'); // Solo segnalare quale traccia è selezionata
+						$clickedItem.addClass('last-played'); // Indica visivamente che è selezionato
 					});
 		
 					// Callback per quando parte l'audio
@@ -1723,6 +1724,7 @@
 				}
 			});
 		}
+		
 		
 
 
