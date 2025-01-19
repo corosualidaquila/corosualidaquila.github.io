@@ -1652,107 +1652,82 @@
 		 * Jp Audio player
 		 * @description  Custom jPlayer script
 		 */
+		
 		if (plugins.jPlayerInit.length) {
 
 			var artist = $('.jp-artist');
-
-			// artist[0].innerText = artist[0].innerText.replace('by', 'from');
-
+		
+			// Imposta "touch" o "no-touch" per il dispositivo
 			$html.addClass('ontouchstart' in window || 'onmsgesturechange' in window ? 'touch' : 'no-touch');
-
+		
 			$.each(plugins.jPlayerInit, function (index, item) {
 				var player = item.querySelector('.jp-jplayer');
-
+		
 				$(item).addClass('jp-audio-' + index);
-
+		
 				var mediaObj = jpFormatePlaylistObj($(item).find('.jp-player-list .jp-player-list-item')),
-						playerInstance = initJplayerBase(index, item, mediaObj);
-
+					playerInstance = initJplayerBase(index, item, mediaObj);
+		
 				if ($(item).data('jp-player-name')) {
 					var customJpPlaylists = $('[data-jp-playlist-relative-to="' + $(item).data('jp-player-name') + '"]'),
-							playlistItems = customJpPlaylists.find("[data-jp-playlist-item]");
-
+						playlistItems = customJpPlaylists.find("[data-jp-playlist-item]");
+		
 					// Toggle audio play on custom playlist play button click
-					playlistItems.on('click', customJpPlaylists.data('jp-playlist-play-on'), function (e) {
-						var mediaObj = jpFormatePlaylistObj(playlistItems),
-								$clickedItem = $(e.delegateTarget);
-
+					playlistItems.on('click', function (e) {
+						var $clickedItem = $(e.delegateTarget);
+		
+						// Configurare il player ma NON avviare automaticamente
+						var mediaObj = jpFormatePlaylistObj(playlistItems);
 						if (!JSON.stringify(playerInstance.playlist) === JSON.stringify(mediaObj) || !playerInstance.playlist.length) {
 							playerInstance.setPlaylist(mediaObj);
 						}
-
-						if (!$clickedItem.hasClass('playing')) {
-							playerInstance.pause();
-
-							if ($clickedItem.hasClass('last-played')) {
-								playerInstance.play();
-							} else {
-								playerInstance.play(playlistItems.index($clickedItem));
-							}
-
-							playlistItems.removeClass('playing last-played');
-							$clickedItem.addClass('playing');
-						} else {
-							playlistItems.removeClass('playing last-played');
-							$clickedItem.addClass('last-played');
-							playerInstance.pause();
-						}
-
+		
+						// Rimuovere l'avvio automatico
+						playlistItems.removeClass('playing last-played');
+						$clickedItem.addClass('last-played'); // Solo segnalare quale traccia è selezionata
 					});
-
-
-					// Callback for custom playlist
-					$(playerInstance.cssSelector.jPlayer).bind($.jPlayer.event.play, function (e) {
-
-						var toggleState = function (elemClass, index) {
-							var activeIndex = playlistItems.index(playlistItems.filter(elemClass));
-
-							if (activeIndex !== -1) {
-								if (playlistItems.eq(activeIndex + index).length !== 0) {
-									playlistItems.eq(activeIndex)
-									.removeClass('play-next play-prev playing last-played')
-									.end()
-									.eq(activeIndex + index)
-									.addClass('playing');
-								}
-							}
-						};
-
-						// Check if user select next or prev track
-						toggleState('.play-next', +1);
-						toggleState('.play-prev', -1);
-
-						var lastPlayed = playlistItems.filter('.last-played');
-
-						// If user just press pause and than play on same track
-						if (lastPlayed.length) {
-							lastPlayed.addClass('playing').removeClass('last-played play-next');
-						}
+		
+					// Ferma il player quando si cambia anno
+					$(".nav-link").on("click", function () {
+						playerInstance.pause(); // Pausa quando si cambia anno
 					});
-
-
-					// Add temp marker of last played audio
-					$(playerInstance.cssSelector.jPlayer).bind($.jPlayer.event.pause, function (e) {
+		
+					// Callback per quando parte l'audio
+					$(playerInstance.cssSelector.jPlayer).bind($.jPlayer.event.play, function () {
+						playlistItems.removeClass('playing last-played');
+						playlistItems.filter('.last-played').addClass('playing');
+					});
+		
+					// Segnalare l'ultimo brano riprodotto
+					$(playerInstance.cssSelector.jPlayer).bind($.jPlayer.event.pause, function () {
 						playlistItems.filter('.playing').addClass('last-played').removeClass('playing');
-
-						$(playerInstance.cssSelector.cssSelectorAncestor).addClass('jp-state-visible');
 					});
-
-					// Add temp marker that user want to play next audio
-					$(item).find('.jp-next')
-					.on('click', function (e) {
+		
+					// Impostazioni per next/prev
+					$(item).find('.jp-next').on('click', function () {
 						playlistItems.filter('.playing, .last-played').addClass('play-next');
 					});
-
-					// Add temp marker that user want to play prev audio
-					$(item).find('.jp-previous')
-					.on('click', function (e) {
+		
+					$(item).find('.jp-previous').on('click', function () {
 						playlistItems.filter('.playing, .last-played').addClass('play-prev');
 					});
 				}
 			});
-
 		}
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 		/**
 		 * Instance CirclePlayer

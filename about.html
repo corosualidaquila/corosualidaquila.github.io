@@ -392,50 +392,24 @@
     <div class="snackbars" id="form-output-global"></div>
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
-
+    
+  
     <script>
-      $(document).ready(function () {
-      // Inizializzazione jPlayer
-      const jPlayer = $("#jquery_jplayer_1");
-
-      jPlayer.jPlayer({
-        ready: function () {
-          $(this).jPlayer("setMedia", {
-            mp3: "" // Non avviamo subito l'audio
-          });
-        },
-        swfPath: "/js",
-        supplied: "mp3",
-        wmode: "window"
-      });
-
-      let currentAudioPath = ""; // Variabile per tenere traccia del file selezionato
-
-      // Assegna un listener a ogni elemento della lista
-      $(".jp-player-list-item").on("click", function () {
-        currentAudioPath = $(this).data("jp-mp3"); // Prendi il percorso dall'attributo data-jp-mp3
-        jPlayer.jPlayer("setMedia", { mp3: currentAudioPath }); // Imposta il file nel player ma NON avvia
-      });
-
-      // Gestisce il cambio delle schede anno
-      $(".nav-link").on("click", function () {
-        const year = $(this).text().trim(); // Ottieni l'anno selezionato
-
-        // Ferma qualsiasi audio in riproduzione
-        jPlayer.jPlayer("stop");
-
-        // Cambia l'immagine dinamica
-        const image = document.getElementById("tab-image");
-        if (year === "2018") {
-          image.src = "images/foto_coro/cdnatale.jpg";
-        } else if (year === "2024") {
-          image.src = "images/foto coro/coro.JPG";
-        } else if (year === "2025") {
-          image.src = "images/foto coro/bambini.JPG";
+    document.querySelectorAll('.nav-link').forEach(tab => {
+      tab.addEventListener('click', function () {
+        const year = this.textContent.trim(); // Ottieni l'anno dalla scheda selezionata
+        const image = document.getElementById('tab-image'); // Immagine dinamica
+    
+        // Cambia l'immagine in base all'anno
+        if (year === '2018') {
+          image.src = 'images/foto_coro/cdnatale.jpg'; // Immagine per il 2018
+        } else if (year === '2024') {
+          image.src = 'images/foto coro/coro.JPG'; // Immagine per il 2015
+        } else if (year === '2025') {
+          image.src = 'images/foto coro/bambini.JPG'; // Immagine per il 2012
         }
       });
     });
-
-     </script>
+    </script>
   </body>
 </html>
