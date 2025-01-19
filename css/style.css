@@ -14878,14 +14878,7 @@ div.single-product-rating .icon {
 .services h2 {
     font-size: 2rem;
     margin-bottom: 30px;
-    color: var(--primary-color);
-    text-align: center; /* Centra il testo */
-    width: 100%; /* Consente al testo di occupare tutta la larghezza disponibile */
-    max-width: 600px; /* Impostare una larghezza massima per evitare che il testo si estenda troppo */
-    word-wrap: break-word; /* Se il testo è troppo lungo, va a capo */
-    overflow-wrap: break-word; /* Interrompe le parole troppo lunghe per adattarsi alla larghezza */
-    margin-left: auto; /* Centra il contenuto orizzontalmente */
-    margin-right: auto; /* Centra il contenuto orizzontalmente */
+    color: var(--primary-color); /* Colore del titolo */
 }
 
 .services h3 {
@@ -14895,9 +14888,16 @@ div.single-product-rating .icon {
 }
 
 .services h6 {
-    font-size: 1rem;
+    font-size: 2rem;
     margin-bottom: 30px;
-    color: var(--secondary-color); /* Colore del titolo */
+    color: var(--secondary-color);
+    text-align: center; /* Centra il testo */
+    width: 100%; /* Consente al testo di occupare tutta la larghezza disponibile */
+    max-width: 600px; /* Impostare una larghezza massima per evitare che il testo si estenda troppo */
+    word-wrap: break-word; /* Se il testo è troppo lungo, va a capo */
+    overflow-wrap: break-word; /* Interrompe le parole troppo lunghe per adattarsi alla larghezza */
+    margin-left: auto; /* Centra il contenuto orizzontalmente */
+    margin-right: auto; /* Centra il contenuto orizzontalmente */
 }
 
 .download-button {
