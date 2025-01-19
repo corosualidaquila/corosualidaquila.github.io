@@ -14891,7 +14891,7 @@ div.single-product-rating .icon {
     font-size: 1rem;
     margin-bottom: 30px;
     color: var(--secondary-color);
-    text-align: center; /* Centra il testo */
+    text-align: justify; /* Centra il testo */
     width: 100%; /* Consente al testo di occupare tutta la larghezza disponibile */
     max-width: 600px; /* Impostare una larghezza massima per evitare che il testo si estenda troppo */
     word-wrap: break-word; /* Se il testo è troppo lungo, va a capo */
