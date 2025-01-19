@@ -14882,6 +14882,12 @@ div.single-product-rating .icon {
     color: var(--primary-color); /* Colore del titolo */
 }
 
+.services h3 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: var(--secondary-color); /* Colore del titolo */
+}
+
 /* Stile per gli item dei servizi */
 .service-item {
     text-align: center;
