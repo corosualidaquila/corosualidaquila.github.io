@@ -1778,6 +1778,9 @@
 					activeVideoPlayer.pause(); // Interrompi la riproduzione
 					activeVideoPlayer = null; // Resetta il player attivo
 				}
+				if (activePlayerInstance) {
+					activePlayerInstance.pause(); // Ferma il player audio attivo
+				}
 			});
 		
 			$window.on("resize", function () {
