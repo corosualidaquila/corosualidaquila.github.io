@@ -1656,11 +1656,10 @@
 		if (plugins.jPlayerInit.length) {
 			var artist = $('.jp-artist');
 		
-			// Imposta "touch" o "no-touch" per il dispositivo
+			// Determina se il dispositivo è touch o meno
 			$html.addClass('ontouchstart' in window || 'onmsgesturechange' in window ? 'touch' : 'no-touch');
 		
-			// Variabile per tracciare l'istanza del player attuale
-			var activePlayerInstance = null;
+			var activePlayerInstance = null; // Traccia il player attivo
 		
 			$.each(plugins.jPlayerInit, function (index, item) {
 				var player = item.querySelector('.jp-jplayer');
@@ -1670,43 +1669,44 @@
 				var mediaObj = jpFormatePlaylistObj($(item).find('.jp-player-list .jp-player-list-item')),
 					playerInstance = initJplayerBase(index, item, mediaObj);
 		
-				// Salva l'istanza del player corrente
 				if (index === 0) {
-					activePlayerInstance = playerInstance;
+					activePlayerInstance = playerInstance; // Memorizza il player attivo iniziale
 				}
 		
 				if ($(item).data('jp-player-name')) {
 					var customJpPlaylists = $('[data-jp-playlist-relative-to="' + $(item).data('jp-player-name') + '"]'),
 						playlistItems = customJpPlaylists.find("[data-jp-playlist-item]");
 		
-					// Disabilita l'avvio automatico quando si clicca su un titolo
+					// Aggiorna solo lo stato senza avviare la riproduzione
 					playlistItems.on('click', function (e) {
-						e.preventDefault(); // Previene il comportamento di default
+						e.preventDefault(); // Evita il comportamento predefinito
+		
 						var $clickedItem = $(e.delegateTarget);
 		
-						// Configurare il player ma NON avviare automaticamente
+						// Crea la nuova playlist
 						var mediaObj = jpFormatePlaylistObj(playlistItems);
 						if (!JSON.stringify(playerInstance.playlist) === JSON.stringify(mediaObj) || !playerInstance.playlist.length) {
 							playerInstance.setPlaylist(mediaObj);
 						}
 		
-						// Seleziona la traccia ma non avvia la riproduzione
+						// Seleziona il brano ma non avvia la riproduzione
 						playlistItems.removeClass('playing last-played');
-						$clickedItem.addClass('last-played'); // Indica visivamente che è selezionato
+						$clickedItem.addClass('last-played'); // Indica che è stato selezionato
+						playerInstance.pause(); // Assicura che il player resti in pausa
 					});
 		
-					// Callback per quando parte l'audio
+					// Callback per il play
 					$(playerInstance.cssSelector.jPlayer).bind($.jPlayer.event.play, function () {
 						playlistItems.removeClass('playing last-played');
 						playlistItems.filter('.last-played').addClass('playing');
 					});
 		
-					// Segnalare l'ultimo brano riprodotto
+					// Callback per il pause
 					$(playerInstance.cssSelector.jPlayer).bind($.jPlayer.event.pause, function () {
 						playlistItems.filter('.playing').addClass('last-played').removeClass('playing');
 					});
 		
-					// Impostazioni per next/prev
+					// Aggiungi eventi per i pulsanti next/prev
 					$(item).find('.jp-next').on('click', function () {
 						playlistItems.filter('.playing, .last-played').addClass('play-next');
 					});
@@ -1717,13 +1717,14 @@
 				}
 			});
 		
-			// Aggiungi un evento per fermare la riproduzione quando si cambia anno
+			// Interrompe la riproduzione quando si cambia anno
 			$(".nav-link").on("click", function () {
 				if (activePlayerInstance) {
-					activePlayerInstance.pause(); // Ferma il player corrente
+					activePlayerInstance.pause(); // Ferma il player attivo
 				}
 			});
 		}
+		
 		
 		
 
