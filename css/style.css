@@ -14911,15 +14911,22 @@ div.single-product-rating .icon {
 /* Stile per gli item dei servizi */
 .service-item {
     text-align: center;
-    margin-bottom: 30px; /* Distanza tra i servizi */
+    margin: 0 auto;
+    padding: 20px 10px;
     display: flex;
     flex-direction: column;
-    align-items: center; 
-	cursor: pointer; /* Centra sia l'icona che la scritta */
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.service-item:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
 }
 
 .service-icon {
-    display: inline-block;
+    display: flex;
     width: 70px; /* Dimensione del cerchio */
     height: 70px; /* Dimensione del cerchio */
     border-radius: 50%; /* Crea il cerchio */
