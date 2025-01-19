@@ -1770,14 +1770,14 @@
 					// Imposta il player attivo corrente
 					activeVideoPlayer = playerInstance;
 				});
+			});
 		
-				// Fermare il player attivo quando si passa a un altro contenuto
-				$(".nav-link").on("click", function () {
-					if (activeVideoPlayer) {
-						activeVideoPlayer.pause(); // Interrompi la riproduzione
-						activeVideoPlayer = null; // Resetta il player attivo
-					}
-				});
+			// Fermare il player attivo quando si passa a un altro contenuto
+			$(".nav-link").on("click", function () {
+				if (activeVideoPlayer) {
+					activeVideoPlayer.pause(); // Interrompi la riproduzione
+					activeVideoPlayer = null; // Resetta il player attivo
+				}
 			});
 		
 			$window.on("resize", function () {
@@ -1794,6 +1794,11 @@
 				});
 			}).trigger("resize");
 		}
+		
+
+
+
+
 		
 
 		// jQuery Countdown
