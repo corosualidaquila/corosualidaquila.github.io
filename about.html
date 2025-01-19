@@ -199,7 +199,8 @@
                   <h5>Le prove per i piccoli</h5>
                   <p class="box-bio-text">Il primo sabato del mese alle 15:30</p>
                   <div class="service-icon">
-                    <i class="fa-solid fa-guitar"></i>
+                    <i class="fa-solid fa-guitar"  ></i>
+                    <div class="notesContainer"></div>
                   </div>
               </div>
           </div>
@@ -216,7 +217,8 @@
                 <h5>Le prove per gli adulti</h5>
                 <p class="box-bio-text">Il mercoledì sera  ale 21:30</p>
                 <div class="service-icon">
-                  <i class="fa-solid fa-music"></i>
+                  <i class="fa-solid fa-music" ></i>
+                  <div class="notesContainer"></div>
                 </div>
             </div>
         </div>
@@ -436,6 +438,47 @@
         }
       });
     });
+
+    function playSound() {
+        var audio = new Audio('audio/piano.mp3');  // Cambia 'audio.mp3' con il percorso corretto del tuo file audio
+        audio.play();
+    }
+
+    document.querySelectorAll('.service-icon').forEach(icon => {
+  icon.addEventListener('click', function () {
+    const notes = ['🎶', '🎵', '🎼'];
+
+    // Troviamo il notesContainer specifico per questa icona
+    const notesContainer = icon.querySelector('.notesContainer');
+
+    // Aggiungi note come fuochi d'artificio
+    notes.forEach(note => {
+      const noteElement = document.createElement('div');
+      noteElement.classList.add('note');
+      noteElement.textContent = note;
+
+      // Genera valori casuali per la direzione dell'esplosione
+      const angle = Math.random() * 360; // Angolo casuale
+      const distance = Math.random() * 150 + 50; // Distanza casuale
+      const x = Math.cos(angle) * distance; // Calcolo X
+      const y = Math.sin(angle) * distance; // Calcolo Y
+
+      // Impostiamo le variabili CSS per l'animazione
+      noteElement.style.setProperty('--x', `${x}px`);
+      noteElement.style.setProperty('--y', `${y}px`);
+
+      // Aggiungiamo la nota al contenitore
+      notesContainer.appendChild(noteElement);
+    });
+
+    // Rimuoviamo le note dopo che l'animazione è finita (1.5 secondi)
+    setTimeout(() => {
+      notesContainer.innerHTML = ''; // Pulisce il contenitore delle note
+    }, 1500); // Durata dell'animazione
+  });
+});
+
+
     </script>
   </body>
 </html>
