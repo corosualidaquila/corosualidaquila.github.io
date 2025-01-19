@@ -221,7 +221,7 @@
                 che si potrebbe fare di più per animare la Santa Messa, e sicuramente hai ragione: allora cosa aspetti?</p>
               <div class="download-button">
                 <a class="button button-outline button-sm" 
-                onclick="downloadFile('images/modulo.JPG')">Scarica il modulo</a>
+                href="https://drive.google.com/uc?export=download&id=1qTLy3T5CjzVzTMle1wq7t5NY4an3VvWT">Scarica il modulo</a>
               </div>
           </div>
           <div class="col-lg-4 col-sm-12">
@@ -449,16 +449,6 @@
         }
       });
     });
-
-    function downloadFile(url) {
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = url.split('/').pop(); // Usa il nome del file dall'URL
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-}
-
     </script>
   </body>
 </html>
