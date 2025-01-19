@@ -3294,6 +3294,13 @@ html.rd-navbar-fixed-linked .page {
 	line-height: 1.5;
 }
 
+.swiper-slide-caption h4 {
+	color: var(--secondary-color);
+	margin-top: -150px;
+	text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8), -2px -2px 4px rgba(255, 255, 255, 0.8); /* Contorno bianco per il testo */
+	font-weight: bold;
+}
+
 .swiper-slide {
 	position: relative;
 	display: flex;
