@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
   <head>
-    <title>archive</title>
+    <title>Archivio testi</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon-3.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:400,700%7COpen+Sans:400,600,700%7CSource+Code+Pro:300,400,500,600,700,900%7CNothing+You+Could+Do%7CPoppins:400,500">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
-    <style>.ie-panel{display: none;background: #03045e;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
+    <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
   </head>
   <body>
-    <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/">
-      <img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
       <div class="preloader">
         <div class="preloader-body">
           <div class="music-notes">
@@ -53,7 +51,7 @@
                       </li>
                       <li class="rd-nav-item"><a class="rd-nav-link" href="about.html">Chi siamo</a>
                       </li>
-                      <li class="rd-nav-item active"><a class="rd-nav-link" href="archive.html">Archivio testi</a>
+                      <li class="rd-nav-item active"><a class="rd-nav-link" href="testi.html">Archivio testi</a>
                       </li>
                       <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Contatti</a>
                       </li>
@@ -62,9 +60,9 @@
                 </div>
                 <div class="rd-navbar-collapse">
                   <ul class="socialite-list">
-                    <li><a class="icon novi-icon socialite fa-facebook" href="#"></a></li>
-                    <li><a class="icon novi-icon socialite fa-twitter" href="#"></a></li>
-                    <li><a class="icon novi-icon socialite fa-instagram" href="#"></a></li>
+                    <li><a class="icon novi-icon socialite fa-facebook" href="https://www.facebook.com/profile.php?id=100032786907194" target="_blank"></a></li>
+                    <li><a class="icon novi-icon socialite fa-envelope" href="mailto:c.sualidaquila@gmail.com"></a></li>
+                    <li><a class="icon novi-icon socialite fa-instagram" href="https://www.instagram.com/corosualidaquila?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"></a></li>
                   </ul>
                 </div>
               </div>
@@ -73,80 +71,415 @@
         </div>
       </header>
       <!-- Breadcrumbs-->
-      <section class="breadcrumbs-custom bg-image context-dark" style="background-color: #0077b6">
+
+        <section class="breadcrumbs-custom bg-image context-dark" 
+        style="background-image: url('images/sheet.jpg'); 
+               background-size: cover; 
+               background-position: center; 
+               background-repeat: no-repeat;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+              background-color: rgba(255, 255, 255, 0.211);"></div>
         <div class="container">
-          <h2 class="breadcrumbs-custom-title">Archivio</h2>
+            <h2 class="breadcrumbs-custom-title">Archivio testi</h2>
         </div>
         <ul class="breadcrumbs-custom-path">
-          <li><a href="index.html">Home</a></li>
-          <li class="active">Archivio</li>
+            <li><a href="index.html">Home</a></li>
+            <li class="active">Archivio testi</li>
         </ul>
-      </section>
+    </section>
+    
 
+
+    
 
       <section class="archive-section">
-        <!-- Sezione Testi e Spartiti in orizzontale -->
-        <div class="archive-nav">
-          <h3 class="sezione-testo" onclick="toggleVisibility('testi')">Testi</h3>
-          <h3 class="sezione-testo" onclick="toggleVisibility('spartiti')">Spartiti</h3>
-        </div>
-      
+
+        <div class="archive-container">
+
+          <div class="archive-left">
+            <ul class="archive-menu">
+              <li onclick="toggleVisibility('anlit')">Animazione Liturgica</li>
+              <li onclick="toggleVisibility('funerali')">Funerali</li>
+              <li onclick="toggleVisibility('matrimoni')">Matrimoni</li>
+              <li onclick="toggleVisibility('natale')">Natale</li>
+              <li onclick="toggleVisibility('triduo')">Triduo</li>
+            </ul>
+          </div>
+
+        <div class="archive-right">
+          <div id="messaggio-iniziale">
+            <h5>Qui trovi tutti i canti delle celebrazioni.</h5>
+            <h6>Seleziona una sezione per visualizzare il contenuto.</h6>
+          </div>
+        
         <!-- Sezione Testi -->
-        <div id="testi" class="archive-list">
-          <h6 class="text-gray-600">Testo 1</h6>
-          <h6 class="text-gray-600">Testo 2</h6>
-          <h6 class="text-gray-600">Testo 3</h6>
+        <div id="anlit" class="archive-list">
+          <hr class="separator"> 
+            <div class="box-event">
+              <div class="box-event-text-wrap">
+                <h6 class="box-event-text-title"> Autunno&Festa della gioventù 2018</h6>
+              </div>
+              <div class="box-event-button-wrap">
+                <a class="button button-outline button-sm" href="https://drive.google.com/uc?export=download&id=1RhQLiah44LlVP_wreFKVPfLXDKaKPMGK">Downaload</a>
+              </div>
+            </div>
+
+            <div class="box-event">
+              <div class="box-event-text-wrap">
+                <h6  class="box-event-text-title"><a href="https://drive.google.com/uc?export=download&id=0B125_qILHPJeSzhaLVc3c2RjMm5jM0dVOG5YX3hydVBkcHhN">Avvento 2015</a></h6 >
+              </div>
+              <div class="box-event-button-wrap">
+                <a class="button button-outline button-sm" href="https://drive.google.com/uc?export=download&id=0B125_qILHPJeSzhaLVc3c2RjMm5jM0dVOG5YX3hydVBkcHhN">Downaload</a></div>
+            </div>
+            
+
+            <div class="box-event">
+              <div class="box-event-text-wrap">
+                <h6 class="box-event-text-title"><a href="https://drive.google.com/uc?export=download&id=1vkU0cw68tMDysUERoO1eSonMOIOa28YY">Avvento 2018</a></h6>
+              </div>
+              <div class="box-event-button-wrap"><a class="button button-outline button-sm" href="https://drive.google.com/uc?export=download&id=1vkU0cw68tMDysUERoO1eSonMOIOa28YY">Downaload</a></div>
+            </div>
+
+            <div class="box-event novi-bg">
+              <div class="box-event-text-wrap">
+                <h6 class="box-event-text-title"><a href="https://drive.google.com/uc?export=download&id=12BREaVhpNnBuTQRVHO9LHxNFUdXZocmY">Corpus Domini</a></h6>
+              </div>
+              <div class="box-event-button-wrap"><a class="button button-outline button-sm" href="https://drive.google.com/uc?export=download&id=12BREaVhpNnBuTQRVHO9LHxNFUdXZocmY">Downaload</a></div>
+            </div>
+            <div class="box-event novi-bg">
+              <div class="box-event-text-wrap">
+                <h6 class="box-event-text-title"><a href="https://drive.google.com/uc?export=download&id=1ufpLszImXts_VAVITtjfTwPRl4N4EPk5">Comunione&Cresima 2020</a></h6>
+              </div>
+              <div class="box-event-button-wrap"><a class="button button-outline button-sm" href="https://drive.google.com/uc?export=download&id=1ufpLszImXts_VAVITtjfTwPRl4N4EPk5">Downaload</a></div>
+            </div>
+            <div class="box-event novi-bg">
+              <div class="box-event-text-wrap">
+                <h6 class="box-event-text-title"><a href="https://drive.google.com/uc?export=download&id=0B125_qILHPJeWllZZldaSnlzQlFkeVZCNG9BV04xSjBDYmNZ&resourcekey=0-dHDORhexfbzKRZ2QZxWBAg">Comunione&Cresima 2017</a></h6>
+              </div>
+              <div class="box-event-button-wrap"><a class="button button-outline button-sm" href="https://drive.google.com/uc?export=download&id=0B125_qILHPJeWllZZldaSnlzQlFkeVZCNG9BV04xSjBDYmNZ&resourcekey=0-dHDORhexfbzKRZ2QZxWBAg">Downaload</a></div>
+            </div>
+            <div class="box-event novi-bg">
+              <div class="box-event-text-wrap">
+                <h6 class="box-event-text-title"><a href="https://drive.google.com/uc?export=download&id=1Lfpwpt7W9m-YtH5JSGNiH37wmivgVwE_">Comunioni 2019</a></h6>
+              </div>
+              <div class="box-event-button-wrap"><a class="button button-outline button-sm" href="https://drive.google.com/uc?export=download&id=1Lfpwpt7W9m-YtH5JSGNiH37wmivgVwE_">Downaload</a></div>
+            </div>
+            <div class="box-event novi-bg">
+              <div class="box-event-text-wrap">
+                <h6 class="box-event-text-title"><a href="https://drive.google.com/uc?export=download&id=1mwruJ4YKzGQF8CzaEhjdW27LrTfu7bYa">Cresime 2019</a></h6>
+              </div>
+              <div class="box-event-button-wrap"><a class="button button-outline button-sm" href="https://drive.google.com/uc?export=download&id=1mwruJ4YKzGQF8CzaEhjdW27LrTfu7bYa">Downaload</a></div>
+            </div>
+            <div class="box-event novi-bg">
+              <div class="box-event-text-wrap">
+                <h6 class="box-event-text-title"><a href="https://drive.google.com/uc?export=download&id=0B125_qILHPJeTGFfek5Qd2d3QW9GZnU2Q2xtVVl3SVd4R1Jr&resourcekey=0-kT7Wen6och75U54_1cj5Bw">Cristo è Risorto, Alleluia!</a></h6>
+              </div>
+              <div class="box-event-button-wrap"><a class="button button-outline button-sm" href="https://drive.google.com/uc?export=download&id=0B125_qILHPJeTGFfek5Qd2d3QW9GZnU2Q2xtVVl3SVd4R1Jr&resourcekey=0-kT7Wen6och75U54_1cj5Bw">Downaload</a></div>
+            </div>
+            <div class="box-event novi-bg">
+              <div class="box-event-text-wrap">
+                <h6 class="box-event-text-title"><a href="https://drive.google.com/uc?export=download&id=0B125_qILHPJeeldxUG1xZERPRjZvYUxfVV9SQXVfY1R2YmZB&resourcekey=0-1wC9GMUDB8gSnY6BabxVgg">Festa della gioventù 2017</a></h6>
+              </div>
+              <div class="box-event-button-wrap"><a class="button button-outline button-sm" href="https://drive.google.com/uc?export=download&id=0B125_qILHPJeeldxUG1xZERPRjZvYUxfVV9SQXVfY1R2YmZB&resourcekey=0-1wC9GMUDB8gSnY6BabxVgg">Downaload</a></div>
+            </div>
+            <div class="box-event novi-bg">
+              <div class="box-event-text-wrap">
+                <h6 class="box-event-text-title"><a href="https://drive.google.com/uc?export=download&id=1L6lCaNuECNNqPX9MMwATeXAcSjdAZcLI">Festa della gioventù 2019</a></h6>
+              </div>
+              <div class="box-event-button-wrap"><a class="button button-outline button-sm" href="https://drive.google.com/uc?export=download&id=1L6lCaNuECNNqPX9MMwATeXAcSjdAZcLI">Downaload</a></div>
+            </div>
+            <div class="box-event novi-bg">
+              <div class="box-event-text-wrap">
+                <h6 class="box-event-text-title"><a href="https://drive.google.com/uc?export=download&id=18gVi-7IP4lVnwQz-BqqIbwU-AU3s0G1_">Festa della gioventù 2020</a></h6>
+              </div>
+              <div class="box-event-button-wrap"><a class="button button-outline button-sm" href="https://drive.google.com/uc?export=download&id=18gVi-7IP4lVnwQz-BqqIbwU-AU3s0G1_">Downaload</a></div>
+            </div>
+            <div class="box-event novi-bg">
+              <div class="box-event-text-wrap">
+                <h6 class="box-event-text-title"><a href="https://drive.google.com/uc?export=download&id=1MGfyRxpSbMK2VcwyOL_t2KVYxmtiZWTl">Festa della gioventù 2021</a></h6>
+              </div>
+              <div class="box-event-button-wrap"><a class="button button-outline button-sm" href="https://drive.google.com/uc?export=download&id=1MGfyRxpSbMK2VcwyOL_t2KVYxmtiZWTl">Downaload</a></div>
+            </div>
+            <div class="box-event novi-bg">
+              <div class="box-event-text-wrap">
+                <h6 class="box-event-text-title"><a href="https://drive.google.com/uc?export=download&id=1-I8NdQA8tJisb3oYhAEOZNsWBcPYjD3q">Foglietti canti estate-autunno 2020</a></h6>
+              </div>
+              <div class="box-event-button-wrap"><a class="button button-outline button-sm" href="https://drive.google.com/uc?export=download&id=1-I8NdQA8tJisb3oYhAEOZNsWBcPYjD3q">Downaload</a></div>
+            </div>
+            <div class="box-event novi-bg">
+              <div class="box-event-text-wrap">
+                <h6 class="box-event-text-title"><a href="https://drive.google.com/uc?export=download&id=0B125_qILHPJeak5iRWhHR3ZFbVdkT1FyV0RPcjE3TkdLQVhn&resourcekey=0-W0uZOaVrvu4gAlwFFpV_bw">Foglietto FDG 2016</a></h6>
+              </div>
+              <div class="box-event-button-wrap"><a class="button button-outline button-sm" href="https://drive.google.com/uc?export=download&id=0B125_qILHPJeak5iRWhHR3ZFbVdkT1FyV0RPcjE3TkdLQVhn&resourcekey=0-W0uZOaVrvu4gAlwFFpV_bw">Downaload</a></div>
+            </div>
+            <div class="box-event novi-bg">
+              <div class="box-event-text-wrap">
+                <h6 class="box-event-text-title"><a href="https://drive.google.com/uc?export=download&id=0B125_qILHPJeQW9SUk5FZWJReGJnajNKR2FldHJuc0RmVHAw&resourcekey=0-SUBXb3Ht2kVqZ_ZjxGQr-A">Gesù viene nel mondo</a></h6>
+              </div>
+              <div class="box-event-button-wrap"><a class="button button-outline button-sm" href="https://drive.google.com/uc?export=download&id=0B125_qILHPJeQW9SUk5FZWJReGJnajNKR2FldHJuc0RmVHAw&resourcekey=0-SUBXb3Ht2kVqZ_ZjxGQr-A">Downaload</a></div>
+            </div>
+            <div class="box-event novi-bg">
+              <div class="box-event-text-wrap">
+                <h6 class="box-event-text-title"><a href="https://drive.google.com/uc?export=download&id=1JI3OqOBl2g0Ozm5e7K1NQ4FRrxUU-vhq">In eterno Canteremo a te</a></h6>
+              </div>
+              <div class="box-event-button-wrap"><a class="button button-outline button-sm" href="https://drive.google.com/uc?export=download&id=1JI3OqOBl2g0Ozm5e7K1NQ4FRrxUU-vhq">Downaload</a></div>
+            </div>
+            <div class="box-event novi-bg">
+              <div class="box-event-text-wrap">
+                <h6 class="box-event-text-title"><a href="https://drive.google.com/uc?export=download&id=1Wa8zr5gkvfvmsumzXXZ-2b0Dv77bxN7E">Operiamo secondo il suo disegno</a></h6>
+              </div>
+              <div class="box-event-button-wrap"><a class="button button-outline button-sm" href="https://drive.google.com/uc?export=download&id=1Wa8zr5gkvfvmsumzXXZ-2b0Dv77bxN7E">Downaload</a></div>
+            </div>
+            <div class="box-event novi-bg">
+              <div class="box-event-text-wrap">
+                <h6 class="box-event-text-title"><a href="https://drive.google.com/uc?export=download&id=0B125_qILHPJeaE9kamktYkhDMGk4S0dwcjZORHJKU1J0czhN&resourcekey=0-l0eRGJqwICAuk71dGPvXRg">Pasqua 2018</a></h6>
+              </div>
+              <div class="box-event-button-wrap"><a class="button button-outline button-sm" href="https://drive.google.com/uc?export=download&id=0B125_qILHPJeaE9kamktYkhDMGk4S0dwcjZORHJKU1J0czhN&resourcekey=0-l0eRGJqwICAuk71dGPvXRg">Downaload</a></div>
+            </div>
+            <div class="box-event novi-bg">
+              <div class="box-event-text-wrap">
+                <h6 class="box-event-text-title"><a href="https://drive.google.com/uc?export=download&id=1tq_4bdyT4g6FzuxmAEjcy85UwAg5vx2U">Pasqua 2019</a></h6>
+              </div>
+              <div class="box-event-button-wrap"><a class="button button-outline button-sm" href="https://drive.google.com/uc?export=download&id=1tq_4bdyT4g6FzuxmAEjcy85UwAg5vx2U">Downaload</a></div>
+            </div>
+            <div class="box-event novi-bg">
+              <div class="box-event-text-wrap">
+                <h6 class="box-event-text-title"><a href="https://drive.google.com/uc?export=download&id=0B125_qILHPJeMDJ4S2YxVW5CUFdSY3BET25OTjQzeFdsMHNZ&resourcekey=0-OGXptsKS43Fkp-2mbymxJQ">Quaresima 2017</a></h6>
+              </div>
+              <div class="box-event-button-wrap"><a class="button button-outline button-sm" href="https://drive.google.com/uc?export=download&id=0B125_qILHPJeMDJ4S2YxVW5CUFdSY3BET25OTjQzeFdsMHNZ&resourcekey=0-OGXptsKS43Fkp-2mbymxJQ">Downaload</a></div>
+            </div>
+            <div class="box-event novi-bg">
+              <div class="box-event-text-wrap">
+                <h6 class="box-event-text-title"><a href="https://drive.google.com/uc?export=download&id=0B125_qILHPJecExJbTVwa296bjRGTzBaWi1ReE1NTmJLOWFB&resourcekey=0-1fkIQ-yHwrKxDfIlmZNYBg">Tempo ordinario + avvento 2016</a></h6>
+              </div>
+              <div class="box-event-button-wrap"><a class="button button-outline button-sm" href="https://drive.google.com/uc?export=download&id=0B125_qILHPJecExJbTVwa296bjRGTzBaWi1ReE1NTmJLOWFB&resourcekey=0-1fkIQ-yHwrKxDfIlmZNYBg">Downaload</a></div>
+            </div>
+            <div class="box-event novi-bg">
+              <div class="box-event-text-wrap">
+                <h6 class="box-event-text-title"><a href="https://drive.google.com/uc?export=download&id=0B125_qILHPJeSjdodVhScFo5M01najFqWXkwZnN6b1FmbjZJ&resourcekey=0-u47IAcByAvSpK91kNWsQsA">Tempo ordinario 2017</a></h6>
+              </div>
+              <div class="box-event-button-wrap"><a class="button button-outline button-sm" href="https://drive.google.com/uc?export=download&id=0B125_qILHPJeSjdodVhScFo5M01najFqWXkwZnN6b1FmbjZJ&resourcekey=0-u47IAcByAvSpK91kNWsQsA">Downaload</a></div>
+            </div>
+            <div class="box-event novi-bg">
+              <div class="box-event-text-wrap">
+                <h6 class="box-event-text-title"><a href="https://drive.google.com/uc?export=download&id=1ncAW3oveIeQq9Jvm-HKUnm0_8bOwRE-O">Via così</a></h6>
+              </div>
+              <div class="box-event-button-wrap"><a class="button button-outline button-sm" href="https://drive.google.com/uc?export=download&id=1ncAW3oveIeQq9Jvm-HKUnm0_8bOwRE-O">Downaload</a></div>
+            </div>
           <!-- Aggiungi altri testi qui -->
         </div>
       
-        <!-- Sezione Spartiti -->
-        <div id="spartiti" class="archive-list">
-          <h6 class="text-gray-600">Spartito 1</h6>
-          <h6 class="text-gray-600">Spartito 2</h6>
-          <h6 class="text-gray-600">Spartito 3</h6>
-          <!-- Aggiungi altri spartiti qui -->
-        </div>
-      </section>
-      
-      
-      
-      <footer class="section footer-classic bg-default">
-        <div class="container">
-          <div class="row row-15">
-            <div class="col-sm-6">
-              <p class="rights"><span>Coro Su Ali d'Aquila</span><span>&nbsp;</span><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><span>\&nbsp;</span>All Rights Reserved
-                \ Design by TemplateMonster and Martina Monti
-              </p>
+        <!-- Sezione Funerali -->
+        <div id="funerali" class="archive-list">
+          <hr class="separator">
+          <div class="box-event novi-bg">
+            <div class="box-event-text-wrap">
+              <h6 class="box-event-text-title"><a href="https://drive.google.com/uc?export=download&id=1KjTgpK7R4rktFiQ7RWDELtaIqjbO7y5M">Speciale Funerali</a></h6>
             </div>
-            <div class="col-sm-6">
-              <div class="footer-contact"><a href="contacts.html">
-                  <div class="icon novi-icon mdi mdi-email-outline"></div>Contact Me</a></div>
+            <div class="box-event-button-wrap"><a class="button button-outline button-sm" href="https://drive.google.com/uc?export=download&id=1KjTgpK7R4rktFiQ7RWDELtaIqjbO7y5M">Downaload</a></div>
+          </div>
+            
+        
+        <!-- Aggiungi altri testi qui -->
+      </div>
+
+      <!-- Sezione Matrimoni -->
+      <div id="matrimoni" class="archive-list">
+        <hr class="separator">
+        <div class="box-event novi-bg">
+          <div class="box-event-text-wrap">
+            <h6 class="box-event-text-title"><a href="https://drive.google.com/uc?export=download&id=10KFUOt3qgvt5kfnfpI1yGJbYkm_n1OzW">Speciale Matrimoni</a></h6>
+          </div>
+          <div class="box-event-button-wrap"><a class="button button-outline button-sm" href="https://drive.google.com/uc?export=download&id=10KFUOt3qgvt5kfnfpI1yGJbYkm_n1OzW">Downaload</a></div>
+        </div>
+      
+      <!-- Aggiungi altri testi qui -->
+    </div>
+
+    <!-- Sezione Natale -->
+    <div id="natale" class="archive-list">
+      <hr class="separator">
+      <div class="box-event novi-bg">
+        <div class="box-event-text-wrap">
+          <h6 class="box-event-text-title"><a href="https://drive.google.com/uc?export=download&id=1KExhhwMYBgHc0ZOhZxoh2q9kiLMnQ7Ct">Concerto natale 2019</a></h6>
+        </div>
+        <div class="box-event-button-wrap"><a class="button button-outline button-sm" href="https://drive.google.com/uc?export=download&id=1KExhhwMYBgHc0ZOhZxoh2q9kiLMnQ7Ct">Downaload</a></div>
+      </div>
+
+      <hr class="separator">
+
+      <div class="box-event novi-bg">
+        <div class="box-event-text-wrap">
+          <h6 class="box-event-text-title"><a href="https://drive.google.com/uc?export=download&id=1P4wqlZnGdHYsR12RAlbljMlAtcrq0VxZ">Bianco Natale</a></h6>
+        </div>
+        <div class="box-event-button-wrap"><a class="button button-outline button-sm" href="https://drive.google.com/uc?export=download&id=1P4wqlZnGdHYsR12RAlbljMlAtcrq0VxZ">Downaload</a></div>
+      </div>
+      <div class="box-event novi-bg">
+        <div class="box-event-text-wrap">
+          <h6 class="box-event-text-title"><a href="https://drive.google.com/uc?export=download&id=1-NN7Z_9tS2Q4YGMojVvdmuRGm1SrvcXZ">Hark the Herald angels sing</a></h6>
+        </div>
+        <div class="box-event-button-wrap"><a class="button button-outline button-sm" href="https://drive.google.com/uc?export=download&id=1-NN7Z_9tS2Q4YGMojVvdmuRGm1SrvcXZ">Downaload</a></div>
+      </div>
+      <div class="box-event novi-bg">
+        <div class="box-event-text-wrap">
+          <h6 class="box-event-text-title"><a href="https://drive.google.com/uc?export=download&id=1ejDj0NCoYQy6cKWwjbWNV-YRKS6AA1le">Noel Noel</a></h6>
+        </div>
+        <div class="box-event-button-wrap"><a class="button button-outline button-sm" href="https://drive.google.com/uc?export=download&id=1ejDj0NCoYQy6cKWwjbWNV-YRKS6AA1le">Downaload</a></div>
+      </div>
+      <div class="box-event novi-bg">
+        <div class="box-event-text-wrap">
+          <h6 class="box-event-text-title"><a href="https://drive.google.com/uc?export=download&id=1bfEiKBv4v1l4ryv2HjjbQ3w-6dceAiKr">Oh happy day</a></h6>
+        </div>
+        <div class="box-event-button-wrap"><a class="button button-outline button-sm" href="https://drive.google.com/uc?export=download&id=1bfEiKBv4v1l4ryv2HjjbQ3w-6dceAiKr">Downaload</a></div>
+      </div>
+      <div class="box-event novi-bg">
+        <div class="box-event-text-wrap">
+          <h6 class="box-event-text-title"><a href="https://drive.google.com/uc?export=download&id=19VcDXYTd4yUQlM5EoQ-QzfyWO1TN4ih1">Santaa Claus is coming to town</a></h6>
+        </div>
+        <div class="box-event-button-wrap"><a class="button button-outline button-sm" href="https://drive.google.com/uc?export=download&id=19VcDXYTd4yUQlM5EoQ-QzfyWO1TN4ih1">Downaload</a></div>
+      </div>
+      <div class="box-event novi-bg">
+        <div class="box-event-text-wrap">
+          <h6 class="box-event-text-title"><a href="https://drive.google.com/uc?export=download&id=1p0gzfPMrClIw-Zapp_ioM3yMDNovjkjE">Somewhere in my memory</a></h6>
+        </div>
+        <div class="box-event-button-wrap"><a class="button button-outline button-sm" href="https://drive.google.com/uc?export=download&id=1p0gzfPMrClIw-Zapp_ioM3yMDNovjkjE">Downaload</a></div>
+      </div>
+      <div class="box-event novi-bg">
+        <div class="box-event-text-wrap">
+          <h6 class="box-event-text-title"><a href="https://drive.google.com/uc?export=download&id=12A0tg3tZyXa47lYY-vY9F7TZIXFD1OQo">Un piccolo natale in più</a></h6>
+        </div>
+        <div class="box-event-button-wrap"><a class="button button-outline button-sm" href="https://drive.google.com/uc?export=download&id=12A0tg3tZyXa47lYY-vY9F7TZIXFD1OQo">Downaload</a></div>
+      </div>
+    
+    <!-- Aggiungi altri testi qui -->
+  </div>
+
+  <!-- Sezione Triduo -->
+  <div id="triduo" class="archive-list">
+    <hr class="separator">
+    <div class="box-event novi-bg">
+      <div class="box-event-text-wrap">
+        <h6 class="box-event-text-title"><a href="https://drive.google.com/uc?export=download&id=1H8nNbPpLCAWXtOP4DdXt6GXfOzEIbraY">Domenica delle Palme & Giovedì santo</a></h6>
+      </div>
+      <div class="box-event-button-wrap"><a class="button button-outline button-sm" href="https://drive.google.com/uc?export=download&id=1H8nNbPpLCAWXtOP4DdXt6GXfOzEIbraY">Downaload</a></div>
+    </div>
+    <div class="box-event novi-bg">
+      <div class="box-event-text-wrap">
+        <h6 class="box-event-text-title"><a href="https://drive.google.com/uc?export=download&id=1HbFkKsHK6vWE2KWQsKQxIq_C4mD3wjG-">Serata Penitenziale</a></h6>
+      </div>
+      <div class="box-event-button-wrap"><a class="button button-outline button-sm" href="https://drive.google.com/uc?export=download&id=1HbFkKsHK6vWE2KWQsKQxIq_C4mD3wjG-">Downaload</a></div>
+    </div>
+    <div class="box-event novi-bg">
+      <div class="box-event-text-wrap">
+        <h6 class="box-event-text-title"><a href="https://drive.google.com/uc?export=download&id=1N8ObLFqbl3RkMvK_ZB4zP_pvuHnLo_68">Giovedì pomeriggio</a></h6>
+      </div>
+      <div class="box-event-button-wrap"><a class="button button-outline button-sm" href="https://drive.google.com/uc?export=download&id=1N8ObLFqbl3RkMvK_ZB4zP_pvuHnLo_68">Downaload</a></div>
+    </div>
+    <div class="box-event novi-bg">
+      <div class="box-event-text-wrap">
+        <h6 class="box-event-text-title"><a href="https://drive.google.com/uc?export=download&id=1XkWF1u8esT3r4DRnOPQGnK7r_CiKufTz">Venerdì&Sabato Santo</a></h6>
+      </div>
+      <div class="box-event-button-wrap"><a class="button button-outline button-sm" href="https://drive.google.com/uc?export=download&id=1XkWF1u8esT3r4DRnOPQGnK7r_CiKufTz">Downaload</a></div>
+    </div>
+    <div class="box-event novi-bg">
+      <div class="box-event-text-wrap">
+        <h6 class="box-event-text-title"><a href="https://drive.google.com/uc?export=download&id=1vfANjMGXGK8UJVSkfFOgiAg0TSfZeZRz">Preconio Pasquale</a></h6>
+      </div>
+      <div class="box-event-button-wrap"><a class="button button-outline button-sm" href="https://drive.google.com/uc?export=download&id=1vfANjMGXGK8UJVSkfFOgiAg0TSfZeZRz">Downaload</a></div>
+    </div>
+    <div class="box-event novi-bg">
+      <div class="box-event-text-wrap">
+        <h6 class="box-event-text-title"><a href="https://drive.google.com/uc?export=download&id=1dqb7DDfs_FAfpQmQUQZKCW2OIdgVqL6t">Sei tu Signore il pane</a></h6>
+      </div>
+      <div class="box-event-button-wrap"><a class="button button-outline button-sm" href="https://drive.google.com/uc?export=download&id=1dqb7DDfs_FAfpQmQUQZKCW2OIdgVqL6t">Downaload</a></div>
+    </div>
+  
+  <!-- Aggiungi altri testi qui -->
+        </div>
+        </div>
+        </div>
+    </section>
+      
+    
+      
+    <footer class="section footer-classic bg-default">
+      <div class="footer-top">
+        <h4>Coro Su Ali d'Aquila</h4>
+      </div>
+    
+      <div class="container">
+        <div class="row row-15">
+          
+          <div class="col-sm-3 text-center">
+            <div class="footer-contact">
+              <a href="contacts.html">
+                <div class="icon novi-icon mdi mdi-email-outline"></div>
+                Contattaci
+              </a>
             </div>
           </div>
+
+          <div class="col-sm-6 text-center">
+            <p class="footer-text">
+              Non siamo una corale professionale, né puntiamo ad esserlo: siamo un gruppo che coltiva la musica e la liturgia.
+              Accompagniamo chi entra a scoprire la propria voce e a condividere questa passione.
+              Perché cantare non è solo eseguire note: è anche pregare due volte.
+            </p>
+          </div>
+
+          <div class="col-sm-3 text-center">
+            <img src="images/logo.png" alt="Logo Coro Su Ali d'Aquila" class="footer-logo">
+          </div>
+          
         </div>
-      </footer>
+    
+        <div class="row row-15">
+          <p class="footer-copy">
+            Coro Su Ali d'Aquila © <span class="copyright-year"></span> -  
+            All Rights Reserved – Design by TemplateMonster & Martina Monti
+          </p>
+        </div>
+      </div>
+    </footer>
+
     </div>
     <div class="snackbars" id="form-output-global"></div>
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
     
     <script>
+      
       function toggleVisibility(sectionId) {
-        // Nascondi tutte le sezioni
-        var sections = document.querySelectorAll('.archive-list');
-        sections.forEach(function(section) {
-          section.classList.remove('active');
-        });
-    
-        // Mostra la sezione selezionata
-        var selectedSection = document.getElementById(sectionId);
+    // Nascondi tutte le sezioni
+    var sections = document.querySelectorAll('.archive-list');
+    sections.forEach(function(section) {
+        section.classList.remove('active');
+    });
+
+    // Nascondi il messaggio iniziale
+    var messaggioIniziale = document.getElementById('messaggio-iniziale');
+    messaggioIniziale.style.display = 'none';
+
+    // Mostra la sezione selezionata, se esiste
+    var selectedSection = document.getElementById(sectionId);
+    if (selectedSection) {
         selectedSection.classList.add('active');
-      }
-    
-      // Mostra la sezione di "Testi" per default all'inizio
-      window.onload = function() {
-        toggleVisibility('testi');
-      };
+    }
+}
+
+// Mostra il messaggio iniziale quando la pagina viene caricata
+window.onload = function () {
+    var messaggioIniziale = document.getElementById('messaggio-iniziale');
+    messaggioIniziale.style.display = 'block';
+
+    // Nascondi tutte le sezioni
+    var sections = document.querySelectorAll('.archive-list');
+    sections.forEach(function(section) {
+        section.classList.remove('active');
+    });
+};
+
+
     </script>
     
     

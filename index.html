@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" href="images/favicon-3.ico" type="image/x-icon">
+    <link rel="icon" href="images/logo.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:400,700%7COpen+Sans:400,600,700%7CSource+Code+Pro:300,400,500,600,700,900%7CNothing+You+Could+Do%7CPoppins:400,500">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/fonts.css">
@@ -14,6 +14,7 @@
     <style>.ie-panel{display: none;background: #ffffff; padding: 10px 0;box-shadow: 3px 3px 5px 0 
       rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
   </head>
+  
   <body>
     <div class="preloader">
       <div class="preloader-body">
@@ -133,42 +134,38 @@
         </div>
       </section> -->
 
-      <section class="section text-center services">
-        <h2 class="text-gray-600"> I nostri servizi</h2>
-        <div class="row">
-            <div class="col-lg-4 col-sm-12">
-                <div class="service-item">
-                  <a href="testi.html">
-                    <div class="service-icon">
-                      <i class="fa-solid fa-church"></i>
-                    </div>       
-                  </a>
-                    <h5>Animazione Liturgica</h5>
-              
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-12">
-                <div class="service-item">
-                  <a href="testi.html">
-                    <div class="service-icon">
-                      <i class="fas fa-heart"></i> 
-                    </div>
-                    </a>
-                    <h5>Matrimoni</h5>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-12">
-                <div class="service-item">
-                  <a href="testi.html">
-                    <div class="service-icon">
-                        <i class="fas fa-cross"></i>
-                    </div>
-                    <h5>Funerali</h5>
-                  </a>
-                </div>
-            </div>
-        </div>
+     <section class="section text-center services">
+      <h2 class="text-gray-600">I nostri servizi</h2>
+    
+      <div class="services-grid">
+    
+        <a class="service-card" href="testi.html">
+          <i class="fa-solid fa-church"></i>
+          <h5>Animazione Liturgica</h5>
+          <p class="service-desc">Contribuiamo ad animare la Messa domenicale e le varie celebrazioni dell’anno liturgico.</p>
+        </a>
+    
+        <a class="service-card" href="testi.html">
+          <i class="fas fa-heart"></i>
+          <h5>Matrimoni</h5>
+          <p class="service-desc">Accompagniamo con il canto il rito del matrimonio durante la celebrazione liturgica.</p>
+        </a>
+    
+        <a class="service-card" href="testi.html">
+          <i class="fas fa-cross"></i>
+          <h5>Funerali</h5>
+          <p class="service-desc">Sosteniamo con la musica la celebrazione esequiale, offrendo un canto sobrio e rispettoso.</p>
+        </a>
+
+        <a class="service-card" href="testi.html">
+          <i class="fa-solid fa-people"></i>
+          <h5>Altri Eventi ed Iniziative</h5>
+          <p class="service-desc">Non mancano occasioni di svago: concerti spirituali, concerti di Natale, partecipazioni a feste e iniziative locali.</p>
+        </a>
+    
+      </div>
     </section>
+    
     
 
       <section class="section section-lg bg-default text-center">
@@ -519,20 +516,45 @@
       </section>-->
 
       <footer class="section footer-classic bg-default">
+        <div class="footer-top">
+          <h4>Coro Su Ali d'Aquila</h4>
+        </div>
+      
         <div class="container">
           <div class="row row-15">
-            <div class="col-sm-6">
-              <p class="rights"><span>Coro Su Ali d'Aquila</span><span>&nbsp;</span><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><span>\&nbsp;</span>All Rights Reserved
-                \ Design by TemplateMonster and Martina Monti
+            
+            <div class="col-sm-3 text-center">
+              <div class="footer-contact">
+                <a href="contacts.html">
+                  <div class="icon novi-icon mdi mdi-email-outline"></div>
+                  Contattaci
+                </a>
+              </div>
+            </div>
+
+            <div class="col-sm-6 text-center">
+              <p class="footer-text">
+                Non siamo una corale professionale, né puntiamo ad esserlo: siamo un gruppo che coltiva la musica e la liturgia.
+                Accompagniamo chi entra a scoprire la propria voce e a condividere questa passione.
+                Perché cantare non è solo eseguire note: è anche pregare due volte.
               </p>
             </div>
-            <div class="col-sm-6">
-              <div class="footer-contact"><a href="contacts.html">
-                  <div class="icon novi-icon mdi mdi-email-outline"></div>Contattaci</a></div>
+
+            <div class="col-sm-3 text-center">
+              <img src="images/logo.png" alt="Logo Coro Su Ali d'Aquila" class="footer-logo">
             </div>
+            
+          </div>
+      
+          <div class="row row-15">
+            <p class="footer-copy">
+              Coro Su Ali d'Aquila © <span class="copyright-year"></span> -  
+              All Rights Reserved – Design by TemplateMonster & Martina Monti
+            </p>
           </div>
         </div>
       </footer>
+      
     </div>
     <div class="snackbars" id="form-output-global"></div>
     <script src="js/core.min.js"></script>

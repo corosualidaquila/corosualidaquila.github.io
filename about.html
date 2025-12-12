@@ -74,7 +74,13 @@
         </div>
       </header>
       <!-- Breadcrumbs-->
-      <section class="breadcrumbs-custom bg-image context-dark">
+      <section class="breadcrumbs-custom bg-image context-dark" 
+         style="background-image: url('images/chiesa.jpg'); 
+                background-size: cover; 
+                background-position: center; 
+                background-repeat: no-repeat;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+              background-color: rgba(158, 156, 156, 0.211);"></div>
         <div class="container">
           <h2 class="breadcrumbs-custom-title">Chi siamo</h2>
         </div>
@@ -195,39 +201,30 @@
 
       <section class="section text-center services">
         <h2 class="text-gray-600">Unisciti a noi!</h2>
-        <div class="row">
-          <div class="col-lg-4 col-sm-12">
-              <div class="service-item">
-                <h5 class="service-item justify-text">Le prove per i piccoli</h5>
-                  <p class="service-item justify-text">Il primo sabato del mese alle 15:30</p>
-                  <div class="service-icon">
-                    <i class="fa-solid fa-guitar"  ></i>
-          
-                  </div>
-              </div>
-          </div>
-          <div class="col-lg-4 col-sm-12">
-            <p class="service-item "> Se apprezzi la musica e i canti che eseguiamo, e magari ti piace anche cantare o suoni uno strumento o pensi 
-                che si potrebbe fare di più per animare la Santa Messa, e sicuramente hai ragione: allora cosa aspetti?
-            </p>
-              <div class="download-button">
-                <a class="button button-outline button-sm" 
-                href="https://drive.google.com/uc?export=download&id=1qTLy3T5CjzVzTMle1wq7t5NY4an3VvWT">Scarica il modulo</a>
-              </div>
-          </div>
-          <div class="col-lg-4 col-sm-12">
-            <div class="service-item">
-              <h5 class="service-item justify-text">Le prove per gli adulti</h5>
-                <p class="service-item">Il mercoledì sera  ale 21:30</p>
-                <div class="service-icon">
-                  <i class="fa-solid fa-music" ></i>
-        
-                </div>
-            </div>
+      
+        <div class="services-grid">
+      
+          <a class="service-card">
+            <i class="fa-solid fa-guitar"></i>
+            <h5>Le prove per i piccoli</h5>
+            <p class="service-desc">Ci teniamo a far si che si crei un gruppo di amicizie per tutte le età! Coi ragazzi più piccoli ci troviamo il <b>sabato pomeriggio alle 14h30 </b> in oratorio.</p>
+          </a>
+
+          <a class="service-card"  href="https://drive.google.com/uc?export=download&id=1qTLy3T5CjzVzTMle1wq7t5NY4an3VvWT">
+            <i class="fa-solid fa-download"></i>
+            <h5>Scarica il form</h5>
+            <p class="service-desc">Se apprezzi la musica e i canti che eseguiamo, e magari ti piace anche cantare o suoni uno strumento o pensi 
+              che si potrebbe fare di più per animare la Santa Messa, e sicuramente hai ragione: allora cosa aspetti?</p>
+            
+          </a>
+
+          <a class="service-card">
+            <i class="fa-solid fa-music"></i>
+            <h5>Le prove per gli adulti</h5>
+            <p class="service-desc">Ci teniamo a far si che si crei un gruppo di amicizie per tutte le età! L'appuntamento per gli adulti è il <b>mercoledì sera ore 21h30</b>.</p>
+          </a>
+      
         </div>
-      </div>
-        
-          
       </section>
 
       <section class="section section-lg bg-default">
@@ -405,18 +402,41 @@
       </section> -->
       
       <footer class="section footer-classic bg-default">
+        <div class="footer-top">
+          <h4>Coro Su Ali d'Aquila</h4>
+        </div>
+      
         <div class="container">
           <div class="row row-15">
-            <div class="col-sm-6">
-              <p class="rights"><span>Coro Su Ali d'Aquila</span><span>&nbsp;</span><span>&copy;&nbsp;</span>
-                <span class="copyright-year"></span><span>&nbsp;</span><span>\&nbsp;</span>All Rights Reserved
-                \ Design by TemplateMonster and Martina Monti
+            
+            <div class="col-sm-3 text-center">
+              <div class="footer-contact">
+                <a href="contacts.html">
+                  <div class="icon novi-icon mdi mdi-email-outline"></div>
+                  Contattaci
+                </a>
+              </div>
+            </div>
+
+            <div class="col-sm-6 text-center">
+              <p class="footer-text">
+                Non siamo una corale professionale, né puntiamo ad esserlo: siamo un gruppo che coltiva la musica e la liturgia.
+                Accompagniamo chi entra a scoprire la propria voce e a condividere questa passione.
+                Perché cantare non è solo eseguire note: è anche pregare due volte.
               </p>
             </div>
-            <div class="col-sm-6">
-              <div class="footer-contact"><a href="contacts.html">
-                  <div class="icon novi-icon mdi mdi-email-outline"></div>Contattaci</a></div>
+
+            <div class="col-sm-3 text-center">
+              <img src="images/logo.png" alt="Logo Coro Su Ali d'Aquila" class="footer-logo">
             </div>
+            
+          </div>
+      
+          <div class="row row-15">
+            <p class="footer-copy">
+              Coro Su Ali d'Aquila © <span class="copyright-year"></span> -  
+              All Rights Reserved – Design by TemplateMonster & Martina Monti
+            </p>
           </div>
         </div>
       </footer>
