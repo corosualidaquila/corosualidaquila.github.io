@@ -483,6 +483,31 @@ window.onload = function () {
 
 
     </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelector('.page').classList.add('fadeIn');
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const items = document.querySelectorAll('section, section .container');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    items.forEach(el => {
+      el.classList.add('fade-scroll');
+      observer.observe(el);
+    });
+  });
+</script>
     
     
 
