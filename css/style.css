@@ -4840,10 +4840,7 @@ h2 + .tabs-albums {
 	font-size: 18px;
 }
 
-.owl-carousel .owl-prev:not(.disabled):hover,
-.owl-carousel .owl-next:not(.disabled):hover {
-	color: #003682;
-}
+
 
 .owl-carousel .owl-prev.disabled,
 .owl-carousel .owl-next.disabled {
@@ -4891,7 +4888,7 @@ h2 + .tabs-albums {
 }
 
 .owl-carousel .owl-dot.active span, .owl-carousel .owl-dot:hover span {
-	background: #00528c;
+	background: var(--secondary-color);
 }
 
 .owl-carousel-bio {
@@ -13999,7 +13996,7 @@ footer a:hover {
 
 @media (min-width: 768px) {
 	.footer-contact {
-		text-align: right;
+		text-align: center;
 	}
 }
 
@@ -14039,8 +14036,12 @@ footer a:hover {
 	text-align: center;
 	width: 100%;
 	margin-top: 20px;
-  }
 
+	line-height: 1.4;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+  }
+  
   .footer-logo {
   height: 60px;      /* imposta l'altezza desiderata */
   width: auto;       /* mantiene le proporzioni */
@@ -15099,6 +15100,16 @@ div.single-product-rating .icon {
   .archive-right {
 	flex-grow: 1;
 	min-height: 400px;
+  }
+ 
+/*CONTACT FORM */
+  .contact-form .form-control {
+	margin-bottom: 15px;
+	border-radius: 4px;
+  }
+  
+  .contact-form textarea {
+	resize: none;
   }
   
   
