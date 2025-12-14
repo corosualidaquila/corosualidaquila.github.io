@@ -13989,7 +13989,7 @@ footer a {
 }
 
 footer a:hover {
-	color: var(--text-color-white);
+	color: var(--secondary-color);
 }
 
 .footer-contact {
