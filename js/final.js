@@ -13,6 +13,10 @@ function setTheme(t) {
   html.dataset.theme = t;
   localStorage.setItem('csaq-theme', t);
   if (icon) icon.className = t === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+
+  document.querySelectorAll('.nav-logo img, .footer-logo img').forEach(img => {
+    img.src = t === 'dark' ? 'images/image-1.png' : 'images/image-12.png';
+  });
 }
 setTheme(localStorage.getItem('csaq-theme') || 'light');
 const themeToggle = document.getElementById('themeToggle');
