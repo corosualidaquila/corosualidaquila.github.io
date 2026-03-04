@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="it" data-theme="dark">
+<head>
+  <title>Archivio – Coro Su Ali d'Aquila</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/logo.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<button id="themeToggle" title="Cambia tema"><i class="fas fa-moon" id="themeIcon"></i></button>
+
+<nav>
+  <div class="nav-logo"><a href="index.html"><img src="images/image-12.png" alt="Logo"></a></div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">Chi siamo</a></li>
+    <li><a href="archivio.html" class="active">Testi&amp;Spartiti</a></li>
+    <li><a href="contacts.html">Contatti</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="nav-social">
+      <a href="https://www.facebook.com/profile.php?id=100032786907194" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="mailto:c.sualidaquila@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.instagram.com/corosualidaquila" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+    <button class="burger" id="burger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg" style="background-image:url('images/foto coro/coro.JPG')"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content fade-up">
+    <span class="hero-ey">♪ Materiale riservato ai coristi</span>
+    <h1 class="hero-title">Archivio</h1>
+  </div>
+  <div class="breadcrumb"><a href="index.html">Home</a><span>›</span>Archivio</div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <span class="sec-eyebrow reveal">Materiale</span>
+    <h2 class="sec-title reveal">Testi &amp; Spartiti</h2>
+    <div class="ornament reveal"><div class="ornament-line"></div><span class="ornament-icon">♪</span><div class="ornament-line"></div></div>
+
+    <div class="arch-tabs reveal">
+      <button class="arch-tab active" data-arch="testi">
+        <i class="fas fa-file-lines"></i><span>Testi per i cantori</span>
+      </button>
+      <button class="arch-tab" data-arch="spartiti">
+        <i class="fas fa-music"></i><span>Spartiti</span>
+      </button>
+    </div>
+
+    <!-- TESTI -->
+    <div class="arch-pane active" id="arch-testi">
+      <div class="search-bar reveal">
+        <i class="fas fa-magnifying-glass"></i>
+        <input type="text" id="searchTesti" placeholder="Cerca un canto…">
+      </div>
+      <div class="cat-tabs reveal">
+        <button class="cat-tab active" data-cat="t-natale">🎄 Natale</button>
+        <button class="cat-tab" data-cat="t-pasqua">✝️ Pasqua &amp; Triduo</button>
+        <button class="cat-tab" data-cat="t-altri">♪ Altri canti (A–Z)</button>
+      </div>
+
+      <div class="cat-pane active" id="t-natale">
+        <!-- <div class="upload-hint reveal"><i class="fas fa-circle-info"></i> Aggiorna archivio.csv per aggiungere file</div> -->
+        <div class="file-grid" id="grid-t-natale"></div>
+      </div>
+
+      <div class="cat-pane" id="t-pasqua">
+        <!-- <div class="upload-hint reveal"><i class="fas fa-circle-info"></i> Aggiorna archivio.csv per aggiungere file</div> -->
+        <div class="file-grid" id="grid-t-pasqua"></div>
+      </div>
+
+      <div class="cat-pane" id="t-altri">
+        <div class="upload-hint reveal"><i class="fas fa-circle-info"></i> I canti sono ordinati alfabeticamente</div>
+        <!-- generato da archivio-csv.js -->
+      </div>
+    </div>
+
+    <!-- SPARTITI -->
+    <div class="arch-pane" id="arch-spartiti">
+      <div class="search-bar reveal">
+        <i class="fas fa-magnifying-glass"></i>
+        <input type="text" id="searchSpartiti" placeholder="Cerca uno spartito…">
+      </div>
+      <div class="cat-tabs reveal">
+        <button class="cat-tab active" data-cat="s-natale">🎄 Natale</button>
+        <button class="cat-tab" data-cat="s-pasqua">✝️ Pasqua &amp; Triduo</button>
+        <button class="cat-tab" data-cat="s-altri">♪ Altri canti (A–Z)</button>
+      </div>
+
+      <div class="cat-pane active" id="s-natale">
+        <!-- <div class="upload-hint reveal"><i class="fas fa-circle-info"></i> Aggiorna archivio.csv per aggiungere file</div> -->
+        <div class="file-grid" id="grid-s-natale"></div>
+      </div>
+
+      <div class="cat-pane" id="s-pasqua">
+        <!-- <div class="upload-hint reveal"><i class="fas fa-circle-info"></i> Aggiorna archivio.csv per aggiungere file</div> -->
+        <div class="file-grid" id="grid-s-pasqua"></div>
+      </div>
+
+      <div class="cat-pane" id="s-altri">
+        <div class="upload-hint reveal"><i class="fas fa-circle-info"></i> Gli spartiti sono ordinati alfabeticamente</div>
+        <!-- generato da archivio-csv.js -->
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-logo"><a href="index.html"><img src="images/image-12.png" alt="Logo"></a></div>
+    <div class="footer-mid">
+      <p>Non siamo una corale professionale, né puntiamo ad esserlo. Siamo un gruppo nato dalla gioia di condividere la liturgia e la musica. Perché cantare non è solo eseguire note, ma anche stare insieme!</p>
+      <a href="mailto:c.sualidaquila@gmail.com">c.sualidaquila@gmail.com</a>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/profile.php?id=100032786907194" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/corosualidaquila" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="mailto:c.sualidaquila@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+  </div>
+   <div class="footer-copy">Coro Su Ali d'Aquila © <span id="yr"></span> — All Rights Reserved –  Design by Martina Monti</div>
+</footer>
+
+<script src="js/final.js"></script>
+<script src="js/archivio-csv.js"></script>
+</body>
+</html>

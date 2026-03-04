@@ -1,5 +1,5 @@
 /* ============================================================
-   Coro Su Ali d'Aquila — main.js (file unificato)
+   Coro Su Ali d'Aquila — final.js
    ============================================================ */
 
 /* ── ANNO NEL FOOTER ── */
@@ -14,7 +14,7 @@ function setTheme(t) {
   localStorage.setItem('csaq-theme', t);
   if (icon) icon.className = t === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
 }
-setTheme(localStorage.getItem('csaq-theme') || 'dark');
+setTheme(localStorage.getItem('csaq-theme') || 'light');
 const themeToggle = document.getElementById('themeToggle');
 if (themeToggle) themeToggle.addEventListener('click', () =>
   setTheme(html.dataset.theme === 'dark' ? 'light' : 'dark')
@@ -25,7 +25,6 @@ const burger   = document.getElementById('burger');
 const navLinks = document.getElementById('navLinks');
 if (burger && navLinks) {
   burger.addEventListener('click', () => navLinks.classList.toggle('open'));
-  // Chiudi cliccando su un link
   navLinks.querySelectorAll('a').forEach(a =>
     a.addEventListener('click', () => navLinks.classList.remove('open'))
   );
@@ -157,20 +156,40 @@ if (audioEl) {
       div.innerHTML = `<span class="pnum">${String(i + 1).padStart(2, '0')}</span>
         <span class="ptitle">${tr.t}</span>
         <i class="fas fa-play pplay"></i>`;
-      div.addEventListener('click', () => loadTrack(year, i));
+      div.addEventListener('click', () => {
+        if (activeYear === year && activeIdx === i) {
+          if (isPlaying) {
+            audioEl.pause(); isPlaying = false;
+            if (playIcon) playIcon.className = 'fas fa-play';
+            div.querySelector('.pplay').className = 'fas fa-play pplay';
+          } else {
+            audioEl.play(); isPlaying = true;
+            if (playIcon) playIcon.className = 'fas fa-pause';
+            div.querySelector('.pplay').className = 'fas fa-pause pplay';
+          }
+        } else {
+          loadTrack(year, i);
+        }
+      });
       pl.appendChild(div);
     });
   }
 
   function loadTrack(year, idx) {
-    document.querySelectorAll('.pitem').forEach(el => el.classList.remove('playing'));
+    document.querySelectorAll('.pitem').forEach(el => {
+      el.classList.remove('playing');
+      el.querySelector('.pplay').className = 'fas fa-play pplay';
+    });
     activeYear = year; activeIdx = idx;
     const tr = albums[year].tracks[idx];
     audioEl.src = tr.s;
     if (playerNow) playerNow.textContent = '♪ ' + tr.t;
     if (cover) { cover.style.opacity = '0.6'; setTimeout(() => { cover.src = albums[year].cover; cover.style.opacity = '1'; }, 200); }
     const items = document.querySelectorAll('#pl-' + year + ' .pitem');
-    if (items[idx]) items[idx].classList.add('playing');
+    if (items[idx]) {
+      items[idx].classList.add('playing');
+      items[idx].querySelector('.pplay').className = 'fas fa-pause pplay';
+    }
     audioEl.play().then(() => { isPlaying = true; if (playIcon) playIcon.className = 'fas fa-pause'; }).catch(() => {});
   }
 
@@ -252,3 +271,78 @@ const ro = new IntersectionObserver(
   { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
 );
 document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+
+/* ── ARCHIVIO (solo archivio.html) ── */
+const archTabs = document.querySelectorAll('.arch-tab');
+if (archTabs.length) {
+
+  /* Tab principali Testi / Spartiti */
+  archTabs.forEach(btn => {
+    btn.addEventListener('click', function () {
+      archTabs.forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.arch-pane').forEach(p => p.classList.remove('active'));
+      this.classList.add('active');
+      document.getElementById('arch-' + this.dataset.arch).classList.add('active');
+      // reset ricerca e ripristina il primo cat-tab attivo
+      document.querySelectorAll('.search-bar input').forEach(i => i.value = '');
+    });
+  });
+
+  /* Sottocategorie — limitato al pannello genitore */
+  document.querySelectorAll('.cat-tab').forEach(btn => {
+    btn.addEventListener('click', function () {
+      const parent = this.closest('.arch-pane');
+      parent.querySelectorAll('.cat-tab').forEach(b => b.classList.remove('active'));
+      parent.querySelectorAll('.cat-pane').forEach(p => {
+        p.classList.remove('active');
+        p.style.display = ''; // pulizia display inline residuo
+      });
+      this.classList.add('active');
+      const target = parent.querySelector('#' + this.dataset.cat);
+      if (target) target.classList.add('active');
+    });
+  });
+
+  /* Ricerca live — opera solo sul pannello attivo, usa classi non display */
+  function filterFiles() {
+    const activeArch = document.querySelector('.arch-tab.active');
+    if (!activeArch) return;
+    const archId = 'arch-' + activeArch.dataset.arch;
+    const archPane = document.getElementById(archId);
+    if (!archPane) return;
+
+    const inputId = activeArch.dataset.arch === 'testi' ? 'searchTesti' : 'searchSpartiti';
+    const input = document.getElementById(inputId);
+    const q = input ? input.value.toLowerCase().trim() : '';
+
+    if (q) {
+      // Cerca: mostra tutti i cat-pane e filtra le card
+      archPane.querySelectorAll('.cat-pane').forEach(p => p.classList.add('active'));
+      archPane.querySelectorAll('.file-card').forEach(card => {
+        const name = card.querySelector('.file-name')?.textContent.toLowerCase() || '';
+        card.style.display = name.includes(q) ? '' : 'none';
+      });
+    } else {
+      // Reset: ripristina solo il cat-pane con il cat-tab attivo
+      archPane.querySelectorAll('.cat-pane').forEach(p => p.classList.remove('active'));
+      archPane.querySelectorAll('.file-card').forEach(card => card.style.display = '');
+      const activeCatTab = archPane.querySelector('.cat-tab.active');
+      if (activeCatTab) {
+        const target = archPane.querySelector('#' + activeCatTab.dataset.cat);
+        if (target) target.classList.add('active');
+      }
+    }
+  }
+
+  // Collega ricerca solo se gli input esistono (solo su archivio.html)
+  const stInput = document.getElementById('searchTesti');
+  const ssInput = document.getElementById('searchSpartiti');
+  if (stInput) stInput.addEventListener('input', filterFiles);
+  if (ssInput) ssInput.addEventListener('input', filterFiles);
+
+  /* Converti data-gdrive in link scaricabili */
+  document.querySelectorAll('[data-gdrive]').forEach(el => {
+    const match = el.dataset.gdrive.match(/\/d\/([a-zA-Z0-9_-]+)/);
+    if (match) el.href = `https://drive.google.com/uc?export=download&id=${match[1]}`;
+  });
+}
