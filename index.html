@@ -1,613 +1,204 @@
 <!DOCTYPE html>
-<html class="wide wow-animation" lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" href="images/logo.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:400,700%7COpen+Sans:400,600,700%7CSource+Code+Pro:300,400,500,600,700,900%7CNothing+You+Could+Do%7CPoppins:400,500">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
-    <style>.ie-panel{display: none;background: #ffffff; padding: 10px 0;box-shadow: 3px 3px 5px 0 
-      rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
-  </head>
-  
-  <body>
-    <div class="preloader">
-      <div class="preloader-body">
-        <div class="music-notes">
-          <span>♪</span>
-          <span>♫</span>
-          <span>♬</span>
+<html lang="it" data-theme="dark">
+<head>
+  <title>Home – Coro Su Ali d'Aquila</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/logo.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<button id="themeToggle" title="Cambia tema"><i class="fas fa-moon" id="themeIcon"></i></button>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo"><a href="index.html"><img src="images/image-12.png" alt="Logo"></a></div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">Chi siamo</a></li>
+    <li><a href="contacts.html">Contatti</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="nav-social">
+      <a href="https://www.facebook.com/profile.php?id=100032786907194" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="mailto:c.sualidaquila@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.instagram.com/corosualidaquila" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+    <button class="burger" id="burger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="slide active" style="background-image:url('images/foto coro/coro.JPG')">
+    <div class="slide-overlay"></div>
+    <div class="slide-caption">
+      <span class="slide-eyebrow">♪ Coro Su Ali d'Aquila – Turate</span>
+      <h1 class="slide-title">Cantare è pregare<br>due volte</h1>
+    </div>
+  </div>
+  <div class="slide" style="background-image:url('images/foto coro/fotoconbanda.JPG')">
+    <div class="slide-overlay"></div>
+    <div class="slide-caption">
+      <span class="slide-eyebrow">♫ Insieme dal 2001</span>
+      <h1 class="slide-title">Chi ha il cuore contento<br>sempre canta</h1>
+    </div>
+  </div>
+  <div class="slide" style="background-image:url('images/foto_coro/PHOTO-2025-01-10-17-13-42-16.jpg')">
+    <div class="slide-overlay"></div>
+    <div class="slide-caption">
+      <span class="slide-eyebrow">♬ Unisciti a noi</span>
+      <h1 class="slide-title">Cammineremo<br>insieme a te</h1>
+    </div>
+  </div>
+  <div class="slide-dots" id="dots"></div>
+</div>
+
+<!-- SERVIZI -->
+<section class="section section-alt">
+  <div class="container">
+    <span class="sec-eyebrow reveal">Cosa facciamo</span>
+    <h2 class="sec-title reveal">I nostri servizi</h2>
+    <div class="ornament reveal"><div class="ornament-line"></div><span class="ornament-icon">♪</span><div class="ornament-line"></div></div>
+    <div class="services-grid">
+      <a class="scard reveal" href="about.html">
+        <i class="fa-solid fa-church"></i>
+        <h5>Animazione Liturgica</h5>
+        <p>Animiamo la Messa domenicale e le varie celebrazioni dell'anno liturgico con canti e musica.</p>
+      </a>
+      <a class="scard reveal" href="contacts.html">
+        <i class="fas fa-heart"></i>
+        <h5>Matrimoni</h5>
+        <p>Accompagniamo con il canto il rito del matrimonio durante la celebrazione liturgica.</p>
+      </a>
+      <a class="scard reveal" href="contacts.html">
+        <i class="fas fa-cross"></i>
+        <h5>Funerali</h5>
+        <p>Sosteniamo la celebrazione esequiale con un canto sobrio e rispettoso.</p>
+      </a>
+      <a class="scard reveal" href="about.html">
+        <i class="fa-solid fa-users"></i>
+        <h5>Altri Eventi</h5>
+        <p>Concerti spirituali, concerti di Natale e partecipazioni a feste e iniziative locali.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CHI SIAMO STRIP -->
+<section class="section">
+  <div class="container">
+    <div class="about-strip">
+      <div class="about-img reveal">
+        <img src="images/foto_coro/lastphoto.jpg" alt="Il coro in chiesa">
+      </div>
+      <div class="reveal">
+        <p class="about-tag">Dal 2001 · Turate</p>
+        <h2 class="about-h">Una grande famiglia<br>unita dalla musica</h2>
+        <div class="about-body">
+          <p>Siamo il <b>Coro Su Ali d'Aquila</b>, un coro parrocchiale nato nel 2001 a Turate. Quello che ci unisce non è la perfezione tecnica, ma la gioia di cantare insieme e di condividere la fede attraverso la musica.</p>
+          <p>Oggi contiamo <b>22 adulti e 15 bambini</b>, più diversi musicisti. Ogni settimana ci ritroviamo per le prove, per le messe e per vivere momenti di vera comunità.</p>
         </div>
-        <p>Lascia che la musica ti trasporti...</p>
+        <a href="about.html" class="btn-outline">Scopri la nostra storia</a>
       </div>
     </div>
-    
-    
-    <div class="page">
+  </div>
+</section>
 
-      <!-- Page Header-->
-      <header class="section page-header">
-        <!--RD Navbar-->
-        <div class="rd-navbar-wrap" style="position: absolute">
-          <nav class="rd-navbar rd-navbar-classic" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" 
-          data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" 
-          data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
-            <div class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1" data-rd-navbar-toggle=".rd-navbar-collapse"><span></span></div>
-            <div class="rd-navbar-main-outer">
-              <div class="rd-navbar-main">
-                <!--RD Navbar Panel-->
-                <div class="rd-navbar-panel">
-                  <!--RD Navbar Toggle-->
-                  <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
-                  <!--RD Navbar Brand-->
-                  <div class="rd-navbar-brand">
-                    <!--Brand--><a class="brand" href="index.html"><img src="images/image-1.png" alt="" width="58" height="26"/></a>
-                  </div>
-                </div>
-                <div class="rd-navbar-main-element">
-                  <div class="rd-navbar-nav-wrap">
-                    <ul class="rd-navbar-nav">
-                      <li class="rd-nav-item active"><a class="rd-nav-link" href="index.html">Home</a>
-                      </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="about.html">Chi siamo</a>
-                      </li>
-                      <!-- <li class="rd-nav-item"><a class="rd-nav-link" href="testi.html">Archivio testi</a>
-                      </li> -->
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Contatti</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="rd-navbar-collapse">
-                  <ul class="socialite-list">
-                    <li><a class="icon novi-icon socialite fa-facebook" href="https://www.facebook.com/profile.php?id=100032786907194" target="_blank"></a></li>
-                    <li><a class="icon novi-icon socialite fa-envelope" href="mailto:c.sualidaquila@gmail.com"></a></li>
-                    <li><a class="icon novi-icon socialite fa-instagram" href="https://www.instagram.com/corosualidaquila?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"></a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </nav>
-        </div>
-      </header>
-      <!--Swiper-->
-      <section class="section swiper-container swiper-slider swiper-slider-1" data-loop="true" data-autoplay="3892" data-simulate-touch="false">
-        <div class="swiper-wrapper text-center">
-          <div class="swiper-slide context-dark" data-slide-bg="images/foto_coro/PHOTO-2025-01-10-17-13-42-15.jpg">
-            <div class="swiper-slide-caption section-md">
-              <div class="container">
-                <div class="row justify-content-lg-center">
-                  <div class="col-lg-8">
-                    <h4 data-caption-animate="fadeInUp" data-caption-delay="100">Cantare è pregare due volte</h4>
-                    <h1 data-caption-animate="fadeInUp" data-caption-delay="200"> </h1>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide context-dark" data-slide-bg="images/foto_coro/PHOTO-2025-01-10-17-13-42-16.jpg">
-            <div class="swiper-slide-caption section-md">
-              <div class="container">
-                <div class="row justify-content-lg-center">
-                  <div class="col-lg-8">
-                    <h4 data-caption-animate="fadeInUp" data-caption-delay="100">Chi ha il cuore contento, sempre canta</h4>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide context-dark" data-slide-bg="images/foto_coro/fdgluigi.jpg">
-            <div class="swiper-slide-caption section-md">
-              <div class="container">
-                <div class="row justify-content-lg-center">
-                  <div class="col-lg-8">
-                    <h4 data-caption-animate="fadeInUp" data-caption-delay="100">Cammineremo insieme a te</h4>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!--Swiper Pagination-->
-        <div class="swiper-pagination"></div>
-      </section>
-      <!--
-      <section class="parallax-container section-lg text-center" data-parallax-img="images/bg-home1-01-1920x1000.jpg">
-        <div class="parallax-content">
-          <div class="container">
-            <h6 class="text-gray-600">Trident Festival in Duchonka, slovakia - June 26, 2019</h6>
-            <h2>featured event</h2>
-            <div class="row justify-content-center">
-              <div class="col-lg-11">
-                <div class="post-event">
-                  <div class="countdown" data-type="until" data-time="17 Aug 2019 00:00"></div><img src="images/events-02-571x313.jpg" alt="" width="571" height="156"/><a class="button button-primary button-lg" href="#">buy tickets</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> -->
-
-     <section class="section text-center services">
-      <h2 class="text-gray-600" >I nostri servizi</h2>
-    
-      <div class="services-grid">
-    
-        <a class="service-card" href="testi.html">
-          <i class="fa-solid fa-church"></i>
-          <h5>Animazione Liturgica</h5>
-          <p class="service-desc">Contribuiamo ad animare la Messa domenicale e le varie celebrazioni dell’anno liturgico.</p>
-        </a>
-    
-        <a class="service-card" href="testi.html">
-          <i class="fas fa-heart"></i>
-          <h5>Matrimoni</h5>
-          <p class="service-desc">Accompagniamo con il canto il rito del matrimonio durante la celebrazione liturgica.</p>
-        </a>
-    
-        <a class="service-card" href="testi.html">
-          <i class="fas fa-cross"></i>
-          <h5>Funerali</h5>
-          <p class="service-desc">Sosteniamo con la musica la celebrazione esequiale, offrendo un canto sobrio e rispettoso.</p>
-        </a>
-
-        <a class="service-card" href="testi.html">
-          <i class="fa-solid fa-people"></i>
-          <h5>Altri Eventi ed Iniziative</h5>
-          <p class="service-desc">Non mancano occasioni di svago: concerti spirituali, concerti di Natale, partecipazioni a feste e iniziative locali.</p>
-        </a>
-    
-      </div>
-    </section>
-    
-    
-
-      <section class="section section-lg bg-default text-center">
-        <div class="container">
-          <h2 class="text-gray-600">I nostri video</h2>
-          <!--Bootstrap tabs-->
-          <div class="tabs-custom tabs-vertical tabs-video" id="tabs-2">
-            <!--Tab panes-->
-            <div class="tab-content">
-              <div class="tab-pane fade show active" id="tabs-2-1">
-                <div class="entry-video embed-responsive embed-responsive-16by9">
-                  <iframe width="886" height="668" src="https://drive.google.com/file/d/1BOQSwe9JGHnPrK6IGw6b1ER7_zv7hTOH/preview" allowfullscreen=""></iframe>
-                </div>
-              </div>
-              <div class="tab-pane fade" id="tabs-2-2">
-                <div class="entry-video embed-responsive embed-responsive-16by9">
-                  <iframe width="886" height="668" src="https://drive.google.com/file/d/117Y2aUO2pdezWmtEZihZKSCTigFtfiPs/preview" allowfullscreen=""></iframe>
-                </div>
-              </div>
-              
-              <div class="tab-pane fade" id="tabs-2-3">
-                <div class="entry-video embed-responsive embed-responsive-16by9">
-                  <iframe width="886" height="668" src="https://drive.google.com/file/d/1CM4I_OVpnsdakxd9fvVMcaJi6tFjfYWv/preview" allowfullscreen=""></iframe>
-                </div>
-              </div>
-              <div class="tab-pane fade" id="tabs-2-4">
-                <div class="entry-video embed-responsive embed-responsive-16by9">
-                  <iframe width="886" height="668" src="https://drive.google.com/file/d/1SEOHbusNYp_YmhWf8cKlKAx2pMVBjTq9/preview" allowfullscreen=""></iframe>
-                </div>
-              </div>
-              <div class="tab-pane fade" id="tabs-2-5">
-                <div class="entry-video embed-responsive embed-responsive-16by9">
-                  <iframe width="886" height="668" src="https://drive.google.com/file/d/12xxZdIWvhuiPVY8SO19s3eXgdJOifS5V/preview" allowfullscreen=""></iframe>
-                </div>
-              </div>
-              <div class="tab-pane fade" id="tabs-2-6">
-                <div class="entry-video embed-responsive embed-responsive-16by9">
-                  <iframe width="886" height="668" src="https://drive.google.com/file/d/1XcO9p-QrTsrUIADokGOYDW6wx7MRRvg1/preview" allowfullscreen=""></iframe>
-                </div>
-              </div>
-              <div class="tab-pane fade" id="tabs-2-7">
-                <div class="entry-video embed-responsive embed-responsive-16by9">
-                  <iframe width="886" height="668" src="https://drive.google.com/file/d/1iuLnqofnJ3oEmPJW1tg2Uhe8wEB9i9v8/preview" allowfullscreen=""></iframe>
-                </div>
-              </div>
-            </div>
-            <div class="scroll-wrap">
-              <!--Nav tabs-->
-              <ul class="nav nav-tabs">
-                <li class="nav-item" role="presentation"><a class="nav-link active" href="#tabs-2-1" data-toggle="tab">
-                    <div class="nav-video">
-                      <figure class="nav-video-figure"><img src="https://drive.google.com/file/d/1Fe5dBuh6b-C57zeb_R1XRvDj0CZQ89lR/view?usp=share_link" alt="" width="140" height="40"/>
-                      </figure>
-                      <h6 class="nav-video-title">Concerto di Natale 2024</h6>
-                    </div></a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-2-2" data-toggle="tab">
-                    <div class="nav-video">
-                      <figure class="nav-video-figure"><img src="https://drive.google.com/file/d/117Y2aUO2pdezWmtEZihZKSCTigFtfiPs/preview" alt="" width="140" height="40"/>
-                      </figure>
-                      <h6 class="nav-video-title">Concerto di Natale 2022 (virtuale)</h6>
-                    </div></a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-2-3" data-toggle="tab">
-                    <div class="nav-video">
-                      <figure class="nav-video-figure"><img src="https://drive.google.com/file/d/1CM4I_OVpnsdakxd9fvVMcaJi6tFjfYWv/preview" alt="" width="140" height="40"/>
-                      </figure>
-                      <h6 class="nav-video-title">Venite fedeli (virtuale)</h6>
-                    </div></a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-2-4" data-toggle="tab">
-                    <div class="nav-video">
-                      <figure class="nav-video-figure"><img src="https://drive.google.com/file/d/1SEOHbusNYp_YmhWf8cKlKAx2pMVBjTq9/preview" alt="" width="140" height="40"/>
-                      </figure>
-                      <h6 class="nav-video-title">Concerto di Natale 2020 (virtuale)</h6>
-                    </div></a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-2-5" data-toggle="tab">
-                    <div class="nav-video">
-                      <figure class="nav-video-figure"><img src="https://drive.google.com/file/d/12xxZdIWvhuiPVY8SO19s3eXgdJOifS5V/preview" alt="" width="140" height="40"/>
-                      </figure>
-                      <h6 class="nav-video-title">Popoli tutti (virtuale)</h6>
-                    </div></a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-2-6" data-toggle="tab">
-                    <div class="nav-video">
-                      <figure class="nav-video-figure"><img src="https://drive.google.com/file/d/1XcO9p-QrTsrUIADokGOYDW6wx7MRRvg1/preview" alt="" width="140" height="40"/>
-                      </figure>
-                      <h6 class="nav-video-title">Concerto di Natale 2019</h6>
-                    </div></a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-2-7" data-toggle="tab">
-                      <div class="nav-video">
-                        <figure class="nav-video-figure"><img src="https://drive.google.com/file/d/1iuLnqofnJ3oEmPJW1tg2Uhe8wEB9i9v8/preview" alt="" width="140" height="40"/>
-                        </figure>
-                        <h6 class="nav-video-title">Magnificat (Debora Vezzani)</h6>
-                      </div></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-    <section class="section bg-default text-center" data-lightgallery="group">
-      <div class="container">
-       <h2 class="text-gray-600">Le nostre foto</h2>
-        <div class="row no-gutters">
-            <div class="col-lg-3 col-sm-6">
-              <div class="thumbnail-classic">
-                <a class="thumbnail-classic-figure" data-lightgallery="item" href="images/foto coro/bambini.JPG">
-                  <img src="images/foto coro/bambini.JPG" alt="" >
-                </a>
-                <div class="thumbnail-classic-caption">
-                  <h5 class="thumbnail-classic-title">Concerto Natale</h5>
-                  <time class="thumbnail-classic-time" datetime="2019-09-19">Dicembre 2024</time>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-              <div class="thumbnail-classic">
-                <a class="thumbnail-classic-figure" data-lightgallery="item" href="images/foto coro/coro.JPG">
-                  <img src="images/foto coro/coro.JPG" alt=""/></a>
-                <div class="thumbnail-classic-caption">
-                  <h5 class="thumbnail-classic-title">Concerto Natale</h5>
-                  <time class="thumbnail-classic-time" datetime="2019-09-19">Dicembre 2024</time>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-              <div class="thumbnail-classic">
-                <a class="thumbnail-classic-figure" data-lightgallery="item" href="images/foto coro/fotoconbanda.JPG">
-                  <img src="images/foto coro/fotoconbanda.JPG" alt="" /></a>
-                <div class="thumbnail-classic-caption">
-                  <h5 class="thumbnail-classic-title">Concerto Natale</h5>
-                  <time class="thumbnail-classic-time" datetime="2019-09-19">Dicembre 2024</time>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-              <div class="thumbnail-classic">
-                <a class="thumbnail-classic-figure" data-lightgallery="item" href="images/foto coro/musicisti.JPG">
-                  <img src="images/foto coro/musicisti.JPG" alt="" /></a>
-                <div class="thumbnail-classic-caption">
-                  <h5 class="thumbnail-classic-title">Concerto Natale</h5>
-                  <time class="thumbnail-classic-time" datetime="2019-09-19">Dicembre 2024</time>
-                </div>
-              </div>
-            </div>
-        </div>
-        
-        <div class="row no-gutters">
-          <div class="col-lg-3 col-sm-6">
-            <div class="thumbnail-classic">
-              <a class="thumbnail-classic-figure" data-lightgallery="item" href="images/foto_coro/cresime.jpg">
-                <img src="images/foto_coro/cresime.jpg" alt="" width="480" height="175"/></a>
-              <div class="thumbnail-classic-caption">
-                <h5 class="thumbnail-classic-title">Cresime</h5>
-                <time class="thumbnail-classic-time" datetime="2019-09-19">Maggio 2020</time>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-sm-6">
-            <div class="thumbnail-classic">
-              <a class="thumbnail-classic-figure" data-lightgallery="item" href="images/foto_coro/fdgluigi.jpg">
-                <img src="images/foto_coro/fdgluigi.jpg" alt="" width="480" height="175"/></a>
-              <div class="thumbnail-classic-caption">
-                <h5 class="thumbnail-classic-title">Festa della gioventù</h5>
-                <time class="thumbnail-classic-time" datetime="2019-09-19">Settembre 2023</time>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-sm-6">
-            <div class="thumbnail-classic">
-              <a class="thumbnail-classic-figure" data-lightgallery="item" href="images/foto_coro/natal23.jpg">
-                <img src="images/foto_coro/natal23.jpg" alt="" width="480" height="175"/></a>
-              <div class="thumbnail-classic-caption">
-                <h5 class="thumbnail-classic-title">Concerto Natale</h5>
-                <time class="thumbnail-classic-time" datetime="2019-09-19">Dicembre 2023</time>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-sm-6">
-            <div class="thumbnail-classic">
-              <a class="thumbnail-classic-figure" data-lightgallery="item" href="images/foto_coro/rennedinatale.jpg">
-                <img src="images/foto_coro/rennedinatale.jpg" alt="" width="480" height="175"/></a>
-              <div class="thumbnail-classic-caption">
-                <h5 class="thumbnail-classic-title">Le renne di Babbo Natale</h5>
-                <time class="thumbnail-classic-time" datetime="2019-09-19">Dicembre 2018</time>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row no-gutters">
-          <div class="col-lg-3 col-sm-6">
-            <div class="thumbnail-classic">
-            </div>
-          </div>
-        </div>
-
-       </div>
-      </section>
-
-
-      <!--
-      <section class="section section-xl bg-default text-center">
-        <div class="container">
-          <h6 class="text-gray-600">from my blog</h6>
-          <h2>latest news</h2>
-          <div class="row row-125">
-            <div class="col-md-6 col-lg-4">
-              <article class="post-classic">
-                <figure class="post-classic-figure"><a href="#"><img src="images/post-classic-01-346x260.jpg" alt="" width="346" height="130"/></a></figure>
-                <div class="post-classic-content">
-                  <time class="post-classic-time" datetime="2019-09-19">Sep 19, 2019</time>
-                  <h5 class="post-classic-title"><a href="#">teasing the demo of my new track ‘I need you’</a></h5><a class="post-classic-link" href="#">read more</a>
-                </div>
-              </article>
-            </div>
-            <div class="col-md-6 col-lg-4">
-              <article class="post-classic">
-                <figure class="post-classic-figure"><a href="#"><img src="images/post-classic-02-346x260.jpg" alt="" width="346" height="130"/></a></figure>
-                <div class="post-classic-content">
-                  <time class="post-classic-time" datetime="2019-09-19">Sep 19, 2019</time>
-                  <h5 class="post-classic-title"><a href="#">Bring your favorite artist to your city!</a></h5><a class="post-classic-link" href="#">read more</a>
-                </div>
-              </article>
-            </div>
-            <div class="col-md-6 col-lg-4">
-              <article class="post-classic">
-                <figure class="post-classic-figure"><a href="#"><img src="images/post-classic-03-346x260.jpg" alt="" width="346" height="130"/></a></figure>
-                <div class="post-classic-content">
-                  <time class="post-classic-time" datetime="2019-09-19">Sep 19, 2019</time>
-                  <h5 class="post-classic-title"><a href="#">New single: ‘rave on’ (raverz 2019 anthem)</a></h5><a class="post-classic-link" href="#">read more</a>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="parallax-container parallax-overlay-01" data-parallax-img="images/bg-footer-1920x1285.jpg">
-        <div class="parallax-content">
-          <div class="section-sm prefooter-custom">
-            <div class="container">
-              <div class="row row-30">
-                <div class="col-lg-6">
-                  <div class="google-map-container google-map-container-custom-1" data-center="new york, USA" data-zoom="5" data-styles="[{&quot;featureType&quot;:&quot;administrative&quot;,&quot;elementType&quot;:&quot;labels.text.fill&quot;,&quot;stylers&quot;:[{&quot;color&quot;:&quot;#444444&quot;}]},{&quot;featureType&quot;:&quot;landscape&quot;,&quot;elementType&quot;:&quot;all&quot;,&quot;stylers&quot;:[{&quot;color&quot;:&quot;#f2f2f2&quot;}]},{&quot;featureType&quot;:&quot;poi&quot;,&quot;elementType&quot;:&quot;all&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;off&quot;}]},{&quot;featureType&quot;:&quot;road&quot;,&quot;elementType&quot;:&quot;all&quot;,&quot;stylers&quot;:[{&quot;saturation&quot;:-100},{&quot;lightness&quot;:45}]},{&quot;featureType&quot;:&quot;road.highway&quot;,&quot;elementType&quot;:&quot;all&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;simplified&quot;}]},{&quot;featureType&quot;:&quot;road.arterial&quot;,&quot;elementType&quot;:&quot;labels.icon&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;off&quot;}]},{&quot;featureType&quot;:&quot;transit&quot;,&quot;elementType&quot;:&quot;all&quot;,&quot;stylers&quot;:[{&quot;visibility&quot;:&quot;off&quot;}]},{&quot;featureType&quot;:&quot;water&quot;,&quot;elementType&quot;:&quot;all&quot;,&quot;stylers&quot;:[{&quot;color&quot;:&quot;#46bcec&quot;},{&quot;visibility&quot;:&quot;on&quot;}]}]">
-                    <div class="google-map"></div>
-                    <ul class="google-map-markers">
-                      <li data-location="Bayfront Park, Miami, USA" data-description="ULTRA MUSIC FESTIVAL" data-icon="images/gmap_marker-1.png" data-icon-active="images/gmap_marker-1.png"></li>
-                      <li data-location="Brooklyn, New York, United States" data-description="CLUB CULTURAL" data-icon="images/gmap_marker-2.png" data-icon-active="images/gmap_marker-2.png"></li>
-                      <li data-location="Hamilton Township Pennsylvania, United States" data-description="A summer story" data-icon="images/gmap_marker-3.png" data-icon-active="images/gmap_marker-3.png"></li>
-                      <li data-location="Montgomery Veterans Park / Arboretum, Harlingen Road, United States" data-description="EXPO CENTER TRENciN" data-icon="images/gmap_marker-4.png" data-icon-active="images/gmap_marker-4.png"></li>
-                      <li data-location="West Milford New Jersey, USA" data-description="WKND FESTIVAL BALTICS" data-icon="images/gmap_marker-5.png" data-icon-active="images/gmap_marker-5.png"></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <h3>tour dates</h3>
-                  <div class="box-event-wrap scroll-wrap">
-                          <div class="box-event novi-bg">
-                            <div class="box-event-date-wrap">
-                              <h3 class="box-event-date-day">25</h3>
-                              <p class="box-event-date-month">feb</p>
-                            </div>
-                            <div class="box-event-text-wrap">
-                              <h5 class="box-event-text-title"><a href="#">ULTRA MUSIC FESTIVAL</a></h5>
-                              <ul class="box-event-text-location">
-                                <li>Miami</li>
-                                <li>USA</li>
-                              </ul>
-                            </div>
-                            <div class="box-event-button-wrap"><a class="button button-outline button-sm" href="#">buy tickets</a></div>
-                          </div>
-                          <div class="box-event novi-bg">
-                            <div class="box-event-date-wrap">
-                              <h3 class="box-event-date-day">12</h3>
-                              <p class="box-event-date-month">mar</p>
-                            </div>
-                            <div class="box-event-text-wrap">
-                              <h5 class="box-event-text-title"><a href="#">edc orlando</a></h5>
-                              <ul class="box-event-text-location">
-                                <li>Tinkler Field</li>
-                                <li>Orlando</li>
-                                <li>USA</li>
-                              </ul>
-                            </div>
-                            <div class="box-event-button-wrap"><a class="button button-outline button-sm" href="#">buy tickets</a></div>
-                          </div>
-                          <div class="box-event novi-bg">
-                            <div class="box-event-date-wrap">
-                              <h3 class="box-event-date-day">24</h3>
-                              <p class="box-event-date-month">apr</p>
-                            </div>
-                            <div class="box-event-text-wrap">
-                              <h5 class="box-event-text-title"><a href="#">Electric zoo</a></h5>
-                              <ul class="box-event-text-location">
-                                <li>Randall’s Island Park</li>
-                                <li>New York</li>
-                                <li>USA</li>
-                              </ul>
-                            </div>
-                            <div class="box-event-button-wrap"><a class="button button-outline button-sm" href="#">buy tickets</a></div>
-                          </div>
-                          <div class="box-event novi-bg">
-                            <div class="box-event-date-wrap">
-                              <h3 class="box-event-date-day">17</h3>
-                              <p class="box-event-date-month">jul</p>
-                            </div>
-                            <div class="box-event-text-wrap">
-                              <h5 class="box-event-text-title"><a href="#">Nocturnal Wonderland</a></h5>
-                              <ul class="box-event-text-location">
-                                <li>Glen Helen National Park</li>
-                                <li>USA</li>
-                              </ul>
-                            </div>
-                            <div class="box-event-button-wrap"><a class="button button-outline button-sm" href="#">buy tickets</a></div>
-                          </div>
-                          <div class="box-event novi-bg">
-                            <div class="box-event-date-wrap">
-                              <h3 class="box-event-date-day">18</h3>
-                              <p class="box-event-date-month">aug</p>
-                            </div>
-                            <div class="box-event-text-wrap">
-                              <h5 class="box-event-text-title"><a href="#">Coachella</a></h5>
-                              <ul class="box-event-text-location">
-                                <li>Empire Polo Club</li>
-                                <li>Indio</li>
-                                <li>USA</li>
-                              </ul>
-                            </div>
-                            <div class="box-event-button-wrap"><a class="button button-outline button-sm" href="#">buy tickets</a></div>
-                          </div>
-                          <div class="box-event novi-bg">
-                            <div class="box-event-date-wrap">
-                              <h3 class="box-event-date-day">12</h3>
-                              <p class="box-event-date-month">OCT</p>
-                            </div>
-                            <div class="box-event-text-wrap">
-                              <h5 class="box-event-text-title"><a href="#">Let It Roll</a></h5>
-                              <ul class="box-event-text-location">
-                                <li>Milovice</li>
-                                <li>Czech Republic</li>
-                              </ul>
-                            </div>
-                            <div class="box-event-button-wrap"><a class="button button-outline button-sm" href="#">buy tickets</a></div>
-                          </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>-->
-
-      <footer class="section footer-classic bg-default">
-        <div class="footer-top">
-          <h4>Coro Su Ali d'Aquila</h4>
-        
-      
-          <div class="container">
-            <div class="row row-15">
-              
-              <div class="col-sm-3 text-center">
-                <div class="footer-contact">
-                  <a href="mailto:c.sualidaquila@g.mail.com">
-                    <div class="icon novi-icon mdi mdi-email-outline"></div>
-                    c.sualidaquila@mail.com
-                  </a>
-                </div>
-              </div>
-
-              <div class="col-sm-6 text-center">
-                <p class="footer-text">
-                  Non siamo una corale professionale, né puntiamo ad esserlo, ma siamo un gruppo nato dalla gioia di condividere la liturgia e la musica.
-                  Accompagniamo chi entra a scoprire la propria voce e a condividere questa passione.
-                  Perché cantare non è solo eseguire note, ma anche stare insieme!
-                </p>
-              </div>
-
-              <div class="col-sm-3 text-center">
-                <img src="images/image-1.png" alt="Logo Coro Su Ali d'Aquila" class="footer-logo">
-              </div>
-              
-            </div>
-          </div>
-        </div>
-        
-        <div class="row row-15">
-          <div class="col-sm-6 text-center">
-            <p class="footer-copy">
-              Coro Su Ali d'Aquila © <span class="copyright-year"></span> -  
-              All Rights Reserved – Design by TemplateMonster & Martina Monti
-            </p>
-          </div>
-        </div>
-        
-   
-        
-      </footer>
-      
+<!-- VIDEO -->
+<section class="section section-alt">
+  <div class="container">
+    <span class="sec-eyebrow reveal">Guardaci</span>
+    <h2 class="sec-title reveal">I nostri video</h2>
+    <div class="ornament reveal"><div class="ornament-line"></div><span class="ornament-icon">♫</span><div class="ornament-line"></div></div>
+    <div class="vtabs-nav reveal">
+      <button class="vtab active" data-v="v1">Concerto Natale 2024</button>
+      <button class="vtab" data-v="v2">Natale 2022</button>
+      <button class="vtab" data-v="v3">Venite fedeli</button>
+      <button class="vtab" data-v="v4">Natale 2020</button>
+      <button class="vtab" data-v="v5">Popoli tutti</button>
+      <button class="vtab" data-v="v6">Natale 2019</button>
+      <button class="vtab" data-v="v7">Magnificat</button>
     </div>
-    <div class="snackbars" id="form-output-global"></div>
-    <script src="js/core.min.js"></script>
-    <script src="js/script.js"></script>
-    <script>
-      $(document).ready(function() {
-    // Quando un tab viene selezionato
-    $('#tabs-2 .nav-link').on('click', function() {
-        // Pausa il video del tab precedente
-        var activeTab = $('.tab-pane.show'); // Trova il tab attivo
-        var iframe = activeTab.find('iframe'); // Trova l'iframe nel tab attivo
-        var iframeSrc = iframe.attr('src'); // Ottieni l'URL dell'iframe
-        
-        // Se l'iframe esiste, metti in pausa
-        if (iframe.length) {
-            var src = iframeSrc.split('?')[0]; // Prendi solo l'URL senza i parametri
-            iframe.attr('src', ''); // Ferma il video (lo rimuoviamo)
-            iframe.attr('src', src); // Ricarica l'iframe, avviando il video quando sarà selezionato di nuovo
-        }
-    });
-    });
-  
-    </script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        document.querySelector('.page').classList.add('fadeIn');
-      });
-    </script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const items = document.querySelectorAll('section, section .container');
-    
-        const observer = new IntersectionObserver(entries => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
-              observer.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.15 });
-    
-        items.forEach(el => {
-          el.classList.add('fade-scroll');
-          observer.observe(el);
-        });
-      });
-    </script>
-    
-  </body>
+    <div class="vpane active reveal" id="v1"><div class="video-box"><iframe src="https://drive.google.com/file/d/1BOQSwe9JGHnPrK6IGw6b1ER7_zv7hTOH/preview" allowfullscreen></iframe></div></div>
+    <div class="vpane" id="v2"><div class="video-box"><iframe src="https://drive.google.com/file/d/117Y2aUO2pdezWmtEZihZKSCTigFtfiPs/preview" allowfullscreen></iframe></div></div>
+    <div class="vpane" id="v3"><div class="video-box"><iframe src="https://drive.google.com/file/d/1CM4I_OVpnsdakxd9fvVMcaJi6tFjfYWv/preview" allowfullscreen></iframe></div></div>
+    <div class="vpane" id="v4"><div class="video-box"><iframe src="https://drive.google.com/file/d/1SEOHbusNYp_YmhWf8cKlKAx2pMVBjTq9/preview" allowfullscreen></iframe></div></div>
+    <div class="vpane" id="v5"><div class="video-box"><iframe src="https://drive.google.com/file/d/12xxZdIWvhuiPVY8SO19s3eXgdJOifS5V/preview" allowfullscreen></iframe></div></div>
+    <div class="vpane" id="v6"><div class="video-box"><iframe src="https://drive.google.com/file/d/1XcO9p-QrTsrUIADokGOYDW6wx7MRRvg1/preview" allowfullscreen></iframe></div></div>
+    <div class="vpane" id="v7"><div class="video-box"><iframe src="https://drive.google.com/file/d/1iuLnqofnJ3oEmPJW1tg2Uhe8wEB9i9v8/preview" allowfullscreen></iframe></div></div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section">
+  <div class="container">
+    <span class="sec-eyebrow reveal">Momenti</span>
+    <h2 class="sec-title reveal">Le nostre foto</h2>
+    <div class="ornament reveal"><div class="ornament-line"></div><span class="ornament-icon">♬</span><div class="ornament-line"></div></div>
+  </div>
+  <div class="gallery reveal">
+    <div class="gitem" data-src="images/foto coro/bambini.JPG">
+      <img src="images/foto coro/bambini.JPG" alt="Bambini al concerto di Natale">
+      <div class="gcap"><h6>Concerto di Natale</h6><time>Dicembre 2024</time></div>
+    </div>
+    <div class="gitem" data-src="images/foto coro/coro.JPG">
+      <img src="images/foto coro/coro.JPG" alt="Il coro in concerto">
+      <div class="gcap"><h6>Il Coro in concerto</h6><time>2024</time></div>
+    </div>
+    <div class="gitem" data-src="images/foto coro/fotoconbanda.JPG">
+      <img src="images/foto coro/fotoconbanda.JPG" alt="Con la banda">
+      <div class="gcap"><h6>Con il Corpo Musicale</h6><time>Dicembre 2024</time></div>
+    </div>
+    <div class="gitem" data-src="images/foto_coro/lastphoto.jpg">
+      <img src="images/foto_coro/lastphoto.jpg" alt="Foto di gruppo">
+      <div class="gcap"><h6>Foto di gruppo</h6><time>2024</time></div>
+    </div>
+    <div class="gitem" data-src="images/foto_coro/PHOTO-2025-01-10-17-13-42-15.jpg">
+      <img src="images/foto_coro/PHOTO-2025-01-10-17-13-42-15.jpg" alt="I piccoli del coro">
+      <div class="gcap"><h6>I piccoli del coro</h6><time>2024</time></div>
+    </div>
+    <div class="gitem" data-src="images/foto_coro/PHOTO-2025-01-10-17-13-42-16.jpg">
+      <img src="images/foto_coro/PHOTO-2025-01-10-17-13-42-16.jpg" alt="Il coro">
+      <div class="gcap"><h6>Il coro adulti</h6><time>2024</time></div>
+    </div>
+    <div class="gitem" data-src="images/foto_coro/fdgluigi.jpg">
+      <img src="images/foto_coro/fdgluigi.jpg" alt="">
+      <div class="gcap"><h6>Celebrazione</h6><time>2024</time></div>
+    </div>
+    <div class="gitem" data-src="images/foto_coro/cdnatale.jpg">
+      <img src="images/foto_coro/cdnatale.jpg" alt="CD di Natale">
+      <div class="gcap"><h6>CD di Natale 2018</h6><time>2018</time></div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb">
+  <button class="lb-close" id="lbClose">✕</button>
+  <img src="" id="lbImg" alt="">
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-logo"><a href="index.html"><img src="images/image-12.png" alt="Logo"></a></div>
+    <div class="footer-mid">
+      <p>Non siamo una corale professionale, né puntiamo ad esserlo. Siamo un gruppo nato dalla gioia di condividere la liturgia e la musica. Perché cantare non è solo eseguire note, ma anche stare insieme!</p>
+      <a href="mailto:c.sualidaquila@gmail.com">c.sualidaquila@gmail.com</a>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/profile.php?id=100032786907194" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/corosualidaquila" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="mailto:c.sualidaquila@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+  </div>
+  <div class="footer-copy">Coro Su Ali d'Aquila © <span id="yr"></span> — All Rights Reserved – Design by TemplateMonster & Martina Monti</div>
+</footer>
+
+<script src="js/scripts.js"></script>
+</body>
 </html>

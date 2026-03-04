@@ -1,550 +1,271 @@
 <!DOCTYPE html>
-<html class="wide wow-animation" lang="en">
-  <head>
-    <title>Chi siamo</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" href="images/logo.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:400,700%7COpen+Sans:400,600,700%7CSource+Code+Pro:300,400,500,600,700,900%7CNothing+You+Could+Do%7CPoppins:400,500">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
-    <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: 
-      both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
-  </head>
-  <body>
-    <div class="preloader">
-      <div class="preloader-body">
-        <div class="music-notes">
-          <span>♪</span>
-          <span>♫</span>
-          <span>♬</span>
+<html lang="it" data-theme="dark">
+<head>
+  <title>Chi siamo – Coro Su Ali d'Aquila</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/logo.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<button id="themeToggle" title="Cambia tema"><i class="fas fa-moon" id="themeIcon"></i></button>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo"><a href="index.html"><img src="images/image-12.png" alt="Logo"></a></div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="active">Chi siamo</a></li>
+    <li><a href="contacts.html">Contatti</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="nav-social">
+      <a href="https://www.facebook.com/profile.php?id=100032786907194" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="/cdn-cgi/l/email-protection#385b164b4d5954515c59494d515459785f55595154165b5755"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.instagram.com/corosualidaquila" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+    <button class="burger" id="burger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg" style="background-image:url('images/foto coro/fotoconbanda.JPG')"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content fade-up">
+    <span class="hero-ey">♪ Dal 2001 · Turate</span>
+    <h1 class="hero-title">Chi siamo</h1>
+  </div>
+  <div class="breadcrumb"><a href="index.html">Home</a><span>›</span>Chi siamo</div>
+</section>
+
+<!-- STORIA -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="storia-grid">
+      <div class="storia-img reveal">
+        <img src="images/foto_coro/lastphoto.jpg" alt="Il coro in chiesa">
+      </div>
+      <div class="reveal">
+        <p class="storia-tag">La nostra storia · Dal 2001</p>
+        <h2 class="storia-h">Coro Su Ali d'Aquila —<br>una grande famiglia</h2>
+        <div class="storia-body">
+          <p>La nostra avventura inizia nel <b>2001</b> da un'iniziativa di don Gianluca: sotto la guida di Bianca Marina si forma un piccolo coro che anima la messa della domenica mattina.</p>
+          <p>Nel <b>2001</b> nasce ufficialmente il <b>"Coro Su Ali d'Aquila"</b>, diretto da Bianca Marina Di Luca Cardillo ed Elisabetta Mantegazza. Dagli inizi come coro di bambini, nel tempo si è aperto a giovani e adulti.</p>
+          <p>Oggi siamo una grande famiglia di persone unite dalla passione per il canto e la musica, che si ritrovano per animare le celebrazioni e condividere momenti di gioia.</p>
         </div>
-        <p>Stiamo accordando gli strumenti...</p>
+        <div class="stats">
+          <div class="stat"><div class="stat-num">22</div><div class="stat-label">Adulti</div></div>
+          <div class="stat"><div class="stat-num">15</div><div class="stat-label">Bambini</div></div>
+          <div class="stat"><div class="stat-num">27</div><div class="stat-label">Anni insieme</div></div>
+        </div>
       </div>
     </div>
-    
-    
-    <div class="page">
+  </div>
+</section>
 
-      <header class="section page-header">
-        <!--RD Navbar-->
-        <div class="rd-navbar-wrap" style="position: absolute">
-          <nav class="rd-navbar rd-navbar-classic" data-layout="rd-navbar-fixed" 
-          data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
-            <div class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1" data-rd-navbar-toggle=".rd-navbar-collapse"><span></span></div>
-            <div class="rd-navbar-main-outer">
-              <div class="rd-navbar-main">
-                <!--RD Navbar Panel-->
-                <div class="rd-navbar-panel">
-                  <!--RD Navbar Toggle-->
-                  <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
-                  <!--RD Navbar Brand-->
-                  <div class="rd-navbar-brand">
-                    <!--Brand--><a class="brand" href="index.html">
-                      <img src="images/image-1.png" alt="" width="58" height="26"/></a>
-                  </div>
-                </div>
-                <div class="rd-navbar-main-element">
-                  <div class="rd-navbar-nav-wrap">
-                    <ul class="rd-navbar-nav">
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">Home</a>
-                      </li>
-                      <li class="rd-nav-item active"><a class="rd-nav-link" href="about.html">Chi siamo</a>
-                      </li>
-                      <!--<li class="rd-nav-item"><a class="rd-nav-link" href="testi.html">Archivio testi</a>
-                      </li> -->
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Contatti</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="rd-navbar-collapse">
-                  <ul class="socialite-list">
-                    <li><a class="icon novi-icon socialite fa-facebook" href="https://www.facebook.com/profile.php?id=100032786907194" target="_blank"></a></li>
-                    <li><a class="icon novi-icon socialite fa-envelope" href="mailto:c.sualidaquila@gmail.com"></a></li>
-                    <li><a class="icon novi-icon socialite fa-instagram" href="https://www.instagram.com/corosualidaquila?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"></a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </nav>
-        </div>
-      </header>
-      <!-- Breadcrumbs-->
-      <section class="breadcrumbs-custom bg-image context-dark" 
-         style="background-image: url('images/chiesa.jpg'); 
-                background-size: cover; 
-                background-position: center; 
-                background-repeat: no-repeat;">
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
-              background-color: rgba(158, 156, 156, 0.211);"></div>
-        <div class="container">
-          <h2 class="breadcrumbs-custom-title">Chi siamo</h2>
-        </div>
-        <ul class="breadcrumbs-custom-path">
-          <li><a href="index.html">Home</a></li>
-          <li class="active">Chi siamo</li>
-        </ul>
-      </section>
-
-      
-      <section class="section section-lg bg-default">
-        <div class="container">
-          <div class="row row-50 flex-md-row-reverse">
-            <div class="col-md-6 text-center">
-              <div class="box-image-1"><img src="images/foto_coro/lastphoto.jpg" alt="" width="468" height="276"/>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="box-about">
-                <div class="box-about-title-wrap">
-                  <h2 class="box-about-mega-title">Coro Su Ali d'Aquila</h2>
-                  <h2 class="box-about-title">su di noi</h2>
-                </div>
-                <h4 class="box-about-post-title">La nostra storia</h4>
-
-                <p> La nostra avventura inizia nel 1997 da un'iniziativa di don Gianluca: sotto la guida di Bianca Marina si forma un piccolo coro che anima la messa della domenica mattina.
-                  Nel 2001 il coro inizia a prendere forma unendo ragazzi di tutte le età: dalle elementari fino agli adolescenti. E' così che nasce ufficialmente il <b>"Coro Su Ali d'Aquila"</b> 
-                  diretto da Bianca Marina Di Luca Cardillo ed Elisabetta Mantegazza.
-                  Con il passare del tempo, la fascia d'età si è ampliata arrivando a unire giovani ed adulti per un totale di 60 elementi.</p>
-                  
-                <p> Ad oggi il coro si è ridimensionato e conta 22 adulti e 15 bambini, ma rimane una grande famiglia di persone unite dalla passione per il canto e la musica, che si ritrovano per animare le celebrazioni e condividere momenti di gioia e divertimento. </p>
-                
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </section>
-      <section class="section section-lg-3 bg-default">
-        <!-- Owl Carousel-->
-        <div class="owl-carousel owl-carousel-bio" data-items="1" data-sm-items="1" data-md-items="2" data-lg-items="2" data-xl-items="3" data-xxl-items="4" data-autoplay="false" data-nav="true" data-dots="true" data-loop="true" data-mouse-drag="false" data-stage-padding="0" data-margin="0" data-nav-text="[&quot;prev&quot;,&quot;next&quot;]">
-          <div class="box-bio">
-            <div class="box-bio-year">2001</div>
-            <div class="box-bio-body">
-              <h5 class="box-bio-title">Il Coro Su Ali d'Aquila</h5>
-              <p class="box-bio-text">Nasce il coro parrocchiale, come coro per bambini e adolescenti.</p>
-            </div>
-          </div>
-    
-          <div class="box-bio">
-            <div class="box-bio-year">2008</div>
-            <div class="box-bio-body">
-              <h5 class="box-bio-title">L'Isola di Eden - Musical</h5>
-            
-            </div>
-          </div>
-          <div class="box-bio">
-            <div class="box-bio-year">2009</div>
-            <div class="box-bio-body">
-              <h5 class="box-bio-title">San Paulus - Musical</h5>
-             
-            </div>
-          </div>
-          <div class="box-bio">
-            <div class="box-bio-year">2010</div>
-            <div class="box-bio-body">
-              <h5 class="box-bio-title">Servizio di matrimonio</h5>
-              <p class="box-bio-text">Nasce un gruppo che si occupa di animare i matrimoni in chiesa.</p>
-            </div>
-          </div>
-          <div class="box-bio">
-            <div class="box-bio-year">2015</div>
-            <div class="box-bio-body">
-              <h5 class="box-bio-title">Gli adulti entrano nel coro</h5>
-              <p class="box-bio-text">Vengono coinvolti gli adulti nel coro.</p>
-            </div>
-          </div>
-          <div class="box-bio">
-            <div class="box-bio-year">2016</div>
-            <div class="box-bio-body">
-              <h5 class="box-bio-title">Il Piccolo Principe - Il recital</h5>
-          
-            </div>
-            <div class="box-bio-body">
-              <h5 class="box-bio-title">The christmas Telethon show</h5>
-              <p class="box-bio-text">Iniziativa organizzata dall'Avis di Turate per sostenere il progetto Telethon e la ricerca sulle malattie genetiche.</p>
-            </div>
-          </div>
-          <div class="box-bio">
-            <div class="box-bio-year">2018</div>
-            <div class="box-bio-body">
-              <h5 class="box-bio-title">Avis incanto</h5>
-              <p class="box-bio-text">Spettacolo benefico organizzato dall'Avis di Turate, nel quale la nostra maestra Bianca Marina partecipa come giudice di canto.</p>
-            </div>
-          </div>
-          <div class="box-bio">
-            <div class="box-bio-year">2018</div>
-            <div class="box-bio-body">
-              <h5 class="box-bio-title">CD di Natale</h5>
-              <p class="box-bio-text">Il nostro primo CD di canti natalizi!.</p>
-            </div>
-          </div>
-          <div class="box-bio">
-            <div class="box-bio-year">2020</div>
-            <div class="box-bio-body">
-              <h5 class="box-bio-title">Un Coro virtuale</h5>
-              <p class="box-bio-text">Durante il periodo del Covid abbiao cercato il più possibile di restare uniti animando le messe in modo virtuale.</p>
-            </div>
-          </div>
-          <div class="box-bio">
-            <div class="box-bio-year">2024</div>
-            <div class="box-bio-body">
-              <h5 class="box-bio-title">Il coro oggi!</h5>
-              <p class="box-bio-text">Oggi il coro conta 15 adulti e 15 bambini, più diversi musicisti tra chitarristi e pianiste.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-      <section class="section text-center services">
-        <h2 class="text-gray-600">Unisciti a noi!</h2>
-      
-        <div class="services-grid">
-      
-          <a class="service-card">
-            <i class="fa-solid fa-guitar"></i>
-            <h5>Le prove per i piccoli</h5>
-            <p class="service-desc">Ci teniamo a far si che si crei un gruppo di amicizie per tutte le età! Coi ragazzi più piccoli ci troviamo il <b>sabato pomeriggio alle 14h30 </b> in oratorio.</p>
-          </a>
-
-          <a class="service-card"  href="https://drive.google.com/uc?export=download&id=1qTLy3T5CjzVzTMle1wq7t5NY4an3VvWT">
-            <i class="fa-solid fa-download"></i>
-            <h5>Scarica il form</h5>
-            <p class="service-desc">Se apprezzi la musica e i canti che eseguiamo, e magari ti piace anche cantare o suoni uno strumento o pensi 
-              che si potrebbe fare di più per animare la Santa Messa, e sicuramente hai ragione: allora cosa aspetti?</p>
-            
-          </a>
-
-          <a class="service-card">
-            <i class="fa-solid fa-music"></i>
-            <h5>Le prove per gli adulti</h5>
-            <p class="service-desc">Ci teniamo a far si che si crei un gruppo di amicizie per tutte le età! L'appuntamento per gli adulti è il <b>mercoledì sera ore 21h30</b>.</p>
-          </a>
-      
-        </div>
-      </section>
-
-      <section class="section section-lg bg-default">
-        <div class="container">
-          <div class="row row-75 flex-lg-row-reverse">
-
-            <div class="col-lg-6 text-center">
-              <div class="box-image-2">
-                <!-- Immagine dinamica gestita dalle tab -->
-                <img id="tab-image" src="images/foto_coro/cdnatale.jpg" alt="" width="428" height="214" />
-              </div>
-            </div>
-
-            <div class="col-lg-6">
-              <h2 class="text-gray-600">Non smettere mai di cantare!</h2>
-              <!--Bootstrap tabs-->
-              <div class="tabs-albums" id="tabs-1">
-                <!--Nav tabs-->
-                <div class="tabs-albums-select">
-                  <h6 class="text-gray-600">Seleziona un anno</h6>
-                  <ul class="nav nav-tabs">
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-1-1" data-toggle="tab">2018</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-1-2" data-toggle="tab">2024</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#tabs-1-3" data-toggle="tab">2025</a></li>
-                  </ul>
-                </div>
-                <!--Tab panes-->
-                <div class="tab-content">
-                  <div class="tab-pane fade" id="tabs-1-1">
-                    <div class="jp-modern jp-player-init">
-                      <div class="jp-jplayer"></div>
-                      <div class="jp-audio jp-audio-0" role="application" aria-label="media player">
-                        <ul class="jp-player-list">
-                          <li class="jp-player-list-item" data-jp-title="Venite Fedeli" data-jp-mp3="audio/CDNATALE/01.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Hark the Herald Angels Sing - Gloria in Exlcesis Deo" data-jp-mp3="audio/CDNATALE/02.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Somewhere in my memories" data-jp-mp3="audio/CDNATALE/03.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Bianco Natal" data-jp-mp3="audio/CDNATALE/04.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Jingle Bless rock!" data-jp-mp3="audio/CDNATALE/05.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Imagine" data-jp-mp3="audio/CDNATALE/06.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Santa Claus is coming to town!" data-jp-mp3="audio/CDNATALE/07.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="merry christmas everyone" data-jp-mp3="audio/CDNATALE/08.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Tu scendi dalle stelle" data-jp-mp3="audio/CDNATALE/09.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="La vera gioia" data-jp-mp3="audio/CDNATALE/10.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="In notte placida" data-jp-mp3="audio/CDNATALE/11.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Rendid à Yahvé" data-jp-mp3="audio/CDNATALE/12.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Rallegriamoci nel Signore" data-jp-mp3="audio/CDNATALE/13.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Come l'aurora verrai" data-jp-mp3="audio/CDNATALE/14.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Oh happy day!" data-jp-mp3="audio/CDNATALE/15.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Noel Noel" data-jp-mp3="audio/CDNATALE/16.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Sing my soul" data-jp-mp3="audio/CDNATALE/17.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Feliz Navidad" data-jp-mp3="audio/CDNATALE/18.mp3"></li>
-                        </ul>
-                        <div class="jp-modern-interface">
-                          <div class="jp-button jp-playpaus-button">
-                            <button class="jp-btn jp-play" tabindex="0"></button>
-                          </div>
-                          <div class="jp-time-rail">
-                            <div class="jp-progress">
-                              <div class="jp-seek-bar">
-                                <div class="jp-play-bar"></div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="jp-current-time"></div>
-                          <div class="jp-button jp-volume-button">
-                            <button class="jp-btn jp-mute" tabindex="0">max volume</button>
-                          </div>
-                        </div>
-                        <div class="jp-playlist">
-                          <ul class="jp-playlist-inner">
-                            <li></li>
-                          </ul>
-                        </div>
-                        <!--<div class="jp-modern-footer">
-                          <p>Like the album?</p>
-                          <ul class="jp-modern-linklist">
-                            <li><a href="#"><img src="images/itunes-21x21.png" alt="" width="21" height="10"/><span>iTunes</span></a></li>
-                            <li><a href="#"><img src="images/spotify-19x19.png" alt="" width="19" height="9"/><span>Spotify</span></a></li>
-                          </ul>
-                        </div>-->
-                      </div>
-                    </div>
-                  </div>
-                  <div class="tab-pane fade" id="tabs-1-2">
-                    <div class="jp-modern jp-player-init">
-                      <div class="jp-jplayer"></div>
-                      <div class="jp-audio jp-audio-1" role="application" aria-label="media player">
-                        <ul class="jp-player-list">
-                          <li class="jp-player-list-item" data-jp-title="Bianco Natal feat. Corpo Musicale Santa Cecilia Turate" data-jp-mp3="audio/Natale24/BiancoNatal.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Buon Natale" data-jp-mp3="audio/Natale24/BuonNatale.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Happy Xmas (war is over) feat Corpo Musicale Santa Cecilia Turate" data-jp-mp3="audio/Natale24/HappyXmas.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Hark the heralds angels sing" data-jp-mp3="audio/Natale24/Harketheheralds.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="In notte Placida" data-jp-mp3="audio/Natale24/inNotteplacida.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Santa Claus is coming to town" data-jp-mp3="audio/Natale24/SantaClaus.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Silent Night feat Corpo Musicale Santa Cecilia Turate" data-jp-mp3="audio/Natale24/SilentNight.mp3"></li>
-                        </ul>
-                        <div class="jp-modern-interface">
-                          <div class="jp-button jp-playpaus-button">
-                            <button class="jp-btn jp-play" tabindex="0"></button>
-                          </div>
-                          <div class="jp-time-rail">
-                            <div class="jp-progress">
-                              <div class="jp-seek-bar">
-                                <div class="jp-play-bar"></div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="jp-current-time"></div>
-                          <div class="jp-button jp-volume-button">
-                            <button class="jp-btn jp-mute" tabindex="0">max volume</button>
-                          </div>
-                        </div>
-                        <div class="jp-playlist">
-                          <ul class="jp-playlist-inner">
-                            <li></li>
-                          </ul>
-                        </div>
-                  
-                      </div>
-                    </div>
-                  </div>
-                  <div class="tab-pane fade show active" id="tabs-1-3">
-                    <div class="jp-modern jp-player-init">
-                      <div class="jp-jplayer"></div>
-                      <div class="jp-audio jp-audio-2" role="application" aria-label="media player">
-                        <ul class="jp-player-list">
-                          <li class="jp-player-list-item" data-jp-title="A Betlemme di Giudea" data-jp-mp3="audio/Natale25/A betlemme di Giudea.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Bolingo Nwzambee" data-jp-mp3="audio/epifania25/bolingo.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Carol of the bells" data-jp-mp3="audio/Natale25/Carol of the bells.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Hark the heralds" data-jp-mp3="audio/Natale25/Hark the heralds.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Medley Sister Act" data-jp-mp3="audio/Natale25/Medley sister Act.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Noel Noel" data-jp-mp3="audio/Natale25/Noel Noel.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Oh happy day!" data-jp-mp3="audio/Natale25/Oh happy day.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Piedad de mi" data-jp-mp3="audio/epifania25/piedad-de-mi.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Santa Claus is coming to town!" data-jp-mp3="audio/Natale25/Santa claus is coming.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Smile - it's christmas day!" data-jp-mp3="audio/Natale25/Smile.mp3"></li>
-                          <li class="jp-player-list-item" data-jp-title="Venite fedeli" data-jp-mp3="audio/Natale25/Venite fedeli.mp3"></li>
-                          
-                        <div class="jp-modern-interface">
-                          <div class="jp-button jp-playpaus-button">
-                            <button class="jp-btn jp-play" tabindex="0"></button>
-                          </div>
-                          <div class="jp-time-rail">
-                            <div class="jp-progress">
-                              <div class="jp-seek-bar">
-                                <div class="jp-play-bar"></div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="jp-current-time"></div>
-                          <div class="jp-button jp-volume-button">
-                            <button class="jp-btn jp-mute" tabindex="0">max volume</button>
-                          </div>
-                        </div>
-                        <div class="jp-playlist">
-                          <ul class="jp-playlist-inner">
-                            <li></li>
-                          </ul>
-                        </div>
-                      
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!--
-      <section class="section section-lg bg-default">
-        <div class="container">
-          <div class="row row-50 flex-lg-row-reverse">
-            <div class="col-lg-6 text-lg-center">
-              <div class="box-image-1"><img src="images/events-01-553x316.jpg" alt="" width="553" height="158"/>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <h3>featured event</h3>
-              <p class="text-decoration-custom">Trident Festival in Duchonka, Slovakia - June 26, 2019</p>
-              <div class="countdown" data-type="until" data-time="17 Sep 2019 00:00"></div><a class="button button-primary button-lg" href="#">buy tickets</a>
-            </div>
-          </div>
-        </div>
-      </section> -->
-      
-      <footer class="section footer-classic bg-default">
-        <div class="footer-top">
-          <h4>Coro Su Ali d'Aquila</h4>
-        
-      
-          <div class="container">
-            <div class="row row-15">
-              
-              <div class="col-sm-3 text-center">
-                <div class="footer-contact">
-                  <a href="mailto:c.sualidaquila@g.mail.com">
-                    <div class="icon novi-icon mdi mdi-email-outline"></div>
-                    c.sualidaquila@mail.com
-                  </a>
-                </div>
-              </div>
-
-              <div class="col-sm-6 text-center">
-                <p class="footer-text">
-                  Non siamo una corale professionale, né puntiamo ad esserlo, ma siamo un gruppo nato dalla gioia di condividere la liturgia e la musica.
-                  Accompagniamo chi entra a scoprire la propria voce e a condividere questa passione.
-                  Perché cantare non è solo eseguire note, ma anche stare insieme!
-                </p>
-              </div>
-
-              <div class="col-sm-3 text-center">
-                <img src="images/image-1.png" alt="Logo Coro Su Ali d'Aquila" class="footer-logo">
-              </div>
-              
-            </div>
-          </div>
-        </div>
-      
-        <div class="row row-15">
-          <div class="col-sm-6 text-center">
-          <p class="footer-copy">
-            Coro Su Ali d'Aquila © <span class="copyright-year"></span> -  
-            All Rights Reserved – Design by TemplateMonster & Martina Monti
-          </p>
-          </div>
-        </div>
-        
-      </footer>
+<!-- TIMELINE -->
+<section class="section">
+  <div class="container">
+    <span class="sec-ey reveal">La nostra storia</span>
+    <h2 class="sec-title reveal">Tappe importanti</h2>
+    <div class="ornament reveal"><div class="ornament-line"></div><span class="ornament-icon">♫</span><div class="ornament-line"></div></div>
+    <div class="timeline">
+      <div class="titem reveal"><div class="tyear">2001</div><div class="tdot"></div><div class="tcontent"><h5>Il Coro Su Ali d'Aquila</h5><p>Nasce il coro parrocchiale, come coro per bambini e adolescenti.</p></div></div>
+      <div class="titem reveal"><div class="tyear">2008</div><div class="tdot"></div><div class="tcontent"><h5>L'Isola di Eden – Musical</h5></div></div>
+      <div class="titem reveal"><div class="tyear">2009</div><div class="tdot"></div><div class="tcontent"><h5>San Paulus – Musical</h5></div></div>
+      <div class="titem reveal"><div class="tyear">2010</div><div class="tdot"></div><div class="tcontent"><h5>Servizio di matrimonio</h5><p>Nasce il gruppo dedicato ad animare i matrimoni in chiesa.</p></div></div>
+      <div class="titem reveal"><div class="tyear">2015</div><div class="tdot"></div><div class="tcontent"><h5>Gli adulti entrano nel coro</h5><p>Il coro si apre ai coristi adulti, arrivando a 60 elementi.</p></div></div>
+      <div class="titem reveal"><div class="tyear">2016</div><div class="tdot"></div><div class="tcontent"><h5>Il Piccolo Principe & Christmas Telethon Show</h5><p>Iniziativa dell'Avis di Turate per sostenere il progetto Telethon.</p></div></div>
+      <div class="titem reveal"><div class="tyear">2018</div><div class="tdot"></div><div class="tcontent"><h5>CD di Natale & Avis Incanto</h5><p>Il nostro primo CD di canti natalizi e spettacolo benefico dell'Avis.</p></div></div>
+      <div class="titem reveal"><div class="tyear">2020</div><div class="tdot"></div><div class="tcontent"><h5>Un Coro virtuale</h5><p>Durante il Covid abbiamo animato le messe in modo virtuale per restare uniti.</p></div></div>
+      <div class="titem reveal"><div class="tyear">2024</div><div class="tdot"></div><div class="tcontent"><h5>Il coro oggi</h5><p>22 adulti, 15 bambini e diversi musicisti. La famiglia cresce!</p></div></div>
     </div>
-    <div class="snackbars" id="form-output-global"></div>
-    <script src="js/core.min.js"></script>
-    <script src="js/script.js"></script>
-    
-   
-    <script>
-    document.querySelectorAll('.nav-link').forEach(tab => {
-      tab.addEventListener('click', function () {
-        const year = this.textContent.trim(); // Ottieni l'anno dalla scheda selezionata
-        const image = document.getElementById('tab-image'); // Immagine dinamica
-    
-        // Cambia l'immagine in base all'anno
-        if (year === '2018') {
-          image.src = 'images/foto_coro/cdnatale.jpg'; // Immagine per il 2018
-        } else if (year === '2024') {
-          image.src = 'images/foto coro/coro.JPG'; // Immagine per il 2015
-        } else if (year === '2025') {
-          image.src = 'images/foto coro/bambini.JPG'; // Immagine per il 2012
-        }
-      });
-    });
+  </div>
+</section>
 
-    function playSound() {
-        var audio = new Audio('audio/piano.mp3');  // Cambia 'audio.mp3' con il percorso corretto del tuo file audio
-        audio.play();
-    }
+<!-- JOIN -->
+<section class="section section-alt">
+  <div class="container">
+    <span class="sec-ey reveal">Entra a far parte di noi</span>
+    <h2 class="sec-title reveal">Unisciti a noi!</h2>
+    <div class="ornament reveal"><div class="ornament-line"></div><span class="ornament-icon">♬</span><div class="ornament-line"></div></div>
+    <div class="join-grid">
+      <div class="jcard reveal">
+        <i class="fa-solid fa-guitar"></i>
+        <h5>Prove per i piccoli</h5>
+        <p>Ci ritroviamo il <b>sabato pomeriggio alle 14:30</b> in oratorio. Un pomeriggio di musica e amicizia!</p>
+      </div>
+      <a class="jcard reveal" href="https://drive.google.com/uc?export=download&id=1qTLy3T5CjzVzTMle1wq7t5NY4an3VvWT">
+        <i class="fa-solid fa-file-arrow-down"></i>
+        <h5>Scarica il modulo</h5>
+        <p>Ti piace cantare o suoni uno strumento? Compila il modulo e unisciti a noi!</p>
+      </a>
+      <div class="jcard reveal">
+        <i class="fa-solid fa-music"></i>
+        <h5>Prove per gli adulti</h5>
+        <p>L'appuntamento settimanale per gli adulti è il <b>mercoledì sera alle 21:30</b>.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    document.querySelectorAll('.service-icon').forEach(icon => {
-  icon.addEventListener('click', function () {
-    const notes = ['🎶', '🎵', '🎼'];
+<!-- AUDIO -->
+<section class="section">
+  <div class="container">
+    <span class="sec-ey reveal">Ascoltaci</span>
+    <h2 class="sec-title reveal">Non smettere mai di cantare!</h2>
+    <div class="ornament reveal"><div class="ornament-line"></div><span class="ornament-icon">♪</span><div class="ornament-line"></div></div>
 
-    // Troviamo il notesContainer specifico per questa icona
-    const notesContainer = icon.querySelector('.notesContainer');
+    <div class="audio-layout reveal">
+      <!-- Cover dinamica -->
+      <div class="audio-cover">
+        <img id="audioCover" src="images/foto coro/bambini.JPG" alt="Cover album">
+      </div>
 
-    // Aggiungi note come fuochi d'artificio
-    notes.forEach(note => {
-      const noteElement = document.createElement('div');
-      noteElement.classList.add('note');
-      noteElement.textContent = note;
+      <!-- Player -->
+      <div>
+        <div class="year-tabs">
+          <button class="ytab active" data-year="2025">Natale 2025</button>
+          <button class="ytab" data-year="2024">Natale 2024</button>
+          <button class="ytab" data-year="2018">CD Natale 2018</button>
+        </div>
 
-      // Genera valori casuali per la direzione dell'esplosione
-      const angle = Math.random() * 360; // Angolo casuale
-      const distance = Math.random() * 150 + 50; // Distanza casuale
-      const x = Math.cos(angle) * distance; // Calcolo X
-      const y = Math.sin(angle) * distance; // Calcolo Y
+        <!-- 2025 -->
+        <div class="ypane active" id="ypane-2025">
+          <div class="playlist" id="pl-2025"></div>
+        </div>
+        <!-- 2024 -->
+        <div class="ypane" id="ypane-2024">
+          <div class="playlist" id="pl-2024"></div>
+        </div>
+        <!-- 2018 -->
+        <div class="ypane" id="ypane-2018">
+          <div class="playlist" id="pl-2018"></div>
+        </div>
 
-      // Impostiamo le variabili CSS per l'animazione
-      noteElement.style.setProperty('--x', `${x}px`);
-      noteElement.style.setProperty('--y', `${y}px`);
+        <!-- Barra player condivisa -->
+        <div class="player-bar">
+          <div class="player-now" id="playerNow">♪ Seleziona un brano dalla lista</div>
+          <audio id="audioEl"></audio>
+          <div class="player-controls">
+            <button class="pctrl" id="btnPrev" title="Precedente"><i class="fas fa-backward-step"></i></button>
+            <button class="pctrl main" id="btnPlay" title="Play/Pausa"><i class="fas fa-play" id="playIcon"></i></button>
+            <button class="pctrl" id="btnNext" title="Successivo"><i class="fas fa-forward-step"></i></button>
+            <div class="prog-wrap">
+              <input type="range" class="prog" id="progBar" value="0" min="0" max="100" step="0.1">
+              <div class="prog-times"><span id="timeNow">0:00</span><span id="timeTot">0:00</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-      // Aggiungiamo la nota al contenitore
-      notesContainer.appendChild(noteElement);
-    });
+<!-- GALLERY -->
+<section class="section">
+  <div class="container">
+    <span class="sec-eyebrow reveal">Momenti</span>
+    <h2 class="sec-title reveal">Le nostre foto</h2>
+    <div class="ornament reveal"><div class="ornament-line"></div><span class="ornament-icon">♪</span><div class="ornament-line"></div></div>
+  </div>
+  <div class="gallery reveal">
+    <div class="gitem" data-src="images/foto coro/coro.JPG">
+      <img src="images/foto coro/coro.JPG" alt="Coro in concerto">
+      <div class="gcap">
+        <h6>Concerto di Natale</h6><time>Dicembre 2024</time></div>
+  </div>
+    <div class="gitem" data-src="images/foto coro/bambini.JPG">
+      <img src="images/foto coro/bambini.JPG" alt="Bambini">
+      <div class="gcap">
+        <h6>I Piccoli</h6>
+        <time>Natale 2024</time>
+      </div>
+    </div>
+    <div class="gitem" data-src="images/foto coro/fotoconbanda.JPG">
+      <img src="images/foto coro/fotoconbanda.JPG" alt="Con la banda">
+      <div class="gcap">
+        <h6>Con la Banda</h6>
+        <time>2024</time>
+      </div>
+    </div>
+    <div class="gitem" data-src="images/foto_coro/lastphoto.jpg">
+      <img src="images/foto_coro/lastphoto.jpg" alt="Gruppo">
+      <div class="gcap">
+        <h6>Foto di gruppo</h6>
+        <time>2024</time>
+      </div>
+    </div>
+    <div class="gitem" data-src="images/foto_coro/PHOTO-2025-01-10-17-13-42-15.jpg">
+      <img src="images/foto_coro/PHOTO-2025-01-10-17-13-42-15.jpg" alt="I piccoli">
+      <div class="gcap">
+        <h6>I Piccoli</h6>
+        <time>2024</time>
+      </div>
+    </div>
+    <div class="gitem" data-src="images/foto_coro/PHOTO-2025-01-10-17-13-42-16.jpg">
+      <img src="images/foto_coro/PHOTO-2025-01-10-17-13-42-16.jpg" alt="Adulti">
+      <div class="gcap">
+        <h6>Coro adulti</h6>
+        <time>2024</time>
+      </div>
+    </div>
+    <div class="gitem" data-src="images/foto_coro/cdnatale.jpg">
+      <img src="images/foto_coro/cdnatale.jpg" alt="CD Natale">
+      <div class="gcap">
+        <h6>CD di Natale</h6>
+        <time>2018</time>
+      </div>
+    </div>
+    <div class="gitem" data-src="images/foto_coro/cresime.jpg">
+      <img src="images/foto_coro/cresime.jpg" alt="Cresime">
+      <div class="gcap">
+        <h6>Cresime</h6>
+        <time>2024</time>
+      </div>
+    </div>
+    <div class="gitem" data-src="images/foto coro/musicisti.JPG">
+      <img src="images/foto coro/musicisti.JPG" alt="Musicisti">
+      <div class="gcap">
+        <h6>I Musicisti</h6>
+        <time>2024</time>
+      </div>
+    </div>
+    <div class="gitem" data-src="images/foto_coro/fdgluigi.jpg">
+      <img src="images/foto_coro/fdgluigi.jpg" alt="Celebrazione">
+      <div class="gcap">
+        <h6>Celebrazione</h6>
+        <time>2024</time>
+      </div>
+    </div>
+  </div>
+</section>
 
-    // Rimuoviamo le note dopo che l'animazione è finita (1.5 secondi)
-    setTimeout(() => {
-      notesContainer.innerHTML = ''; // Pulisce il contenitore delle note
-    }, 1500); // Durata dell'animazione
-  });
-});
+<!-- LIGHTBOX -->
+<div class="lb" id="lb"><button class="lb-close" id="lbClose">✕</button><img src="" id="lbImg" alt=""></div>
 
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-logo"><a href="index.html"><img src="images/image-12.png" alt="Logo"></a></div>
+    <div class="footer-mid">
+      <p>Non siamo una corale professionale, né puntiamo ad esserlo. Siamo un gruppo nato dalla gioia di condividere la liturgia e la musica. Perché cantare non è solo eseguire note, ma anche stare insieme!</p>
+      <a href="/cdn-cgi/l/email-protection#32511c4147535e5b565343475b5e5372555f535b5e1c515d5f"><span class="__cf_email__" data-cfemail="86e5a8f5f3e7eaefe2e7f7f3efeae7c6e1ebe7efeaa8e5e9eb">[email&#160;protected]</span></a>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/profile.php?id=100032786907194" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/corosualidaquila" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="/cdn-cgi/l/email-protection#90f3bee3e5f1fcf9f4f1e1e5f9fcf1d0f7fdf1f9fcbef3fffd"><i class="fas fa-envelope"></i></a>
+    </div>
+  </div>
+  <div class="footer-copy">Coro Su Ali d'Aquila © <span id="yr"></span> — All Rights Reserved – Design by TemplateMonster & Martina Monti</div>
+</footer>
 
-    </script>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    document.querySelector('.page').classList.add('fadeIn');
-  });
-</script>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const items = document.querySelectorAll('section, section .container');
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15 });
-
-    items.forEach(el => {
-      el.classList.add('fade-scroll');
-      observer.observe(el);
-    });
-  });
-</script>
-
-  </body>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script src="js/main.js"></script>
+</body>
 </html>
