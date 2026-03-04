@@ -719,6 +719,8 @@ footer {
   }
 }
 
+/* TABLET & MOBILE
+
 @media (max-width: 860px) {
   nav {
     padding: 0 1.5rem;
@@ -780,14 +782,10 @@ footer {
   .section {
     padding: 4rem 0;
   }
-  .about-strip {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
   .timeline::before {
     left: 66px;
   }
-}
+} */
 
 /* ── SERVICES ── */
 .services-grid {
@@ -1357,4 +1355,184 @@ input.prog::-webkit-slider-thumb {
   justify-content: space-between;
   font-size: 0.68rem;
   color: var(--muted);
+}
+
+
+@media (max-width: 860px) {
+  nav {
+    padding: 0 1.5rem;
+  }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: var(--nav-bg);
+    padding: 1.5rem 2rem;
+    gap: 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-links.open {
+    display: flex;
+  }
+  .burger {
+    display: flex;
+  }
+  .hero {
+    padding: 0 1.5rem 2.5rem;
+  }
+  .storia-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .stats {
+    grid-template-columns: 1fr 1fr;
+  }
+  .breadcrumb {
+    right: 1.5rem;
+  }
+  .join-grid {
+    grid-template-columns: 1fr;
+  }
+  .main-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .audio-layout {
+    grid-template-columns: 1fr;
+  }
+  .frow {
+    grid-template-columns: 1fr;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .footer-social {
+    justify-content: center;
+  }
+  .section {
+    padding: 4rem 0;
+  }
+  .timeline::before {
+    left: 66px;
+  }
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .vtabs-nav {
+    gap: 0.4rem;
+  }
+  .vtab {
+    font-size: 0.7rem;
+    padding: 0.4rem 0.9rem;
+  }
+}
+
+/* ================================================
+   MOBILE PICCOLO — iPhone SE, Galaxy S, ecc.
+   ================================================ */
+
+@media (max-width: 480px) {
+
+  /* -- About Strip: 1 colonna, immagine sopra -- */
+  .about-strip {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .about-img {
+    order: -1;
+  }
+  .about-h {
+    font-size: 1.8rem;
+  }
+  .about-body p {
+    font-size: 0.9rem;
+  }
+
+  /* -- Hero slideshow -- */
+  .slide-title {
+    font-size: 2rem;
+  }
+  .slide-caption {
+    bottom: 10vh;
+    padding: 0 1.2rem;
+  }
+
+  /* -- Sezioni -- */
+  .section {
+    padding: 3rem 0;
+  }
+  .container {
+    padding: 0 1.2rem;
+  }
+  .sec-title {
+    font-size: 1.7rem;
+  }
+
+  /* -- Services: 1 colonna su telefono piccolo -- */
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* -- Stats: 1 colonna -- */
+  .stats {
+    grid-template-columns: 1fr;
+  }
+  .stat-num {
+    font-size: 2.4rem;
+  }
+
+  /* -- Join cards: 1 colonna -- */
+  .join-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* -- Gallery: 2 colonne strette -- */
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* -- Footer -- */
+  .footer-grid {
+    padding: 2rem 1.2rem;
+    gap: 1.5rem;
+  }
+  .footer-copy {
+    font-size: 0.65rem;
+    padding: 1rem;
+  }
+
+  /* -- Nav -- */
+  nav {
+    padding: 0 1rem;
+  }
+  .nav-logo img {
+    height: 28px;
+  }
+
+  /* -- Form -- */
+  .form-panel {
+    padding: 1.8rem 1.2rem;
+  }
+
+  /* -- Timeline -- */
+  .timeline::before {
+    left: 56px;
+  }
+  .tyear {
+    font-size: 1.1rem;
+    width: 50px;
+  }
+
+  /* -- Video tabs -- */
+  .vtabs-nav {
+    gap: 0.3rem;
+  }
+  .vtab {
+    font-size: 0.65rem;
+    padding: 0.35rem 0.7rem;
+  }
 }

@@ -7,7 +7,7 @@ document.getElementById('themeToggle').addEventListener('click', () => setTheme(
 function setTheme(t) { html.dataset.theme=t; localStorage.setItem('csaq-theme',t); icon.className=t==='dark'?'fas fa-sun':'fas fa-moon'; }
 document.getElementById('burger').addEventListener('click', () => document.getElementById('navLinks').classList.toggle('open'));
 document.querySelectorAll('.gs-item').forEach(el => el.addEventListener('click', () => { document.getElementById('lbImg').src=el.dataset.src; document.getElementById('lb').classList.add('open'); }));
-document.getElementById('lbClose').addEventListener('click', () => document.getElementById('lb').classList.remove('open'));
+// document.getElementById('lbClose').addEventListener('click', () => document.getElementById('lb').classList.remove('open'));
 
 /* ── AUDIO PLAYER ── */
 const albums = {
