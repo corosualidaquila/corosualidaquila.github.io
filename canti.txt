@@ -1,7 +1,7 @@
 # Modifica questo file: scrivi un canto per riga.
 # Salva il file, poi nel gioco apri "Cambia l'elenco dei canti" e caricalo.
 Pane del cielo
-Fammi conoscere
+Fammi conosce
 Mi basta la tua grazia
 Prendi quedsto pane e questo vino
 Invochiamo la tua presenza
@@ -20,3 +20,5 @@ Lodate
 Rivestiti di Luce
 Serviremo il Signore
 Come l'aurora
+
+        Type: 
