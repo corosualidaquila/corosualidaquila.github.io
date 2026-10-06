@@ -1,0 +1,12 @@
+[project]
+name = "coro-ottavio"
+version = "0.1.0"
+description = "Strumenti per generare l'animazione trasparente di Ottavio"
+requires-python = ">=3.11"
+dependencies = [
+    "imageio-ffmpeg==0.6.0",
+    "pillow==11.3.0",
+]
+
+[tool.uv]
+package = false

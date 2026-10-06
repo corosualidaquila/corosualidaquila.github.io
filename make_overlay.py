@@ -12,7 +12,7 @@ import imageio_ffmpeg
 
 ROOT = Path(__file__).resolve().parent
 ASSETS = ROOT / "assets"
-OUTPUT = ASSETS / "ottavio-entrata-trasparente.webm"
+OUTPUT = ASSETS / "ottavio-entrata-trasparente.webp"
 WIDTH = HEIGHT = 800
 FPS = 24
 DURATION = 4.4
@@ -96,9 +96,8 @@ def main() -> None:
     ffmpeg = imageio_ffmpeg.get_ffmpeg_exe()
     command = [ffmpeg, "-y", "-f", "rawvideo", "-pixel_format", "rgba", "-video_size",
                f"{WIDTH}x{HEIGHT}", "-framerate", str(FPS), "-i", "-", "-an", "-c:v",
-               "libvpx-vp9", "-pix_fmt", "yuva420p", "-auto-alt-ref", "0", "-b:v", "0",
-               "-crf", "30", "-deadline", "good", "-metadata:s:v:0", "alpha_mode=1",
-               str(OUTPUT)]
+               "libwebp_anim", "-pix_fmt", "bgra", "-loop", "1", "-lossless", "0",
+               "-quality", "90", "-preset", "picture", str(OUTPUT)]
     process = subprocess.Popen(command, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
     assert process.stdin is not None
     for index in range(round(DURATION * FPS)):

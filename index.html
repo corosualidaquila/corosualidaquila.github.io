@@ -8,12 +8,12 @@
   <style>
     :root{--ink:#25334a;--muted:#68758a;--cream:#fffaf0;--blue:#a9def5;--pink:#ffd6df;--yellow:#ffe28a;--green:#c8edcf;--purple:#d9c9ff}
     *{box-sizing:border-box}body{margin:0;background:#fff7e8;color:var(--ink);font-family:ui-rounded,"Trebuchet MS",system-ui,sans-serif;min-height:100vh}
-    main{max-width:1040px;margin:auto;padding:28px 20px 48px}.top{display:flex;justify-content:space-between;align-items:center;gap:12px}.badge{background:#fff;border:2px solid #f1e3c9;border-radius:99px;padding:9px 14px;font-weight:800;color:#6c5b42;font-size:.86rem}
-    h1{font-size:clamp(2rem,5vw,3.5rem);line-height:1.02;margin:22px 0 8px;letter-spacing:-.04em}.intro{color:var(--muted);font-size:1.05rem;margin:0 0 24px}
+    main{max-width:1040px;margin:auto;padding:28px 20px 48px}.top{display:flex;justify-content:flex-start;align-items:center;gap:20px}.brand-logo{display:block;width:min(220px,58vw);height:110px;object-fit:contain;mix-blend-mode:multiply}
+    h1{font-size:clamp(2rem,5vw,3.5rem);line-height:1.02;margin:0;letter-spacing:-.04em;text-align:left}.intro{color:var(--muted);font-size:1.05rem;margin:0 0 24px}
     .layout{display:grid;grid-template-columns:1.2fr .8fr;gap:20px}.card{background:white;border:2px solid #f1e7d6;border-radius:26px;padding:22px;box-shadow:0 8px 24px #4a32120b}.stage{background:linear-gradient(145deg,#fff0bb,#ffe4e8);position:relative;min-height:360px;display:flex;align-items:center;justify-content:center;overflow:hidden;text-align:center}.stage:before,.stage:after{content:"✦";position:absolute;color:#fff;font-size:42px;opacity:.8}.stage:before{top:25px;left:30px}.stage:after{right:36px;bottom:20px}
     .stage{transition:background .3s}.stage.style-mascot{background:linear-gradient(145deg,#ffe6ad,#fff6d7 52%,#d9f5df)}.stage.style-flight{background:linear-gradient(145deg,#fff0bb,#ffe4e8)}
     .avatar{position:relative;display:block;width:220px;height:220px;margin:0 auto;filter:drop-shadow(0 8px 8px #31506a20);animation:bob 2.4s ease-in-out infinite}.avatar img{width:100%;height:100%;object-fit:contain}.style-flight .avatar{width:240px;height:220px;animation:none}.style-flight .avatar img{animation:heroFlight 1.15s ease-in-out infinite alternate;transform-origin:50% 70%}.avatar:before,.avatar:after{position:absolute;z-index:2;opacity:0;pointer-events:none;color:#2286d2;font-weight:900;text-shadow:0 2px 0 white}.avatar:before{content:"♪";font-size:38px;left:5px;top:35px}.avatar:after{content:"♫";font-size:32px;right:8px;top:65px;color:#f0a62f}.style-flight .avatar:before{animation:musicNote 1.8s ease-out infinite}.style-flight .avatar:after{animation:musicNote 1.8s ease-out .85s infinite}.style-flight .stage-inner{padding-top:14px}@keyframes bob{50%{transform:translateY(-9px) rotate(-2deg)}}@keyframes heroFlight{from{transform:translateY(3px) rotate(-2deg) scale(.98)}to{transform:translateY(-15px) rotate(2deg) scale(1.035)}}@keyframes musicNote{0%{opacity:0;transform:translateY(20px) rotate(-15deg) scale(.7)}25%{opacity:1}100%{opacity:0;transform:translateY(-45px) rotate(20deg) scale(1.12)}}
-    .stage video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:transparent;z-index:3;pointer-events:none}.stage video[hidden]{display:none}.stage.video-playing .avatar{visibility:hidden}.stage.style-flight .avatar img{animation:none}
+    .stage #flight-animation{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;z-index:3;pointer-events:none}.stage #flight-animation[hidden]{display:none}.stage.video-playing .avatar{visibility:hidden}.stage.style-flight .avatar img{animation:none}
     .speech{background:white;border-radius:20px;padding:15px 18px;margin:12px auto 0;max-width:440px;box-shadow:0 5px 14px #58350012;font-weight:650;line-height:1.45}.stage-inner{position:relative;z-index:1;width:100%;padding:28px}
     .result{font-size:clamp(1.5rem,4vw,2.4rem);font-weight:900;letter-spacing:-.03em;margin:10px 0}.category{color:#7b659c;font-weight:800;text-transform:uppercase;letter-spacing:.1em;font-size:.75rem}
     .actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px}button{font:inherit;font-weight:850;border:0;border-radius:14px;padding:13px 18px;cursor:pointer;transition:transform .12s,filter .12s}button:hover{transform:translateY(-2px);filter:brightness(.98)}button:focus-visible,textarea:focus-visible{outline:3px solid #4f8dd8;outline-offset:3px}.primary{background:#355caa;color:#fff;box-shadow:0 5px 0 #284680}.secondary{background:#f1f4fa;color:#344560}.small{padding:9px 12px;font-size:.9rem}
@@ -22,18 +22,16 @@
     details{margin-top:20px}summary{font-weight:850;cursor:pointer}.editor{display:grid;gap:10px;margin-top:12px}textarea{resize:vertical;width:100%;min-height:125px;border:2px solid #e8e1d5;border-radius:14px;padding:12px;font:inherit;line-height:1.5;color:var(--ink)}.editor small{color:var(--muted)}
     .toast{min-height:1.4em;text-align:center;font-size:.9rem;color:#68758a;margin-top:13px}.spin{animation:pop .32s ease-out}@keyframes pop{0%{transform:scale(.94);opacity:.5}100%{transform:scale(1);opacity:1}}
     footer{text-align:center;color:#8b8172;font-size:.82rem;margin:24px 0 0}
-    @media(max-width:720px){main{padding:18px 14px 32px}.layout{grid-template-columns:1fr}.stage{min-height:320px}.side{order:2}.top{align-items:flex-start}.badge{font-size:.75rem}}
+    @media(max-width:720px){main{padding:18px 14px 32px}.layout{grid-template-columns:1fr}.stage{min-height:320px}.side{order:2}.top{align-items:center;gap:12px}.brand-logo{width:min(150px,38vw);height:80px;flex:none}h1{font-size:clamp(1.35rem,6vw,2rem)}}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition:none!important}}
   </style>
 </head>
 <body>
   <main>
-    <div class="top"><span class="badge">🎵 Un gioco per cantare insieme</span></div>
-    <h1>La missione<br>delle note</h1>
-    <p class="intro">Gira la ruota, scopri il canto e affronta la missione musicale di oggi!</p>
+    <div class="top"><img class="brand-logo" src="assets/logo-su-d-aquila.jpeg" alt="Logo del coro Su d'Aquila"><h1>La missione<br>delle note</h1></div>
     <div class="layout">
       <section class="card stage style-mascot" id="stage" aria-live="polite">
-        <video id="flight-video" src="assets/ottavio-entrata-trasparente.webm" playsinline preload="auto" aria-label="Ottavio vola sopra la pagina e atterra in posa da eroe" hidden></video>
+        <img id="flight-animation" alt="" hidden>
         <div class="stage-inner">
           <span class="avatar" id="avatar" aria-hidden="true"></span>
           <div class="speech" id="message">Ciao! Sono Ottavio. Pronti a scegliere il prossimo canto?</div>
@@ -84,14 +82,15 @@
     function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
     function drawSong(){if(busy||!songs.length)return;busy=true;$('draw').disabled=true;$('toast').textContent='Ottavio sta mescolando le note…';let n=0;const interval=setInterval(()=>{const pick=songs[Math.floor(Math.random()*songs.length)];$('song-result').hidden=false;$('category').hidden=true;$('song-result').textContent=pick;$('song-result').classList.remove('spin');void $('song-result').offsetWidth;$('song-result').classList.add('spin');n++;if(n>=13){clearInterval(interval);let choices=songs.filter(s=>songs.length<2||s!==lastSong);lastSong=choices[Math.floor(Math.random()*choices.length)];$('song-result').textContent=lastSong;$('category').textContent='🎶 Il canto scelto';$('category').hidden=false;$('message').textContent='È uscito questo canto! Siete pronti a cantare insieme?';$('again').hidden=false;$('toast').textContent='';busy=false;$('draw').disabled=false}} ,95)}
     $('avatar').innerHTML=eagleMascot;
+    let flightTimer;
     function setStyle(style){
-      const flying=style==='flight', video=$('flight-video');
+      const flying=style==='flight', animation=$('flight-animation');
       $('stage').classList.toggle('style-flight',flying);$('stage').classList.toggle('style-mascot',!flying);$('avatar').innerHTML=eagleMascot;
       $('mascot-style').setAttribute('aria-pressed',String(!flying));$('flight-style').setAttribute('aria-pressed',String(flying));
-      if(flying){video.currentTime=0;video.hidden=false;$('stage').classList.add('video-playing');video.play().catch(()=>{$('stage').classList.remove('video-playing');video.hidden=true;$('toast').textContent='Animazione non disponibile in questo browser.'})}
-      else{video.pause();video.hidden=true;$('stage').classList.remove('video-playing')}
+      clearTimeout(flightTimer);
+      if(flying){$('stage').classList.add('video-playing');animation.hidden=false;animation.onload=()=>{flightTimer=setTimeout(()=>{$('stage').classList.remove('video-playing');animation.hidden=true},4400)};animation.onerror=()=>{$('stage').classList.remove('video-playing');animation.hidden=true;$('toast').textContent='Animazione non disponibile.'};animation.src='assets/ottavio-entrata-trasparente.webp?v='+Date.now()}
+      else{animation.hidden=true;$('stage').classList.remove('video-playing')}
     }
-    $('flight-video').addEventListener('ended',()=>{$('stage').classList.remove('video-playing');$('flight-video').hidden=true;$('avatar').innerHTML=eagleMascot});
     $('mascot-style').addEventListener('click',()=>setStyle('mascot'));$('flight-style').addEventListener('click',()=>setStyle('flight'));
     $('draw').addEventListener('click',drawSong);$('again').addEventListener('click',drawSong);
     $('new-challenge').addEventListener('click',()=>{$('challenge').textContent=challenges[Math.floor(Math.random()*challenges.length)];$('challenge').classList.remove('spin');void $('challenge').offsetWidth;$('challenge').classList.add('spin')});
@@ -101,7 +100,7 @@
     $('load-file').addEventListener('click',()=>$('song-file').click());
     $('song-file').addEventListener('change',async event=>{const file=event.target.files[0];if(!file)return;const imported=(await file.text()).split(/\r?\n/).map(s=>s.trim()).filter(s=>s&&!s.startsWith('#'));if(!imported.length){$('toast').textContent='Il file non contiene titoli di canti.';return}songs=imported;lastSong='';localStorage.setItem('missione-note-songs',JSON.stringify(songs));renderSongs();$('toast').textContent=`Caricati ${songs.length} canti dal file.`;setTimeout(()=>$('toast').textContent='',2800);event.target.value=''});
     renderSongs();
-    async function readExternalSongs(){try{const response=await fetch('canti.txt?ts='+Date.now(),{cache:'no-store'});if(!response.ok)throw new Error('File non trovato');const text=await response.text();const fromFile=text.split(/\r?\n/).map(s=>s.trim()).filter(s=>s&&!s.startsWith('#'));if(!fromFile.length)throw new Error('Il file non contiene titoli');songs=fromFile;lastSong='';localStorage.setItem('missione-note-songs',JSON.stringify(songs));renderSongs();$('toast').textContent='Elenco aggiornato da canti.txt.';setTimeout(()=>$('toast').textContent='',2500)}catch{$('toast').textContent=location.protocol==='file:'?'Per lettura automatica apri il gioco da un server locale; altrimenti usa “Carica canti.txt”.':'Non riesco a leggere canti.txt: controlla che sia nella stessa cartella del gioco.'}}
+    async function readExternalSongs(){try{const response=await fetch('canti.txt?ts='+Date.now(),{cache:'no-store'});if(!response.ok)throw new Error('File non trovato');const text=await response.text();const fromFile=text.split(/\r?\n/).map(s=>s.trim()).filter(s=>s&&!s.startsWith('#'));if(!fromFile.length)throw new Error('Il file non contiene titoli');songs=fromFile;lastSong='';localStorage.setItem('missione-note-songs',JSON.stringify(songs));renderSongs();$('toast').textContent='Elenco aggiornato da canti.txt.';setTimeout(()=>$('toast').textContent='',2500)}catch{}}
     readExternalSongs();
   </script>
 </body>
