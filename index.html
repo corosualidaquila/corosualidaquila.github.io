@@ -21,6 +21,7 @@
     .side h2{margin:2px 0 14px;font-size:1.25rem}.song-list{display:grid;gap:8px;max-height:330px;overflow:auto;padding-right:3px}.song{display:flex;align-items:center;gap:11px;background:#fffaf2;padding:10px 12px;border-radius:13px;font-weight:700}.num{height:29px;width:29px;display:grid;place-items:center;background:var(--yellow);border-radius:50%;font-size:.85rem;flex:none}.hint{font-size:.88rem;color:var(--muted);line-height:1.5;margin:15px 0 0}.challenge-card{margin-top:20px;background:#eef8ff}.challenge-card h2{margin:0 0 8px}.challenge{font-weight:700;line-height:1.5}.challenge-actions{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
     details{margin-top:20px}summary{font-weight:850;cursor:pointer}.editor{display:grid;gap:10px;margin-top:12px}textarea{resize:vertical;width:100%;min-height:125px;border:2px solid #e8e1d5;border-radius:14px;padding:12px;font:inherit;line-height:1.5;color:var(--ink)}.editor small{color:var(--muted)}
     .toast{min-height:1.4em;text-align:center;font-size:.9rem;color:#68758a;margin-top:13px}.spin{animation:pop .32s ease-out}@keyframes pop{0%{transform:scale(.94);opacity:.5}100%{transform:scale(1);opacity:1}}
+    .karaoke-card{margin-top:20px;background:#fff4df}.karaoke-card h2{margin:0 0 8px}.karaoke-tools{display:grid;grid-template-columns:minmax(180px,.7fr) 1.3fr;gap:12px;margin-top:14px}.karaoke-tools select{font:inherit;border:2px solid #e8e1d5;border-radius:12px;padding:10px;color:var(--ink);background:white}.karaoke-tools textarea{min-height:140px}.karaoke-view{position:fixed;inset:0;z-index:20;background:radial-gradient(ellipse at top,#273d69,#101629 75%);color:white;display:grid;grid-template-rows:auto 1fr auto;align-items:center;justify-items:center;padding:clamp(16px,4vw,48px);text-align:center}.karaoke-view[hidden]{display:none}.karaoke-title{font-size:clamp(1.1rem,2.6vw,2rem);opacity:.78}.karaoke-line{font-size:clamp(1.8rem,5.5vw,4.2rem);font-weight:900;line-height:1.2;max-width:1200px;text-wrap:balance;white-space:pre-line}.karaoke-controls{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}.karaoke-progress{opacity:.75;min-width:70px}@media(max-width:720px){.karaoke-tools{grid-template-columns:1fr}}
     footer{text-align:center;color:#8b8172;font-size:.82rem;margin:24px 0 0}
     @media(max-width:720px){main{padding:18px 14px 32px}.layout{grid-template-columns:1fr}.stage{min-height:320px}.side{order:2}.top{align-items:center;gap:12px}.brand-logo{width:min(150px,38vw);height:80px;flex:none}h1{font-size:clamp(1.35rem,6vw,2rem)}}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition:none!important}}
@@ -34,7 +35,7 @@
         <img id="flight-animation" alt="" hidden>
         <div class="stage-inner">
           <span class="avatar" id="avatar" aria-hidden="true"></span>
-          <div class="speech" id="message">Ciao sono ARMON!. Sei pronto a cantare?! Tira il dado e scegli il prossimo canto?</div>
+          <div class="speech" id="message">Ciao! Sono Ottavio. Pronti a scegliere il prossimo canto?</div>
           <div id="song-result" class="result" hidden></div>
           <div id="category" class="category" hidden></div>
           <div class="actions"><button class="primary" id="draw">🎲 Scegli un canto!</button><button class="secondary" id="again" hidden>🔄 Pesca ancora</button></div>
@@ -48,15 +49,26 @@
       </aside>
     </div>
     <section class="card challenge-card">
-      <h2>✨ La missione di Armon</h2>
+      <h2>✨ La missione di Ottavio</h2>
       <div class="challenge" id="challenge">Dopo aver scelto il canto, premi “Nuova missione” per una sfida da fare tutti insieme.</div>
       <div class="challenge-actions"><button class="secondary small" id="new-challenge">✨ Nuova missione</button><button class="secondary small" id="director">🎤 Scegli il direttore</button></div>
     </section>
+    <section class="card karaoke-card">
+      <h2>🎤 Mini karaoke</h2>
+      <div>Incolla il testo e proiettalo a tutto schermo.</div>
+      <div class="karaoke-tools"><select id="karaoke-song" aria-label="Scegli il canto per il karaoke"></select><textarea id="lyrics-input" aria-label="Testo del canto, una riga per volta" placeholder="Incolla o scrivi il testo, andando a capo dopo ogni riga…"></textarea></div>
+      <div class="actions"><button class="secondary small" id="save-lyrics">Salva testo</button><button class="primary" id="start-karaoke">🎤 Proietta il testo</button></div>
+      <div class="hint">Il testo resta salvato su questo dispositivo.</div>
+    </section>
+    <div class="karaoke-view" id="karaoke-view" hidden role="dialog" aria-modal="true" aria-label="Testo del canto">
+      <div class="karaoke-title" id="karaoke-title"></div><div class="karaoke-line" id="karaoke-line" aria-live="polite"></div>
+      <div class="karaoke-controls"><button class="secondary" id="karaoke-prev">← Indietro</button><span class="karaoke-progress" id="karaoke-progress"></span><button class="primary" id="karaoke-next">Avanti →</button><button class="secondary" id="karaoke-fullscreen">⛶ Schermo intero</button><button class="secondary" id="karaoke-close">Chiudi</button></div>
+    </div>
     <details class="card">
       <summary>✏️ Cambia l’elenco dei canti</summary>
       <div class="editor"><small>Il gioco legge <a href="canti.txt" download>canti.txt</a> all’apertura quando è avviato da un server locale. Scrivi un canto per riga. Se hai aperto questa pagina con doppio clic, usa “Carica canti.txt” per via delle protezioni del browser.</small><input id="song-file" type="file" accept=".txt,text/plain" hidden><textarea id="song-input" aria-label="Elenco dei canti, uno per riga"></textarea><div><button class="primary small" id="save-songs">Salva elenco</button><button class="secondary small" id="load-file">📄 Carica canti.txt</button><button class="secondary small" id="reset-songs">Ripristina gli esempi</button></div></div>
     </details>
-    <footer>Armon ricorda: qui si tutti cantano, nessuno viene eliminato! 🧡</footer>
+    <footer>Ottavio ricorda: qui si canta tutti, nessuno viene eliminato! 🧡</footer>
   </main>
   <script>
     const examples = [
@@ -78,7 +90,22 @@
     const $ = id => document.getElementById(id);
     let songs = loadSongs(), lastSong = "", busy = false;
     function loadSongs(){try{const saved=JSON.parse(localStorage.getItem("missione-note-songs"));return Array.isArray(saved)&&saved.length?saved:examples.slice()}catch{return examples.slice()}}
-    function renderSongs(){ $('song-list').innerHTML=songs.map((song,i)=>`<div class="song"><span class="num">${i+1}</span><span>${escapeHtml(song)}</span></div>`).join('');$('song-input').value=songs.join('\n') }
+    function renderSongs(){ $('song-list').innerHTML=songs.map((song,i)=>`<div class="song"><span class="num">${i+1}</span><span>${escapeHtml(song)}</span></div>`).join('');$('song-input').value=songs.join('\n');const select=$('karaoke-song'),previous=select.value;select.innerHTML=songs.map(song=>`<option value="${escapeHtml(song)}">${escapeHtml(song)}</option>`).join('');if(songs.includes(previous))select.value=previous;loadLyricsForSong() }
+    function getLyrics(){try{return JSON.parse(localStorage.getItem('missione-note-lyrics')||'{}')}catch{return {}}}
+    let lyricsStore=getLyrics();
+    function loadLyricsForSong(){$('lyrics-input').value=lyricsStore[$('karaoke-song').value]||''}
+    async function persistLyrics(){localStorage.setItem('missione-note-lyrics',JSON.stringify(lyricsStore));try{const response=await fetch('/api/lyrics',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(lyricsStore)});return response.ok}catch{return false}}
+    let karaokeLines=[],karaokeIndex=0;
+    function groupLyrics(text){const slides=[];let group=[];const flush=()=>{if(group.length){slides.push(group.join('\n'));group=[]}};for(const raw of text.split(/\r?\n/)){const line=raw.trim();if(!line){flush();continue}const size=group.join(' ').length+line.length+(group.length?1:0);if(group.length&&(group.length>=3||size>92))flush();group.push(line);if(/[.!?…]$/.test(line))flush()}flush();return slides}
+    function showKaraokeLine(){ $('karaoke-line').textContent=karaokeLines[karaokeIndex]||' ';$('karaoke-progress').textContent=`${karaokeIndex+1} / ${karaokeLines.length}`;$('karaoke-prev').disabled=karaokeIndex===0;$('karaoke-next').textContent=karaokeIndex===karaokeLines.length-1?'Fine':'Avanti →' }
+    $('karaoke-song').addEventListener('change',loadLyricsForSong);
+    $('save-lyrics').addEventListener('click',async()=>{const lyrics=$('lyrics-input').value.trim();if(!lyrics){$('toast').textContent='Aggiungi almeno una riga di testo.';return}lyricsStore[$('karaoke-song').value]=lyrics;const savedToFile=await persistLyrics();$('toast').textContent=savedToFile?'Testo salvato in testi.json.':'Testo salvato solo in questo browser.';setTimeout(()=>$('toast').textContent='',2800)});
+    $('start-karaoke').addEventListener('click',async()=>{const title=$('karaoke-song').value,lyrics=$('lyrics-input').value.trim();if(!title||!lyrics){$('toast').textContent='Scegli un canto e aggiungi il suo testo.';return}lyricsStore[title]=lyrics;await persistLyrics();karaokeLines=groupLyrics(lyrics);karaokeIndex=0;$('karaoke-title').textContent=title;$('karaoke-view').hidden=false;showKaraokeLine()});
+    $('karaoke-prev').addEventListener('click',()=>{if(karaokeIndex>0){karaokeIndex--;showKaraokeLine()}});
+    $('karaoke-next').addEventListener('click',()=>{if(karaokeIndex<karaokeLines.length-1){karaokeIndex++;showKaraokeLine()}else{$('karaoke-view').hidden=true}});
+    $('karaoke-close').addEventListener('click',()=>{$('karaoke-view').hidden=true;if(document.fullscreenElement)document.exitFullscreen().catch(()=>{})});
+    $('karaoke-fullscreen').addEventListener('click',()=>{if(!document.fullscreenElement){const enter=$('karaoke-view').requestFullscreen;if(enter)enter.call($('karaoke-view')).catch(()=>{})}else if(document.exitFullscreen)document.exitFullscreen().catch(()=>{})});
+    document.addEventListener('keydown',event=>{if($('karaoke-view').hidden)return;if(event.key==='ArrowRight'||event.key===' '){event.preventDefault();$('karaoke-next').click()}else if(event.key==='ArrowLeft')$('karaoke-prev').click();else if(event.key==='Escape')$('karaoke-close').click()});
     function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
     function drawSong(){if(busy||!songs.length)return;busy=true;$('draw').disabled=true;$('toast').textContent='Ottavio sta mescolando le note…';let n=0;const interval=setInterval(()=>{const pick=songs[Math.floor(Math.random()*songs.length)];$('song-result').hidden=false;$('category').hidden=true;$('song-result').textContent=pick;$('song-result').classList.remove('spin');void $('song-result').offsetWidth;$('song-result').classList.add('spin');n++;if(n>=13){clearInterval(interval);let choices=songs.filter(s=>songs.length<2||s!==lastSong);lastSong=choices[Math.floor(Math.random()*choices.length)];$('song-result').textContent=lastSong;$('category').textContent='🎶 Il canto scelto';$('category').hidden=false;$('message').textContent='È uscito questo canto! Siete pronti a cantare insieme?';$('again').hidden=false;$('toast').textContent='';busy=false;$('draw').disabled=false}} ,95)}
     $('avatar').innerHTML=eagleMascot;
@@ -100,6 +127,7 @@
     $('load-file').addEventListener('click',()=>$('song-file').click());
     $('song-file').addEventListener('change',async event=>{const file=event.target.files[0];if(!file)return;const imported=(await file.text()).split(/\r?\n/).map(s=>s.trim()).filter(s=>s&&!s.startsWith('#'));if(!imported.length){$('toast').textContent='Il file non contiene titoli di canti.';return}songs=imported;lastSong='';localStorage.setItem('missione-note-songs',JSON.stringify(songs));renderSongs();$('toast').textContent=`Caricati ${songs.length} canti dal file.`;setTimeout(()=>$('toast').textContent='',2800);event.target.value=''});
     renderSongs();
+    fetch('/api/lyrics').then(response=>{if(!response.ok)throw new Error('No local storage API');return response.json()}).then(data=>{if(data&&typeof data==='object'&&!Array.isArray(data)){lyricsStore={...getLyrics(),...data};localStorage.setItem('missione-note-lyrics',JSON.stringify(lyricsStore));loadLyricsForSong()}}).catch(()=>{});
     async function readExternalSongs(){try{const response=await fetch('canti.txt?ts='+Date.now(),{cache:'no-store'});if(!response.ok)throw new Error('File non trovato');const text=await response.text();const fromFile=text.split(/\r?\n/).map(s=>s.trim()).filter(s=>s&&!s.startsWith('#'));if(!fromFile.length)throw new Error('Il file non contiene titoli');songs=fromFile;lastSong='';localStorage.setItem('missione-note-songs',JSON.stringify(songs));renderSongs();$('toast').textContent='Elenco aggiornato da canti.txt.';setTimeout(()=>$('toast').textContent='',2500)}catch{}}
     readExternalSongs();
   </script>
