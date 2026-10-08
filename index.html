@@ -35,7 +35,7 @@
         <img id="flight-animation" alt="" hidden>
         <div class="stage-inner">
           <span class="avatar" id="avatar" aria-hidden="true"></span>
-          <div class="speech" id="message">Ciao! Sono Ottavio. Pronti a scegliere il prossimo canto?</div>
+          <div class="speech" id="message">Ciao! Sono Armon. Pronti a cantare e scegliere il prossimo canto?</div>
           <div id="song-result" class="result" hidden></div>
           <div id="category" class="category" hidden></div>
           <div class="actions"><button class="primary" id="draw">🎲 Scegli un canto!</button><button class="secondary" id="again" hidden>🔄 Pesca ancora</button></div>
@@ -49,7 +49,7 @@
       </aside>
     </div>
     <section class="card challenge-card">
-      <h2>✨ La missione di Ottavio</h2>
+      <h2>✨ La missione di Armon</h2>
       <div class="challenge" id="challenge">Dopo aver scelto il canto, premi “Nuova missione” per una sfida da fare tutti insieme.</div>
       <div class="challenge-actions"><button class="secondary small" id="new-challenge">✨ Nuova missione</button><button class="secondary small" id="director">🎤 Scegli il direttore</button></div>
     </section>
@@ -68,7 +68,7 @@
       <summary>✏️ Cambia l’elenco dei canti</summary>
       <div class="editor"><small>Il gioco legge <a href="canti.txt" download>canti.txt</a> all’apertura quando è avviato da un server locale. Scrivi un canto per riga. Se hai aperto questa pagina con doppio clic, usa “Carica canti.txt” per via delle protezioni del browser.</small><input id="song-file" type="file" accept=".txt,text/plain" hidden><textarea id="song-input" aria-label="Elenco dei canti, uno per riga"></textarea><div><button class="primary small" id="save-songs">Salva elenco</button><button class="secondary small" id="load-file">📄 Carica canti.txt</button><button class="secondary small" id="reset-songs">Ripristina gli esempi</button></div></div>
     </details>
-    <footer>Ottavio ricorda: qui si canta tutti, nessuno viene eliminato! 🧡</footer>
+     <footer>Armon ricorda: qui si tutti cantano, nessuno viene eliminato! 🧡</footer>
   </main>
   <script>
     const examples = [
@@ -107,7 +107,7 @@
     $('karaoke-fullscreen').addEventListener('click',()=>{if(!document.fullscreenElement){const enter=$('karaoke-view').requestFullscreen;if(enter)enter.call($('karaoke-view')).catch(()=>{})}else if(document.exitFullscreen)document.exitFullscreen().catch(()=>{})});
     document.addEventListener('keydown',event=>{if($('karaoke-view').hidden)return;if(event.key==='ArrowRight'||event.key===' '){event.preventDefault();$('karaoke-next').click()}else if(event.key==='ArrowLeft')$('karaoke-prev').click();else if(event.key==='Escape')$('karaoke-close').click()});
     function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-    function drawSong(){if(busy||!songs.length)return;busy=true;$('draw').disabled=true;$('toast').textContent='Ottavio sta mescolando le note…';let n=0;const interval=setInterval(()=>{const pick=songs[Math.floor(Math.random()*songs.length)];$('song-result').hidden=false;$('category').hidden=true;$('song-result').textContent=pick;$('song-result').classList.remove('spin');void $('song-result').offsetWidth;$('song-result').classList.add('spin');n++;if(n>=13){clearInterval(interval);let choices=songs.filter(s=>songs.length<2||s!==lastSong);lastSong=choices[Math.floor(Math.random()*choices.length)];$('song-result').textContent=lastSong;$('category').textContent='🎶 Il canto scelto';$('category').hidden=false;$('message').textContent='È uscito questo canto! Siete pronti a cantare insieme?';$('again').hidden=false;$('toast').textContent='';busy=false;$('draw').disabled=false}} ,95)}
+    function drawSong(){if(busy||!songs.length)return;busy=true;$('draw').disabled=true;$('toast').textContent='Armon sta mescolando le note…';let n=0;const interval=setInterval(()=>{const pick=songs[Math.floor(Math.random()*songs.length)];$('song-result').hidden=false;$('category').hidden=true;$('song-result').textContent=pick;$('song-result').classList.remove('spin');void $('song-result').offsetWidth;$('song-result').classList.add('spin');n++;if(n>=13){clearInterval(interval);let choices=songs.filter(s=>songs.length<2||s!==lastSong);lastSong=choices[Math.floor(Math.random()*choices.length)];$('song-result').textContent=lastSong;$('category').textContent='🎶 Il canto scelto';$('category').hidden=false;$('message').textContent='È uscito questo canto! Siete pronti a cantare insieme?';$('again').hidden=false;$('toast').textContent='';busy=false;$('draw').disabled=false}} ,95)}
     $('avatar').innerHTML=eagleMascot;
     let flightTimer;
     function setStyle(style){
