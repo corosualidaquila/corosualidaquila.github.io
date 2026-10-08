@@ -1,7 +1,7 @@
 # Modifica questo file: scrivi un canto per riga.
 # Salva il file, poi nel gioco apri "Cambia l'elenco dei canti" e caricalo.
 Pane del cielo
-Fammi conosce
+Fammi conoscere
 Mi basta la tua grazia
 Prendi quedsto pane e questo vino
 Invochiamo la tua presenza
@@ -11,7 +11,7 @@ Te al centro del mio cuore
 Come fuoco e vento
 Annunceremo che tu sei verità
 Alza i tuoi occhi
-Ave Marisa
+Ave Maria
 Davanti a te
 Alleluia con il cuore
 Gesù mio buon pastore
