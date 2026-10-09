@@ -8,48 +8,99 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main>
-    <div class="top"><img class="brand-logo" src="assets/logo-su-d-aquila.jpeg" alt="Logo del coro Su d'Aquila"><h1>La missione<br>delle note</h1></div>
-    <div class="layout">
-      <section class="card stage style-mascot" id="stage" aria-live="polite">
-        <img id="flight-animation" alt="" hidden>
-        <div class="stage-inner">
-          <span class="avatar" id="avatar" aria-hidden="true"></span>
-          <div class="speech" id="message">Ciao! Sono Armon. Pronti a cantare e scegliere il prossimo canto?</div>
-          <div id="song-result" class="result" hidden></div>
-          <div id="category" class="category" hidden></div>
-          <div class="actions"><button class="primary" id="draw">🎲 Scegli un canto!</button><button class="secondary" id="again" hidden>🔄 Pesca ancora</button></div>
-          <div class="actions" aria-label="Scegli lo stile della grafica"><button class="secondary small" id="mascot-style" aria-pressed="true">🦅 Mascotte</button><button class="secondary small" id="flight-style" aria-pressed="false">▶ In volo</button></div>
-          <div class="toast" id="toast" role="status"></div>
-        </div>
+  <div class="app-shell">
+    <main class="app-main">
+      <header class="app-header">
+        <img class="header-logo" id="brand-logo" src="assets/logo-su-d-aquila-light.png" alt="Logo del coro Su d'Aquila">
+        <div class="header-actions"><button class="home-return nav-item" id="home-return" type="button" data-view="home-view" hidden>Home</button><button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false" aria-label="Attiva il tema scuro"><span class="theme-sun" aria-hidden="true">☀</span><span class="switch-track" aria-hidden="true"><span class="switch-thumb"></span></span><span class="theme-moon" aria-hidden="true">☾</span></button></div>
+      </header>
+      <section class="page-view welcome-view" id="home-view">
+        <section class="card stage style-mascot welcome-stage" id="stage" aria-live="polite">
+          <img id="flight-animation" alt="" hidden>
+          <div class="stage-inner">
+            <span class="avatar" id="avatar" aria-hidden="true"></span>
+            <div class="speech welcome-speech" id="message">Ciao! Sono Armon. Scegli una missione dal menu e cantiamo insieme!</div>
+            <nav class="home-games" aria-label="Scegli un gioco"><button class="home-game-button" type="button" data-view="songs-view"><span aria-hidden="true">🎤</span><span>Canti e karaoke</span><span aria-hidden="true">→</span></button><button class="home-game-button" type="button" data-view="notes-view"><span aria-hidden="true">🎼</span><span>Indovina la nota</span><span aria-hidden="true">→</span></button></nav>
+            <div class="home-controls" aria-label="Scegli l'aspetto di Armon"><button class="secondary small armon-style-button is-selected" id="mascot-style" type="button" aria-pressed="true">Mascotte</button><button class="secondary small armon-style-button" id="flight-style" type="button" aria-pressed="false">In volo</button></div>
+          </div>
+        </section>
       </section>
-      <aside class="card side">
-        <h2>🎼 I canti in gioco</h2>
-        <div class="song-list" id="song-list"></div>
-      </aside>
-    </div>
-    <section class="card challenge-card">
-      <h2>✨ La missione di Armon</h2>
-      <div class="challenge" id="challenge">Dopo aver scelto il canto, premi “Nuova missione” per una sfida da fare tutti insieme.</div>
-      <div class="challenge-actions"><button class="secondary small" id="new-challenge">✨ Nuova missione</button><button class="secondary small" id="director">🎤 Scegli il direttore</button></div>
-    </section>
-    <section class="card karaoke-card">
-      <h2>🎤 Mini karaoke</h2>
-      <div>Incolla il testo e proiettalo a tutto schermo.</div>
-      <div class="karaoke-tools"><select id="karaoke-song" aria-label="Scegli il canto per il karaoke"></select><textarea id="lyrics-input" aria-label="Testo del canto, una riga per volta" placeholder="Incolla o scrivi il testo, andando a capo dopo ogni riga…"></textarea></div>
-      <div class="actions"><button class="secondary small" id="save-lyrics">Salva testo</button><button class="primary" id="start-karaoke">🎤 Proietta il testo</button></div>
-      <div class="hint">Il testo resta salvato su questo dispositivo.</div>
-    </section>
-    <div class="karaoke-view" id="karaoke-view" hidden role="dialog" aria-modal="true" aria-label="Testo del canto">
-      <div class="karaoke-title" id="karaoke-title"></div><div class="karaoke-line" id="karaoke-line" aria-live="polite"></div>
-      <div class="karaoke-controls"><button class="secondary" id="karaoke-prev">← Indietro</button><span class="karaoke-progress" id="karaoke-progress"></span><button class="primary" id="karaoke-next">Avanti →</button><button class="secondary" id="karaoke-fullscreen">⛶ Schermo intero</button><button class="secondary" id="karaoke-close">Chiudi</button></div>
-    </div>
-    <details class="card">
-      <summary>✏️ Cambia l’elenco dei canti</summary>
-      <div class="editor"><small>Il gioco legge <a href="canti.txt" download>canti.txt</a> all’apertura quando è avviato da un server locale. Scrivi un canto per riga. Se hai aperto questa pagina con doppio clic, usa “Carica canti.txt” per via delle protezioni del browser.</small><input id="song-file" type="file" accept=".txt,text/plain" hidden><textarea id="song-input" aria-label="Elenco dei canti, uno per riga"></textarea><div><button class="primary small" id="save-songs">Salva elenco</button><button class="secondary small" id="load-file">📄 Carica canti.txt</button><button class="secondary small" id="reset-songs">Ripristina gli esempi</button></div></div>
-    </details>
+      <section class="page-view songs-view" id="songs-view" hidden>
+        <div class="layout">
+          <section class="card song-picker">
+            <div class="song-picker-heading"><h2>Scegli un canto</h2><img class="song-mascot" src="assets/armon-karaoke.png" alt="Armon canta con cuffie e microfono"></div>
+            <div id="song-result" class="result" hidden></div>
+            <div id="category" class="category" hidden></div>
+            <div class="song-message" id="song-message" role="status" aria-live="polite">Pronti? Armon pesca il prossimo canto!</div>
+            <div class="actions"><button class="primary" id="draw">🎲 Scegli un canto!</button><button class="secondary" id="again" hidden>🔄 Pesca ancora</button></div>
+            <div class="song-karaoke-controls">
+              <select id="karaoke-song" aria-label="Canto estratto" tabindex="-1" aria-hidden="true"></select>
+              <div class="actions"><button class="primary" id="start-karaoke">🎤 Proietta il testo</button><button class="secondary small" id="edit-lyrics">✏️ Modifica testo</button></div>
+            </div>
+            <div class="toast" id="toast" role="status"></div>
+          </section>
+          <aside class="card side">
+            <h2>🎼 Canti in gioco</h2>
+            <div class="song-list" id="song-list"></div>
+          </aside>
+        </div>
+        <section class="card challenge-card">
+          <h2>✨ La missione di Armon</h2>
+          <div class="challenge" id="challenge">Scegli un canto e poi chiedi ad Armon una missione da fare tutti insieme.</div>
+          <div class="challenge-actions"><button class="secondary small" id="new-challenge">✨ Nuova missione</button><button class="secondary small" id="director">🎤 Scegli il direttore</button></div>
+        </section>
+        <dialog class="lyrics-dialog" id="lyrics-dialog" aria-labelledby="lyrics-dialog-title">
+          <form method="dialog" class="dialog-top"><h2 id="lyrics-dialog-title">Modifica il testo</h2><button class="secondary small" value="cancel" aria-label="Chiudi">✕</button></form>
+          <p class="hint">Il testo viene salvato per il canto selezionato.</p>
+          <textarea id="lyrics-input" aria-label="Testo del canto, una riga per volta" placeholder="Incolla o scrivi il testo, andando a capo dopo ogni riga…"></textarea>
+          <div class="actions"><button class="primary" id="save-lyrics" type="button">Salva testo</button></div>
+          <div class="toast" id="lyrics-toast" role="status" aria-live="polite"></div>
+        </dialog>
+        <details class="card song-editor">
+          <summary>✏️ Cambia l’elenco dei canti</summary>
+          <div class="editor"><input id="song-file" type="file" accept=".txt,text/plain" hidden><textarea id="song-input" aria-label="Elenco dei canti, uno per riga"></textarea><div><button class="primary small" id="save-songs">Salva elenco</button><button class="secondary small" id="load-file">📄 Carica canti.txt</button><button class="secondary small" id="reset-songs">Ripristina gli esempi</button></div></div>
+        </details>
+      </section>
+      <section class="page-view notes-view" id="notes-view" hidden>
+        <section class="card note-game-card" id="note-game-card" aria-labelledby="note-game-title">
+          <canvas class="celebration-canvas" id="note-celebration" aria-hidden="true"></canvas>
+          <div class="note-game-heading"><h2 id="note-game-title">🎼 Leggi la nota</h2><div class="note-game-meta"><span id="note-level">Livello 1/6 · Note naturali</span><span id="note-score">0/5</span></div></div>
+          <div class="note-game-layout">
+            <div class="note-game-main">
+              <div class="staff-wrap" id="staff-wrap" aria-label="Pentagramma in chiave di violino">
+                <svg class="staff" viewBox="0 0 320 180" role="img" aria-labelledby="staff-title staff-desc">
+                  <title id="staff-title">Pentagramma in chiave di violino</title>
+                  <desc id="staff-desc">Una nota da riconoscere sulle linee o negli spazi.</desc>
+                  <text class="treble-clef" id="staff-clef" x="34" y="119" aria-hidden="true">𝄞</text>
+                  <g class="staff-lines"><line x1="85" y1="40" x2="290" y2="40"/><line x1="85" y1="60" x2="290" y2="60"/><line x1="85" y1="80" x2="290" y2="80"/><line x1="85" y1="100" x2="290" y2="100"/><line x1="85" y1="120" x2="290" y2="120"/></g>
+                  <g id="ledger-lines" class="ledger-lines"></g>
+                  <text class="staff-accidental" id="staff-accidental" x="176" y="125" text-anchor="middle"></text>
+                  <ellipse id="staff-note" class="staff-note" cx="198" cy="120" rx="10" ry="7" transform="rotate(-20 198 120)"/>
+                </svg>
+              </div>
+              <div class="note-answers" id="note-answers" aria-label="Scegli il nome della nota"></div>
+              <div class="note-feedback" id="note-feedback" role="status" aria-live="polite"></div>
+              <div class="sr-only" id="note-celebration-status" role="status" aria-live="polite"></div>
+              <button class="secondary small note-replay" id="note-replay" hidden>↻ Rigioca</button>
+            </div>
+            <aside class="note-guide" aria-label="Aiuto di Armon">
+              <span class="note-guide-label">Info · chiedi ad Armon</span>
+              <button class="note-guide-button" id="note-guide" type="button" aria-label="Chiedi un indizio ad Armon" title="Clicca su Armon per un indizio">
+                <img src="assets/armon-maestro-note.png" alt="Armon maestro indica le note sul pentagramma" draggable="false">
+              </button>
+              <div class="note-guide-message" id="note-guide-message" role="status" aria-live="polite" hidden></div>
+            </aside>
+          </div>
+        </section>
+      </section>
+      <div class="karaoke-view" id="karaoke-view" hidden role="dialog" aria-modal="true" aria-label="Testo del canto">
+        <div class="karaoke-title" id="karaoke-title"></div><div class="karaoke-line" id="karaoke-line" aria-live="polite"></div>
+        <div class="karaoke-controls"><button class="secondary" id="karaoke-prev">← Indietro</button><span class="karaoke-progress" id="karaoke-progress"></span><button class="primary" id="karaoke-next">Avanti →</button><button class="secondary" id="karaoke-fullscreen">⛶ Schermo intero</button><button class="secondary" id="karaoke-close">Chiudi</button></div>
+      </div>
+
     <footer>Armon ricorda: qui tutti cantano, nessuno viene eliminato! 🧡</footer>
-  </main>
+    </main>
+  </div>
   <script src="app.js" defer></script>
 </body>
 </html>
